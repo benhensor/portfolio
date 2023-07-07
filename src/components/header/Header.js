@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../assets/img/logo2023.png';
 import navIcon1 from '../../assets/img/nav-icon1.svg';
