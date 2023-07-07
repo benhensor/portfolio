@@ -1,0 +1,64 @@
+import { useState, useEffect } from 'react'
+import { ArrowRightCircle } from 'react-bootstrap-icons'
+import circleVector1 from '../../assets/img/circleVector1.svg';
+import circleVector2 from '../../assets/img/circleVector2.svg';
+import circleVector3 from '../../assets/img/circleVector3.svg';
+import 'animate.css';
+import './hero.css';
+
+
+
+export default function Hero () {
+
+  const textRotate = ['Junior Developer', 'Web Designer', 'Cat Fanatic'];
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhrase(prevPhrase =>
+        (prevPhrase + 1) % textRotate.length
+      );
+    }, 5000); // Adjust the interval duration as needed
+
+    return () => clearInterval(interval);
+  }, );
+
+  return (
+    <section className='hero' id='home'>
+      <div className="hero-container">
+        <div className='hero-titles'>
+          <div className='hero-content'>
+          <div className="hero-content-text">
+          <span className='tagline'>Welcome to my Portfolio</span>
+          <div className="name-container">
+          <h1 className='name'>Ben Hensor</h1>
+          </div>
+          <div className='text-phrases'>
+              {textRotate.map((phrase, index) => (
+                <h2
+                  key={index} 
+                  className={`text-phrase ${index === currentPhrase ? 'animate__animated animate__fadeInLeft' : 'animate__animated animate__fadeOutRight'}` }
+                >
+                  {phrase}
+                </h2>
+              ))}
+            </div>
+          </div>
+          
+          
+          
+          <p>I am available for weddings and Bar Mitvahs!</p>
+          <button onClick={() => console.log('connect')}>Let's Connect<ArrowRightCircle size={25}/></button>
+          </div>
+          
+          <div className='hero-animation-container'>
+            <img className='circleVector1' src={circleVector1} alt='circle vector' />
+            <img className='circleVector2' src={circleVector2} alt='circle vector' />
+            <img className='circleVector3' src={circleVector3} alt='circle vector' />
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  )
+}
