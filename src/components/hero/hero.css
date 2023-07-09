@@ -173,7 +173,7 @@
   position: absolute;
   top: 0;
   right: -2000;
-  mix-blend-mode:multiply;
+  mix-blend-mode:add;
 
   opacity: 0.5;
 }
