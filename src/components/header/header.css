@@ -6,6 +6,11 @@ header {
   z-index: 100;
   width: 100%;
   height: 10.8rem;
+  transition: 0.5s ease-in-out;
+}
+
+header.scrolled {
+  background-color: #141717;
 }
 
 nav {
@@ -146,6 +151,8 @@ nav {
 
 
 @media screen and (max-width: 999px) {
+
+  
 
   #mobile-controls {
     display: flex;

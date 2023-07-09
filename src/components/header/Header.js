@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../assets/img/logo2023.png';
 import navIcon1 from '../../assets/img/nav-icon1.svg';
@@ -11,7 +11,31 @@ export default function Header () {
 
   // state to track which link is active (home, about, skills, projects)
   const [activeLink, setActiveLink] = useState('home');
+  // state to track if mobile menu is open
   const [isOpen, setIsOpen] = useState(false);
+  // state to track when user is scrolling
+  const [scrolled, setScrolled] = useState(false);
+
+
+  // triggered when user scrolls
+  useEffect(() => {
+    // function to update scrolling state
+    const onScroll = () => {
+    // check if user has scrolled more than 50px
+    if (window.scrollY > 50) {
+      // set state to true
+      setScrolled(true)
+    } else {
+      // set state to false
+      setScrolled(false)
+    }
+    }
+      window.addEventListener('scroll', onScroll);
+
+      return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+
 
   const handleClick = () => { setIsOpen(!isOpen) };
 
@@ -28,7 +52,7 @@ export default function Header () {
   }
 
   return (
-    <header>
+    <header className={scrolled ? 'scrolled' : ''}>
       <nav>
 
         <div className="logo-container">

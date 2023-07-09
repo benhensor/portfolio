@@ -1,0 +1,143 @@
+.skills-container {
+  margin: 0 10%;
+  
+}
+
+.skills-row {
+
+  margin: 0 auto;
+}
+
+.skills-header h1 {
+  margin-bottom: 60px;
+  font-size: 4rem;
+}
+
+.skills-content {
+  overflow-x: scroll;
+  display: flex;
+
+}
+
+.skills-slider {
+  display: flex;
+}
+
+.skill {
+
+}
+
+.skills img {
+  margin: 0;
+  padding: 0;
+}
+
+/* .skill:hover {
+  scale: 1.5;
+  transform-origin: center;
+  transition: rubberBand ;
+} */
+
+
+.skill:hover {
+  
+  -webkit-animation-name: boing;
+  animation-name: boing;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+
+@-webkit-keyframes boing {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  5% {
+    -webkit-transform: scale(1.55);
+    transform: scale(1.55);
+  }
+  20% {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+  30% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  40% {
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+  }
+  50% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  60% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  70% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  80% {
+    -webkit-transform: scale(0.68);
+    transform: scale(0.98);
+  }
+  90% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  }
+  }
+  @keyframes boing {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  5% {
+    -webkit-transform: scale(1.75);
+    transform: scale(1.75);
+  }
+  20% {
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+  }
+  30% {
+    -webkit-transform: scale(1.65);
+    transform: scale(1.65);
+  }
+  40% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  50% {
+    -webkit-transform: scale(1.55);
+    transform: scale(1.55);
+  }
+  60% {
+    -webkit-transform: scale(1.35);
+    transform: scale(1.35);
+  }
+  70% {
+    -webkit-transform: scale(1.53);
+    transform: scale(1.53);
+  }
+  80% {
+    -webkit-transform: scale(1.47);
+    transform: scale(1.47);
+  }
+  90% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  100% {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  }
+  }
