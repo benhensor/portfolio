@@ -41,22 +41,38 @@ export default function Header () {
 
 
   const onUpdateActiveLink = (value) => {
-    setActiveLink(value)
-  
-    // scroll to section based on active link
-    const section = document.querySelector(`#${value}`);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    if (activeLink === value) {
+      return;
     }
+    setActiveLink(value);
   
-  }
+    // Scroll to section based on active link
+    const section = document.getElementById(value);
+    const header = document.querySelector('header');
+    if (section && header) {
+      const headerHeight = header.offsetHeight;
+      const targetPosition = section.offsetTop - (headerHeight -5);
+  
+      setTimeout(() => {
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+      }, 100);
+    }
+    setIsOpen(false);
+  };
+
+  const scrollToTop = () => {
+    onUpdateActiveLink('home');
+  };
 
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <nav>
 
         <div className="logo-container">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" onClick={scrollToTop}/>
         </div>
         <div id="mobile-controls" onClick={handleClick}>
           {isOpen ? <FaTimes className="visible" /> : <FaBars />}
@@ -67,10 +83,10 @@ export default function Header () {
           <div className="nav-menu">
             <ul className="header-menu">
               <li>
-                <a href="#journey" className={ activeLink === 'journey' ? 'active menu-link' : 'menu-link' } onClick={() => onUpdateActiveLink('journey')}>My Journey</a>
+              <a href="#skills" className={ activeLink === 'skills' ? 'active menu-link' : 'menu-link' } onClick={() => onUpdateActiveLink('skills')}>Skills</a>
               </li>
               <li>
-                <a href="#skills" className={ activeLink === 'skills' ? 'active menu-link' : 'menu-link' } onClick={() => onUpdateActiveLink('skills')}>Skills</a>
+              <a href="#journey" className={ activeLink === 'journey' ? 'active menu-link' : 'menu-link' } onClick={() => onUpdateActiveLink('journey')}>My Journey</a>
               </li>
               <li>
                 <a href="#projects" className={ activeLink === 'projects' ? 'active menu-link' : 'menu-link' } onClick={() => onUpdateActiveLink('projects')}>Projects</a>

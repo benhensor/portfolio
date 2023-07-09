@@ -1,0 +1,28 @@
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 2rem 10%;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-content img {
+    width: 42px;
+    height: 42px;
+}
+
+.footer-content p {
+    font-size: var(--text-s);
+}

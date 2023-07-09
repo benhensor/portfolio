@@ -9,9 +9,10 @@
 
     /* Global Colours */
 
-  --main-color: #DE9E36;
-  --secondary-color: #556D60;
-  --tertiary-color: #357435;
+  --accent-color: #DE9E36;
+  --background-color: #141717;
+  --card-background-color: linear-gradient(to bottom right, #2f3636, #171e1e);
+  --highlight-color: #642b0a;
   --quaternary-color: #323232;
   --quinary-color: #f5f5f5;
   --senary-color: #ccc;

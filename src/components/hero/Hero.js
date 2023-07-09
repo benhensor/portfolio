@@ -14,7 +14,7 @@ import './hero.css';
 
 export default function Hero () {
 
-  const textRotate = ['Junior Developer', 'Web Designer', 'Cat Fanatic'];
+  const textRotate = ['Junior Developer', 'Sound Designer', 'Cat Fanatic'];
   const [currentPhrase, setCurrentPhrase] = useState(0);
 
   useEffect(() => {

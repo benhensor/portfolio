@@ -2,7 +2,10 @@ import React from 'react';
 import Header from './components/header/Header';
 import Hero from './components/hero/Hero';
 import Skills from './components/skills/Skills';
-// import Footer from './components/footer/Footer';
+import Journey from './components/journey/Journey';
+import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
+import Footer from './components/footer/Footer';
 import './App.css';
 
 function App() {
@@ -12,8 +15,11 @@ function App() {
       <div className="content">
       <Hero />
       <Skills />
+      <Journey />
+      <Projects />
+      <Contact />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }
