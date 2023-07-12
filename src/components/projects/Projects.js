@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import PaprbackLogo from '../../assets/img/paprback_orangebooks_whitetext.svg';
+import BenHensorSoundLogo from '../../assets/img/logo2023.png';
 import './projects.css';
 
 
@@ -41,17 +43,41 @@ export default function Projects () {
           <div className="projects-content">
             <div className="project1">
               <div className="project-card">
-                Paprback
+                <h1 className="project-title">Paprback</h1>
+                <div className="project-image-container">
+                  <img className="project-image" src={PaprbackLogo} alt="" />
+                </div>
+                <h3 className="project-description">
+                  Paperback is a software solution designed to connect book lovers for the purpose of exchanging and donating old books.
+                </h3>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" className="project-link">GitHub</a>
+                <a href="https://bcpaprback.netlify.app/" className="project-link">Online</a>
               </div>
             </div>
             <div className="project2">
               <div className="project-card">
-                Ben Hensor Sound
+              <h1 className="project-title">Ben Hensor Sound</h1>
+                <div className="project-image-container">
+                  <img className="project-image" src={BenHensorSoundLogo} alt="" />
+                </div>
+                <h3 className="project-description">
+                  This is a recreation of my old website showcasing my film sound work.
+                </h3>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" className="project-link">GitHub</a>
+                <a href="https://bcpaprback.netlify.app/" className="project-link">Online</a>
               </div>
             </div>
             <div className="project3">
               <div className="project-card">
-                FrontEnd Masters Proj?
+              <h1 className="project-title">Paprback</h1>
+                <div className="project-image-container">
+                  <img className="project-image" src={PaprbackLogo} alt="" />
+                </div>
+                <h3 className="project-description">
+                  Paperback is a software solution designed to connect book lovers for the purpose of exchanging and donating old books.
+                </h3>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" className="project-link">GitHub</a>
+                <a href="https://bcpaprback.netlify.app/" className="project-link">Online</a>
               </div>
             </div>
 
