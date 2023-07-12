@@ -6,17 +6,19 @@ header {
   z-index: 100;
   width: 100%;
   height: 10.8rem;
-  transition: 0.5s ease-in-out;
+  border-bottom: none;
+  transition: all 0.5s ease-in-out;
 }
 
 header.scrolled {
   background-color: #141717;
-  border-bottom: 5px solid var(--accent-color);;
+  border-bottom: 5px solid var(--accent-color);
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 1rem 10%;
   position: relative;
   
@@ -34,10 +36,11 @@ nav {
 .nav-menu-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
-.nav-menu {
+#nav-menu {
   display: flex;
   align-items: center;
 }
@@ -47,7 +50,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: 4rem;
+  gap: 2rem;
   margin: 0 4rem;
 }
 
@@ -125,6 +128,10 @@ nav {
   transition: 0.3s ease-in-out;
 }
 
+.connect-icon {
+  display: none;
+}
+
 .connect-button span {
   z-index: 1;
 }
@@ -159,37 +166,52 @@ nav {
 
 @media screen and (max-width: 999px) {
 
-  
+  header {
+    height: 8.8rem;
+    transition: 0.5s ease-in-out;
+  }
+
+  .logo-container {
+    max-width: 6rem;
+  }
 
   #mobile-controls {
     display: flex;
     align-items: center;
     
     color: #fff;
-    font-size: var(--text-xxxxl);
+    font-size: var(--text-xxxl);
   }
   
   .nav-menu-container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    padding: 4rem 10%;
+    padding-top: 6.5rem;
+    padding-right: 10%;
     position: fixed;
-    top: 10.8rem;
+    top: 8.8rem;
     right: -30rem;
-    width: 30rem;
+    width: 20rem;
     height: 100vh;
     opacity: 0;
-    background: linear-gradient(180deg, #1d1f20 0%, #141717 100%);
+    background-color: transparent;
     transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .nav-menu-container.scrolled {
+    background-color: #141717;
+    border-bottom: 5px solid var(--accent-color);
+    transition: 0.5s ease-in-out;
   }
 
   .nav-menu-container.visible {
     right: 0;
     opacity: 1;
+    transition: 0.5s ease-in-out;
   }
 
-  .nav-menu {
+  #nav-menu {
     justify-content: flex-start;
     align-items: flex-start;
 
@@ -208,11 +230,18 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 2rem;
 }
 
   .connect-button {
-    margin-top: 2rem;
-    margin-left: 0;
+    display: none;
     
+  }
+
+  .connect-icon {
+    display: block;
+    width: 4.2rem;
+    height: 4.2rem;
+    margin-top: 2.5rem;
   }
 }

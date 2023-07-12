@@ -12,11 +12,9 @@
   --accent-color: #DE9E36;
   --background-color: #141717;
   --card-background-color: linear-gradient(to bottom right, #2f3636, #171e1e);
-  --highlight-color: #642b0a;
-  --quaternary-color: #323232;
-  --quinary-color: #f5f5f5;
-  --senary-color: #ccc;
-  --close-color: #ee3232;
+
+  --journey-background: linear-gradient(to bottom right, #322d22, #1c1810);
+  --projects-background:  linear-gradient(to bottom right, #003a3a, #0d2727);
 
   --text-color-light: #fff;
   --text-color-dark: #323232;
@@ -37,8 +35,9 @@
   --text-xxl: 2.8rem;
   --text-xxxl: 3.2rem;
   --text-xxxxl: 4rem;
-  --text-xxxxxl: 8rem;
-  --text-xxxxxxl: 10rem;
+  --text-xxxxxl: 6rem;
+  --text-xxxxxxl: 8rem;
+  --text-xxxxxxxl: 10rem;
 
   
 
@@ -60,6 +59,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 1px solid #f00 !important; */
 }
 
 html {

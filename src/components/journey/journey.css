@@ -1,72 +1,194 @@
 #journey {
-  background: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
-  padding: 15rem 0;
+  background: var(--journey-background);
+  padding: 5rem 0;
   transition: 0.5s ease-in-out;
+  min-height: 175rem;
 }
 
 #journey.scrolled {
   border-top: 5px solid var(--accent-color);
+  transition: 0.5s ease-in-out;
+  width: 100%;
 }
 
 .journey-container {
   margin: 0 10%;
-  min-height: 300rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.journey-content {
-  
+.journey-header {
+  background-image: url('../../assets/blobs/blob1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  width: 40rem;
+  position: relative;
 }
 
 .journey-header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   font-size: var(--text-xxxxl);
+  width: 100%;
 }
 
 .journey-header h3 {
   text-align: center;
-  margin: 6rem 0;
   font-size: var(--text-xxxl);
 }
 
+.journey-row {
+  position: relative;
+  width: 100%;
+}
+
+.journey-content {
+  width: 100%;
+}
+
+.block1-position {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
 .journey-block1 {
-  background-image: url('../../assets/blobs/blob1.svg');
+  background-image: url('../../assets/blobs/blob2.svg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  width: 50rem;
-  height: 50rem;
-  padding: 4rem;
+  height: 30rem;
+  width: 30rem;
+  position: relative;
+}
+
+.block2-position {
+  position: absolute;
+  top: 15rem;
+  right: 20%;
 }
 
 .journey-block2 {
-  background-image: url('../../assets/blobs/blob2.svg');
+  background-image: url('../../assets/blobs/blob3.svg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  width: 30rem;
-  height: 30rem;
+  height: 35rem;
+  width: 35rem;
+  position: relative;
+}
+
+.block3-position {
+  position: absolute;
+  top: 30rem;
+  left: 30rem;
 }
 
 .journey-block3 {
-  background-image: url('../../assets/blobs/blob3.svg');
+  background-image: url('../../assets/blobs/blob4.svg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  width: 30rem;
-  height: 30rem;
+  height: 50rem;
+  width: 50rem;
+  position: relative;
+}
+
+.block4-position {
+  position: absolute;
+  top: 60rem;
+  right: 25%;
 }
 
 .journey-block4 {
-  background-image: url('../../assets/blobs/blob4.svg');
+  background-image: url('../../assets/blobs/blob5.svg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  width: 30rem;
-  height: 30rem;
+  height: 60rem;
+  width: 60rem;
+  position: relative;
 }
 
 .journey-content h4 {
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   font-size: var(--text-xl);
+  width: 75%;
+}
+
+
+@media screen and (max-width: 999px) {
+
+  .block1-position {
+    left: 0%;
+  }
+
+  .journey-block1 {
+    height: 20rem;
+    width: 20rem;
+    position: relative;
+  }
+
+  .journey-content h4 {
+    font-size: var(--text-l);
+  }
+
+  .block2-position {
+  position: absolute;
+  top: 10rem;
+  right: 0;
+  }
+
+  .journey-block2 {
+    background-image: url('../../assets/blobs/blob3.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 30rem;
+    width: 30rem;
+    position: relative;
+  }
+
+  .block3-position {
+    position: absolute;
+    top: 35rem;
+    left: 0;
+  }
+
+  .journey-block3 {
+    background-image: url('../../assets/blobs/blob4.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 40rem;
+    width: 35rem;
+    position: relative;
+  }
+
+  .block4-position {
+    position: absolute;
+    top: 70rem;
+    right: 0;
+  }
+
+  .journey-block4 {
+    background-image: url('../../assets/blobs/blob5.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
+    width: 40rem;
+    position: relative;
+  }
+
 }

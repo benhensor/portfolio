@@ -32,21 +32,31 @@ export default function Journey () {
       <div className='journey-container'>
         <div className='journey-header'>
           <h1>My Journey</h1>
+          </div>
+        <div className='journey-subheader'>
           <h3>From Sound design to sound Design!</h3>
         </div>
         <div className='journey-row'>
           <div className='journey-content'>
-            <div className="journey-block1">
-              <h4>Hi, I'm Ben, a Front End Developer based in Bristol, UK.</h4>
+            <div className="block1-position">
+              <div className="journey-block1">
+                <h4>Hi, I'm Ben, a Front End Developer based in Bristol, UK.</h4>
+              </div>
             </div>
-            <div className="journey-block2">
-              <h4>After working in the film industry for almost a decade I have decided to take the plunge and get into the world of tech!</h4>
+            <div className="block2-position">
+              <div className="journey-block2">
+                <h4>I started out creating music and sound effects for local theatre companies...</h4>
+              </div>
             </div>
-            <div className="journey-block3">
-              <h4>I am currently enrolled on the School of Code Bootcamp being put through my paces learning about all aspects of coding and software development and agile team frameworks.</h4>
+            <div className="block3-position">
+              <div className="journey-block3">
+                <h4>Some years later I decided to formalise my training and become a professional Sound Editor, I trained at the National Film and Television School and became a freelance Sound Designer.</h4>
+              </div>
             </div>
-            <div className="journey-block4">
-              <h4>At the moment I am focused on making the most of this incredible opportunity, I love collaborative working and problem-solving and I am looking forward to launching myself into a new career in Front End Development.</h4>
+            <div className="block4-position">
+              <div className="journey-block4">
+                <h4>Sadly, the pandemic wasn't kind to me and following some serious self-reflection I decided to pursue another career and follow my other design passion, Frontend Devlepment!</h4>
+              </div>
             </div>
           </div>
         </div>
