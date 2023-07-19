@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { MdMail } from 'react-icons/md';
+import navIcon1 from '../../assets/img/nav-icon1.svg';
+import navIcon2 from '../../assets/img/nav-icon2.svg';
+import navIcon3 from '../../assets/img/nav-icon3.svg';
 import './journey.css';
 
 
@@ -32,30 +36,66 @@ export default function Journey () {
       <div className='journey-container'>
         <div className='journey-header'>
           <h1>My Journey</h1>
-          </div>
-        <div className='journey-subheader'>
-          <h3>From Sound design to sound Design!</h3>
         </div>
         <div className='journey-row'>
           <div className='journey-content'>
-            <div className="block1-position">
-              <div className="journey-block1">
-                <h4>Hi, I'm Ben, a Front End Developer based in Bristol, UK.</h4>
+            <div className="block-one">
+              <div className="block">
+                <div className="block-text">
+                  <h4>Hi, I'm Ben, a Junior Developer based in Bristol, UK.</h4>
+                </div>
+              </div>
+              <div className="block">
+                <div className="block-text">
+                  <h4>I started out creating music and sound effects for local theatre companies...</h4>
+                </div>
               </div>
             </div>
-            <div className="block2-position">
-              <div className="journey-block2">
-                <h4>I started out creating music and sound effects for local theatre companies...</h4>
+            <div className="block-two">
+              <div className="block">
+                <div className="block-text">
+                  <h4>Driven by my love for audio production, I trained at the prestigious National Film & Television School. I honed my skills and became a professional Sound Designer, working in Film, Television, and Commercials.</h4>
+                </div>
+              </div>
+              <div className="block">
+                <div className="block-text">
+                  <h4>However, with the onset of the pandemic, I realized the need to adapt and explore new avenues. It was during this time that I made a bold decision to pursue my other passion: Software Development!</h4>
+                </div>
               </div>
             </div>
-            <div className="block3-position">
-              <div className="journey-block3">
-                <h4>Some years later I decided to formalise my training and become a professional Sound Editor, I trained at the National Film and Television School and became a freelance Sound Designer.</h4>
+            <div className="block-three">
+              <div className="block">
+                <div className="block-text">
+                  <h4>To kickstart this new chapter, I enrolled onto the School of Code. The experience was incredibly challenging, but through determination and a lot of hard work, I completed the immensely challenging coding bootcamp...</h4>
+                </div>
+              </div>
+              <div className="block">
+                <div className="block-text">
+                  <h4>Throughout this journey, I have embraced the opportunity to acquire a wealth of new knowledge and skills. Now, I'm eagerly poised to take the next step in my career and become a software developer, ready to contribute my expertise to exciting projects and make a meaningful impact in the world of technology.</h4>
+                </div>
               </div>
             </div>
-            <div className="block4-position">
-              <div className="journey-block4">
-                <h4>Sadly, the pandemic wasn't kind to me and following some serious self-reflection I decided to pursue another career and follow my other design passion, Frontend Devlepment!</h4>
+            <div className="block-four">
+              <div className="block">
+                <div className="block-text">
+                  <h4>Thank you for visiting my portfolio, please check out some of my projects below. I will be adding more as they become completed. If you would like to connect with me, check out my GitHub page or get in touch then please follow the links below!</h4>
+                </div>
+              
+                <div className="journey-links">
+                <div className="journey-icons">
+                <a href="https://github.com/benhensor" rel="noreferrer" target="_blank">
+                  <img src={navIcon1} alt="Github" />
+                </a>
+                <a href="https://www.linkedin.com/in/benhensor/" rel="noreferrer" target="_blank">
+                  <img src={navIcon2} alt="LinkedIn" />
+                </a>
+                <a href="https://www.imdb.com/name/nm5978088/?ref_=rvi_nm" rel="noreferrer" target="_blank">
+                  <img src={navIcon3} alt="" />
+                </a>
+                </div>
+                <button className="journey-connect-button" onClick={() => console.log('connect')}><span>Let's Connect!</span></button>
+                <MdMail className="journey-connect-icon" onClick={() => console.log('connect')}/>
+                </div>
               </div>
             </div>
           </div>

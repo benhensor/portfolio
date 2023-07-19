@@ -1,14 +1,13 @@
 #journey {
-  background: var(--journey-background);
-  padding: 5rem 0;
+  background: var(--background-color);
+  /* padding: 15rem 0; */
   transition: 0.5s ease-in-out;
-  min-height: 175rem;
+  padding: 7rem 0;
 }
 
 #journey.scrolled {
   border-top: 5px solid var(--accent-color);
   transition: 0.5s ease-in-out;
-  width: 100%;
 }
 
 .journey-container {
@@ -19,17 +18,17 @@
 }
 
 .journey-header {
-  background-image: url('../../assets/blobs/blob1.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 40rem;
-  width: 40rem;
   position: relative;
+  background-image: url('../../assets/blobs/blob2.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 30rem;
+  width: 30rem;
+  margin-bottom: 5rem;
 }
 
 .journey-header h1 {
-  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,151 +44,282 @@
 }
 
 .journey-row {
-  position: relative;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  
 }
 
 .journey-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
   width: 100%;
 }
 
-.block1-position {
-  position: absolute;
-  top: 25%;
-  left: 25%;
+.block-one,
+.block-two,
+.block-three {
+  display: flex;
+  gap: 7rem;
 }
 
-.journey-block1 {
-  background-image: url('../../assets/blobs/blob2.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 30rem;
-  width: 30rem;
-  position: relative;
-}
-
-.block2-position {
-  position: absolute;
-  top: 15rem;
-  right: 20%;
-}
-
-.journey-block2 {
-  background-image: url('../../assets/blobs/blob3.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 35rem;
-  width: 35rem;
-  position: relative;
-}
-
-.block3-position {
-  position: absolute;
-  top: 30rem;
-  left: 30rem;
-}
-
-.journey-block3 {
-  background-image: url('../../assets/blobs/blob4.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 50rem;
-  width: 50rem;
-  position: relative;
-}
-
-.block4-position {
-  position: absolute;
-  top: 60rem;
-  right: 25%;
-}
-
-.journey-block4 {
-  background-image: url('../../assets/blobs/blob5.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 60rem;
-  width: 60rem;
-  position: relative;
+.block {
+  display: block;
+  border: 2px solid var(--journey-accent-color);
+  background-color: black;
+  border-radius: 1rem;
+  padding: 3rem;
 }
 
 .journey-content h4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
   font-size: var(--text-xl);
-  width: 75%;
+}
+
+.journey-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.journey-icons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.journey-icons a {
+  width: 5rem;
+  height: 5rem;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.journey-icons a::before {
+  content: '';
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+
+.journey-icons a:hover::before {
+  transform: scale(1);
+}
+
+.journey-icons a img {
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.journey-icons a:hover img {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+.journey-connect-button {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 14px 34px;
+  margin-left: 2rem;
+  font-size: var(--text-l);
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.journey-connect-icon {
+  display: none;
+}
+
+.journey-connect-button span {
+  z-index: 1;
+}
+
+.journey-connect-button::before {
+  content: '';
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #ffffff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.journey-connect-button:hover {
+  color: #121212;
+}
+
+.journey-connect-button:hover::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 
 @media screen and (max-width: 999px) {
 
-  .block1-position {
-    left: 0%;
+  .journey-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
   }
 
-  .journey-block1 {
-    height: 20rem;
-    width: 20rem;
-    position: relative;
+  .block-one,
+  .block-two,
+  .block-three,
+  .block-four {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  .block {
+    width: 100%;
   }
 
   .journey-content h4 {
     font-size: var(--text-l);
   }
 
-  .block2-position {
-  position: absolute;
-  top: 10rem;
-  right: 0;
+  .journey-links {
+    justify-content: space-between;
   }
 
-  .journey-block2 {
-    background-image: url('../../assets/blobs/blob3.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 30rem;
-    width: 30rem;
-    position: relative;
+  .journey-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem;
+}
+
+  .journey-connect-button {
+    display: none;
+    
   }
 
-  .block3-position {
-    position: absolute;
-    top: 35rem;
-    left: 0;
+  .journey-connect-icon {
+    display: block;
+    width: 5rem;
+    height: 5rem;
   }
 
-  .journey-block3 {
-    background-image: url('../../assets/blobs/blob4.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 40rem;
-    width: 35rem;
-    position: relative;
-  }
+}
 
-  .block4-position {
-    position: absolute;
-    top: 70rem;
-    right: 0;
-  }
 
-  .journey-block4 {
-    background-image: url('../../assets/blobs/blob5.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 45rem;
-    width: 40rem;
-    position: relative;
-  }
 
+
+/******   BLOB CSS ******/
+
+
+.tk-blob {
+  animation: blob-turn var(--time, 30s) linear infinite;
+  fill: var(--fill, #7600f8);
+  position: relative;
+  transform-origin: center;
+}
+
+.tk-blob svg {
+  animation: blob-skew calc( var(--time, 30s) * 0.5 ) linear 0s infinite;
+  transform-origin: center;
+}
+
+.tk-blob svg path {
+  animation: blob-scale calc( var(--time, 30s) * 0.5 ) ease-in-out 0s infinite;
+  transform-origin: center;
+}
+
+@keyframes blob-turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blob-skew {
+  0% {
+    transform: skewY(0deg);
+  }
+  13% {
+    transform: skewY( calc( (1.8deg) * var(--amount, 2)) );
+  }
+  18% {
+    transform: skewY( calc( (2.2deg) * var(--amount, 2)) );
+  }
+  24% {
+    transform: skewY( calc( (2.48deg) * var(--amount, 2)) );
+  }
+  25% {
+    transform: skewY( calc( (2.5deg) * var(--amount, 2)) );
+  }
+  26% {
+    transform: skewY( calc( (2.48deg) * var(--amount, 2)) );
+  }
+  32% {
+    transform: skewY( calc( (2.2deg) * var(--amount, 2)) );
+  }
+  37% {
+    transform: skewY( calc( (1.8deg) * var(--amount, 2)) );
+  }
+  50% {
+    transform: skewY(0deg);
+  }
+  63% {
+    transform: skewY( calc( (-1.8deg) * var(--amount, 2)) );
+  }
+  68% {
+    transform: skewY( calc( (-2.2deg) * var(--amount, 2)) );
+  }
+  74% {
+    transform: skewY( calc( (-2.48deg) * var(--amount, 2)) );
+  }
+  75% {
+    transform: skewY( calc( (-2.5deg) * var(--amount, 2)) );
+  }
+  76% {
+    transform: skewY( calc( (-2.48deg) * var(--amount, 2)) );
+  }
+  82% {
+    transform: skewY( calc( (-2.2deg) * var(--amount, 2)) );
+  }
+  87% {
+    transform: skewY( calc( (-1.8deg) * var(--amount, 2)) );
+  }
+  100% {
+    transform: skewY(0deg);
+  }
+}
+
+@keyframes blob-scale {
+  0% {
+    transform: scaleX(.9) scaleY(1);
+  }
+  25% {
+    transform: scaleX(.9) scaleY(.9);
+  }
+  50% {
+    transform: scaleX(1) scaleY(.9);
+  }
+  75% {
+    transform: scaleX(.9) scaleY(.9);
+  }
+  100% {
+    transform: scaleX(.9) scaleY(1);
+  }
 }

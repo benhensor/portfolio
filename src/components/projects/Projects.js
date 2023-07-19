@@ -16,7 +16,7 @@ export default function Projects () {
     // function to update scrolling state
     const onScroll = () => {
     // check if user has scrolled more than 50px
-    if (window.scrollY > 1000) {
+    if (window.scrollY > 1500) {
       // set state to true
       setScrolled(true)
     } else {
@@ -50,34 +50,34 @@ export default function Projects () {
                 <h3 className="project-description">
                   Paperback is a software solution designed to connect book lovers for the purpose of exchanging and donating old books.
                 </h3>
-                <a href="https://github.com/benhensor/soc_byteclub_paprback" className="project-link">GitHub</a>
-                <a href="https://bcpaprback.netlify.app/" className="project-link">Online</a>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" target="blank" className="project-link">GitHub</a>
+                <a href="https://bcpaprback.netlify.app/" target="blank" className="project-link">Online</a>
               </div>
             </div>
             <div className="project2">
               <div className="project-card">
-              <h1 className="project-title">Ben Hensor Sound</h1>
+              <h1 className="project-title">Coming soon...</h1>
                 <div className="project-image-container">
                   <img className="project-image" src={BenHensorSoundLogo} alt="" />
                 </div>
                 <h3 className="project-description">
                   This is a recreation of my old website showcasing my film sound work.
                 </h3>
-                <a href="https://github.com/benhensor/soc_byteclub_paprback" className="project-link">GitHub</a>
-                <a href="https://bcpaprback.netlify.app/" className="project-link">Online</a>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" target="blank" className="project-link">GitHub</a>
+                <a href="https://bcpaprback.netlify.app/" target="blank" className="project-link">Online</a>
               </div>
             </div>
             <div className="project3">
               <div className="project-card">
-              <h1 className="project-title">Paprback</h1>
+              <h1 className="project-title">Coming soon...</h1>
                 <div className="project-image-container">
-                  <img className="project-image" src={PaprbackLogo} alt="" />
+                  {/* <img className="project-image" src={PaprbackLogo} alt="" /> */}
                 </div>
-                <h3 className="project-description">
+                {/* <h3 className="project-description">
                   Paperback is a software solution designed to connect book lovers for the purpose of exchanging and donating old books.
                 </h3>
-                <a href="https://github.com/benhensor/soc_byteclub_paprback" className="project-link">GitHub</a>
-                <a href="https://bcpaprback.netlify.app/" className="project-link">Online</a>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" target="blank" className="project-link">GitHub</a>
+                <a href="https://bcpaprback.netlify.app/" target="blank" className="project-link">Online</a> */}
               </div>
             </div>
 

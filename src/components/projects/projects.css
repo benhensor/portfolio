@@ -1,6 +1,6 @@
 #projects {
   padding: 15rem 0 25rem 0;
-  background: var(--projects-background);
+  background: var(--background-color);
 }
 
 #projects.scrolled {
