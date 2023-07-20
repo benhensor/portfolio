@@ -193,7 +193,7 @@
 .circleVector3,
 .circleVector4 {
   position: absolute;
-  top: 10rem;
+  top: 25rem;
   left: 25rem;
   mix-blend-mode:screen;
   opacity: 0.5;
@@ -201,27 +201,27 @@
 
 .circleVector1 {
   animation: rotateA 25s linear infinite;
-  scale: 150%;
+  scale: 200%;
   filter: blur(14px);
   
 }
 
 .circleVector2 {
   animation: rotateB 40s linear infinite;
-  scale: 130%;
+  scale: 180%;
   filter: blur(13px);
 }
 
 .circleVector3 {
   animation: rotateC 60s linear infinite;
-  scale: 110%;
+  scale: 160%;
   filter: blur(18px);
 
 }
 
 .circleVector4 {
   animation: rotateD 50s linear infinite;
-  scale: 125%;
+  scale: 175%;
   filter: blur(18px);
 
 }

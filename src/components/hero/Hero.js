@@ -87,7 +87,7 @@ export default function Hero () {
             </div>
 
           </div>
-          <button onClick={() => console.log('connect')}>Let's Connect<ArrowRightCircle size={25}/></button>
+          <a href="#connect"><button onClick={() => console.log('connect')}>Let's Connect<ArrowRightCircle size={25}/></button></a>
         </div>
       </div>
     </section>

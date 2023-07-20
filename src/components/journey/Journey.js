@@ -93,8 +93,8 @@ export default function Journey () {
                   <img src={navIcon3} alt="" />
                 </a>
                 </div>
-                <button className="journey-connect-button" onClick={() => console.log('connect')}><span>Let's Connect!</span></button>
-                <MdMail className="journey-connect-icon" onClick={() => console.log('connect')}/>
+                <a href="#connect"><button className="journey-connect-button" onClick={() => console.log('connect')}><span>Let's Connect!</span></button></a>
+                <a href="#connect"><MdMail className="journey-connect-icon" onClick={() => console.log('connect')}/></a>
                 </div>
               </div>
             </div>

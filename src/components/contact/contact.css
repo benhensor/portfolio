@@ -46,29 +46,19 @@
   z-index: 0;
 }
 
-.cat-leftEye {
-  width: 30rem;
-  height: 30rem;
-  z-index: 0;
-}
-
+.cat-leftEye,
 .cat-rightEye {
   width: 30rem;
   height: 30rem;
   z-index: 0;
 }
 
-
-
-
-
-
 .contact-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 50rem;
   gap: 2rem;
 
   margin-bottom: 10rem;
@@ -138,8 +128,8 @@
   margin-left: 1rem;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
+.contact-submit-button:hover {
+  background-color: #0e57a4;
 }
 
 .contact-status-message {
@@ -157,11 +147,28 @@
 
 @media screen and (max-width: 999px) {
 
-  .cat-face {
-    object-fit: contain;
-    width: 120%;
+  .contact-container {
+    margin: 0;
   }
 
+  .cat-face {
+    min-width: 80rem;
+    max-width: 80rem;    
+  }
 
+  .cat-eyes {
+    width: 50rem;
+    /* outline: 1px solid #f00 !important; */
+  }
+
+  .cat-leftEye,
+  .cat-rightEye {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .contact-card {
+    width: 40rem;
+  }
 
 }

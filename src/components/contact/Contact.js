@@ -95,10 +95,10 @@ export default function Contact () {
     const rightEyeBoundingBox = rightEye.getBoundingClientRect();
   
     // Calculate the center positions of the eyes
-    const leftEyeCenterX = leftEyeBoundingBox.left + leftEyeBoundingBox.width / 0.5;
-    const leftEyeCenterY = leftEyeBoundingBox.top + leftEyeBoundingBox.height * 6;
-    const rightEyeCenterX = rightEyeBoundingBox.left + rightEyeBoundingBox.width / 2;
-    const rightEyeCenterY = rightEyeBoundingBox.top + rightEyeBoundingBox.height * 6;
+    const leftEyeCenterX = leftEyeBoundingBox.left + leftEyeBoundingBox.width;
+    const leftEyeCenterY = leftEyeBoundingBox.top + leftEyeBoundingBox.height * 4;
+    const rightEyeCenterX = rightEyeBoundingBox.left + rightEyeBoundingBox.width;
+    const rightEyeCenterY = rightEyeBoundingBox.top + rightEyeBoundingBox.height * 4;
   
     // Calculate the distance between the mouse and the eye centers
     const leftEyeDeltaX = mouseX - leftEyeCenterX;
