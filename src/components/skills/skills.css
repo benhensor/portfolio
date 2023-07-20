@@ -31,36 +31,6 @@
   position: relative; 
 }
 
-.skills-slider::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -10px; /* Adjust the width of the glowing edge */
-  width: 10px; /* Adjust the width of the glowing edge */
-  height: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), transparent);
-  opacity: 0;
-  animation: glowingEdge 1s ease-in-out infinite alternate;
-}
-
-.skills-slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -10px; /* Adjust the width of the glowing edge */
-  width: 10px; /* Adjust the width of the glowing edge */
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9));
-  opacity: 0;
-  animation: glowingEdge 1s ease-in-out infinite alternate;
-}
-
-@keyframes glowingEdge {
-  to {
-    opacity: 1;
-  }
-}
-
 .skills-slider {
   display: flex;
   align-items: center;

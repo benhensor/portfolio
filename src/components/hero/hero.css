@@ -193,7 +193,7 @@
 .circleVector3,
 .circleVector4 {
   position: absolute;
-  top: 0;
+  top: 10rem;
   left: 25rem;
   mix-blend-mode:screen;
   opacity: 0.5;
