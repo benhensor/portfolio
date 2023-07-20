@@ -107,8 +107,8 @@ export default function Header () {
                 <img src={navIcon3} alt="" />
               </a>
             </div>
-            <button className="connect-button" onClick={() => console.log('connect')}><span>Let's Connect!</span></button>
-            <MdMail className="connect-icon" onClick={() => console.log('connect')}/>
+            <a href="#connect"><button className="connect-button" onClick={() => console.log('connect')}><span>Let's Connect!</span></button></a>
+            <a href="#connect"><MdMail className="connect-icon" onClick={() => console.log('connect')}/></a>
           </div>
 
         </div>

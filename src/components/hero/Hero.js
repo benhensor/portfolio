@@ -3,7 +3,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons'
 // import circleVector1 from '../../assets/img/circleVector1.svg';
 // import circleVector2 from '../../assets/img/circleVector2.svg';
 // import circleVector3 from '../../assets/img/circleVector3.svg';
-// import circleVec1 from '../../assets/img/circleVec1.svg';
+import circleVec1 from '../../assets/img/circleVec1.svg';
 import circleVec2 from '../../assets/img/circleVec2.svg';
 import circleVec3 from '../../assets/img/circleVec3.svg';
 import circleVec4 from '../../assets/img/circleVec4.svg';
@@ -57,7 +57,7 @@ export default function Hero () {
         <div className="hero-container">
 
           <div className='hero-animation-container'>
-            {/* <img className='circleVector1' src={circleVec1} alt='circle vector' /> */}
+            <img className='circleVector1' src={circleVec1} alt='circle vector' />
             <img className='circleVector2' src={circleVec2} alt='circle vector' /> 
             <img className='circleVector3' src={circleVec3} alt='circle vector' />
             <img className='circleVector4' src={circleVec4} alt='circle vector' /> 

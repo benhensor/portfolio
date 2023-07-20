@@ -188,41 +188,41 @@
   align-items: center;
 }
 
-.circleVector1, 
+.circleVector1,
 .circleVector2, 
 .circleVector3,
 .circleVector4 {
   position: absolute;
   top: 0;
-  left: 100rem;
-  mix-blend-mode:add;
-  
+  left: 25rem;
+  mix-blend-mode:screen;
   opacity: 0.5;
 }
 
 .circleVector1 {
-  animation: rotateA 40s linear infinite;
-  filter: blur(4px);
+  animation: rotateA 25s linear infinite;
+  scale: 150%;
+  filter: blur(14px);
   
 }
 
 .circleVector2 {
   animation: rotateB 40s linear infinite;
-  scale: 150%;
-  filter: blur(3px);
+  scale: 130%;
+  filter: blur(13px);
 }
 
 .circleVector3 {
   animation: rotateC 60s linear infinite;
-  scale: 200%;
-  filter: blur(5px);
+  scale: 110%;
+  filter: blur(18px);
 
 }
 
 .circleVector4 {
   animation: rotateD 50s linear infinite;
-  scale: 175%;
-  filter: blur(4px);
+  scale: 125%;
+  filter: blur(18px);
 
 }
 
@@ -239,11 +239,11 @@
 
 @keyframes rotateB {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
 
   }
 }

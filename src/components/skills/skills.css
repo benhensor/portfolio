@@ -28,6 +28,37 @@
 .skills-content {
   overflow-x: scroll;
   display: flex;
+  position: relative; 
+}
+
+.skills-slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px; /* Adjust the width of the glowing edge */
+  width: 10px; /* Adjust the width of the glowing edge */
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), transparent);
+  opacity: 0;
+  animation: glowingEdge 1s ease-in-out infinite alternate;
+}
+
+.skills-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px; /* Adjust the width of the glowing edge */
+  width: 10px; /* Adjust the width of the glowing edge */
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9));
+  opacity: 0;
+  animation: glowingEdge 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowingEdge {
+  to {
+    opacity: 1;
+  }
 }
 
 .skills-slider {
@@ -37,8 +68,9 @@
   gap: 4rem;
   padding: 0 1rem;
   margin-bottom: 10rem;
-  border-top: 5px solid var(--highlight-color);
-  border-bottom: 5px solid var(--highlight-color);
+  
+  position: relative;
+  
 }
 
 .skills-slider::-webkit-scrollbar {
@@ -54,8 +86,8 @@
   border-radius: 1rem;
   width: 100px;
   height: 150px;
-  /* background: var(--card-background-color);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); */
+  background: var(--card-background-color);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   position: relative;
   transition: all 0.15s ease-in-out;
 }

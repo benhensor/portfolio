@@ -73,6 +73,7 @@
 
 .journey-content h4 {
   font-size: var(--text-xl);
+  color: var(--text-color-medium);
 }
 
 .journey-links {

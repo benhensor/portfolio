@@ -39,6 +39,7 @@ export default function Skills() {
       <div className='skills-row'>
         <div>
           <div className='skills-content'>
+       
             <div className='skills-slider' >
             {tech.map((skill, index) => (
               <div className='skill-card' key={index}>
@@ -49,6 +50,7 @@ export default function Skills() {
               </div>
             ))}      
           </div>
+          
           </div>
         </div>
       </div>
