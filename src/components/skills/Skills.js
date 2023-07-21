@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import tech from '../../tech';
-import texture from '../../assets/img/texture01.jpeg';
 import './skills.css';
 
 
