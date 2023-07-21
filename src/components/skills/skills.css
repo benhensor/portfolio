@@ -22,7 +22,8 @@
   text-align: center;
   margin-top: 6rem;
   margin-bottom: 4rem;
-  font-size: var(--text-xxl);
+  font-size: var(--text-xl);
+  color: var(--text-color-medium);
 }
 
 .skills-content {
@@ -37,7 +38,7 @@
   height: 20rem;
   gap: 4rem;
   padding: 0 1rem;
-  margin-bottom: 10rem;
+  margin-bottom: 4rem;
   
   position: relative;
   

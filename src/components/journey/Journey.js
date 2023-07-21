@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MdMail } from 'react-icons/md';
-import navIcon1 from '../../assets/img/nav-icon1.svg';
-import navIcon2 from '../../assets/img/nav-icon2.svg';
-import navIcon3 from '../../assets/img/nav-icon3.svg';
+import navIcon1 from '../../assets/icons/nav-icon1.svg';
+import navIcon2 from '../../assets/icons/nav-icon2.svg';
+import navIcon3 from '../../assets/icons/nav-icon3.svg';
 import './journey.css';
 
 
@@ -54,7 +54,7 @@ export default function Journey () {
             <div className="block-two">
               <div className="block">
                 <div className="block-text">
-                  <h4>Driven by my love for audio production, I trained at the prestigious National Film & Television School. I honed my skills and became a professional Sound Designer, working in Film, Television, and Commercials.</h4>
+                  <h4>Driven by my love for audio production, I trained at the prestigious National Film & Television School, honed my skills and became a professional Sound Designer, working in Film, Television, and Commercials for over a decade.</h4>
                 </div>
               </div>
               <div className="block">

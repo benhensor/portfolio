@@ -65,13 +65,14 @@
 }
 
 .contact-icon {
-  height: 4rem;
+  height: 6rem;
   transform: rotate(45deg);
   fill: #fff;
+  margin-right: 1rem;
 }
 
 .contact-container h1 {
-  font-size: var(--text-xxl);
+  font-size: var(--text-xxxxl);
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -103,6 +104,7 @@
   border: none;
   font-size: var(--text-l);
   margin-bottom: 4rem;
+  resize: none;
 }
 
 .contact-submit-button {
@@ -116,6 +118,7 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin-bottom: 4rem;
 }
 
 .contact-submit-button span {
@@ -132,10 +135,15 @@
   background-color: #0e57a4;
 }
 
+.cotact-status-message::before {
+  content: 'Hello';
+}
+
 .contact-status-message {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 5rem;
 }
 
 .contact-status-message p {

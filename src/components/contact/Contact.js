@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import catFace from '../../assets/img/catFaceBanner.png';
 import leftEye from '../../assets/img/leftEye.svg';
 import rightEye from '../../assets/img/rightEye.svg';
-import mailIcon from '../../assets/img/mailPlane.svg';
+import mailIcon from '../../assets/icons/mailPlane.svg';
 import './contact.css';
 
 
@@ -10,8 +10,9 @@ import './contact.css';
 export default function Contact () {
 
   const formInitialDetails = {
-    firstName: '',
-    lastName: '',
+    name: '',
+    // firstName: '',
+    // lastName: '',
     email: '',
     phone: '',
     message: ''
@@ -70,8 +71,14 @@ export default function Contact () {
       setFormDetails(formInitialDetails)
       if (result.code === 200) {
         setStatus({ success: true, message: 'Message sent successfully!'})
+        setTimeout(() => {
+        setStatus({});
+        }, 2000);
       } else {
         setStatus({ success: false, message: 'Something went wrong, please try again later.'})
+        setTimeout(() => {
+          setStatus({});
+        }, 2000);
       }
   }
 
@@ -126,10 +133,10 @@ export default function Contact () {
       <div id="contact">
       <div className="contact-container">
       <div className="cat-face-container">
-      <div ><img className="cat-face" src={catFace} alt=""/></div>
+      <div><img className="cat-face" src={catFace} alt=""/></div>
       <div className="cat-eyes">
         <div><img className="cat-leftEye" src={leftEye} alt=""/></div>
-        <div ><img className="cat-rightEye" src={rightEye} alt=""/></div>
+        <div><img className="cat-rightEye" src={rightEye} alt=""/></div>
       </div>
       </div>
       
@@ -144,15 +151,17 @@ export default function Contact () {
         </h1>
           
           <form className="contact-form" onSubmit={handleSubmit} action="">
-            <label htmlFor="firstName">First Name:</label>
+            <label htmlFor="name">Your Name (Required)</label>
+            <input type="text" name="name" id="name" required value={formDetails.name} onChange={(e) => onFormUpdate('name', e.target.value)} />
+            {/* <label htmlFor="firstName">First Name:</label>
             <input type="text" value={formDetails.firstName} name="firstName" id="firstName" required onChange={(e) => onFormUpdate('firstName', e.target.value)} />
             <label htmlFor="lastName">Last Name:</label>
-            <input type="text" value={formDetails.lastName} name="lastName" id="lastName" required onChange={(e) => onFormUpdate('lastName', e.target.value)} />
-            <label htmlFor="emailFrom">Your Email:</label>
+            <input type="text" value={formDetails.lastName} name="lastName" id="lastName" required onChange={(e) => onFormUpdate('lastName', e.target.value)} /> */}
+            <label htmlFor="emailFrom">Your Email (Required)</label>
             <input type="email" name="email_from" id="emailFrom" required value={formDetails.email} onChange={(e) => onFormUpdate('email', e.target.value)} />
             <label htmlFor="phone">Phone Number:</label>
             <input type="tel" value={formDetails.phone} onChange={(e) => onFormUpdate('phone', e.target.value)} />
-            <label htmlFor="message">Message:</label>
+            <label htmlFor="message">Your Message (Required)</label>
             <textarea name="message" id="message" cols="30" rows="10" required value={formDetails.message} onChange={(e) => onFormUpdate('message', e.target.value)} />
             <button className="contact-submit-button" type="submit"><span>{buttonText}</span></button>
             {

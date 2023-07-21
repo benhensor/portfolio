@@ -25,6 +25,7 @@
 .projects-subheader h2 {
   text-align: center;
   font-size: var(--text-xxl);
+  color: var(--text-color-medium);
   margin-bottom: 4rem;
 }
 

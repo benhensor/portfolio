@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PaprbackLogo from '../../assets/img/paprback_orangebooks_whitetext.svg';
 import BookShelf from '../../assets/img/bookshelfHero.png';
 // import BenHensorSoundLogo from '../../assets/img/logo2023.png';
-import navIcon1 from '../../assets/img/nav-icon1.svg';
-import navIcon4 from '../../assets/img/nav-icon4.svg';
+import navIcon1 from '../../assets/icons/nav-icon1.svg';
+import navIcon4 from '../../assets/icons/nav-icon4.svg';
 import './projects.css';
 
 
