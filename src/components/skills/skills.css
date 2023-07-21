@@ -1,24 +1,52 @@
 #skills {
-  background: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
-  transition: 0.5s ease-in-out;
+  background-image: url('../../assets/img/splatterBG01.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top 0 left 50%;
+  overflow-y: hidden;
+  z-index: 0;
   padding: 15rem 0;
+  /* background: linear-gradient(180deg, #141717 0%, #1d1f20 100%); */
+  border-top: 5px solid transparent;
+  transition: all 0.5s ease-in-out;
 }
 
 #skills.scrolled {
   border-top: 5px solid var(--accent-color);
+  
 }
+/* 
+.skills-background-container {
+  
+
+} */
 
 .skills-container {
   margin: 0 10%;
-  
+  position: relative;
+  z-index: 10;
 }
 
+/* .skills-header {
+
+}
+
+
+
+.skills-background {
+  
+  
+} */
+
 .skills-header h1 {
+  position: relative;
   text-align: center;
   font-size: var(--text-xxxxl);
+  z-index: 1;
 }
 
 .skills-header h3 {
+  position: relative;
   text-align: center;
   margin-top: 6rem;
   margin-bottom: 4rem;
@@ -26,10 +54,15 @@
   color: var(--text-color-medium);
 }
 
+/* .skills-row {
+  margin-top: 50rem;
+} */
+
 .skills-content {
   overflow-x: scroll;
   display: flex;
   position: relative; 
+  
 }
 
 .skills-slider {
@@ -94,105 +127,9 @@
 }
 
 
-/* .skill-card img:hover {
-  
-  -webkit-animation-name: boing;
-  animation-name: boing;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  }
+@media screen and (max-width: 999px) {
 
-@-webkit-keyframes boing {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+  #skills {
+    background-size: cover;
   }
-  5% {
-    -webkit-transform: scale(1.55);
-    transform: scale(1.55);
-  }
-  20% {
-    -webkit-transform: scale(0.75);
-    transform: scale(0.75);
-  }
-  30% {
-    -webkit-transform: scale(1.25);
-    transform: scale(1.25);
-  }
-  40% {
-    -webkit-transform: scale(0.85);
-    transform: scale(0.85);
-  }
-  50% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-  }
-  60% {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-  }
-  70% {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-  }
-  80% {
-    -webkit-transform: scale(0.68);
-    transform: scale(0.98);
-  }
-  90% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  100% {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  }
-  }
-  @keyframes boing {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  5% {
-    -webkit-transform: scale(1.75);
-    transform: scale(1.75);
-  }
-  20% {
-    -webkit-transform: scale(0.85);
-    transform: scale(0.85);
-  }
-  30% {
-    -webkit-transform: scale(1.65);
-    transform: scale(1.65);
-  }
-  40% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-  }
-  50% {
-    -webkit-transform: scale(1.55);
-    transform: scale(1.55);
-  }
-  60% {
-    -webkit-transform: scale(1.35);
-    transform: scale(1.35);
-  }
-  70% {
-    -webkit-transform: scale(1.53);
-    transform: scale(1.53);
-  }
-  80% {
-    -webkit-transform: scale(1.47);
-    transform: scale(1.47);
-  }
-  90% {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-  }
-  100% {
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
-  }
-  } */
+}

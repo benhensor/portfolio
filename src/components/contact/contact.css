@@ -1,11 +1,12 @@
 #connect {
   padding: 15rem 0;
   overflow: hidden;
+  border-top: 5px solid transparent;
+  transition: all 0.5s ease-in-out;
 }
 
 #connect.scrolled {
   border-top: 5px solid var(--accent-color);
-  transition: 0.5s ease-in-out;
 }
 
 .contact-container {

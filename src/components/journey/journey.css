@@ -1,13 +1,18 @@
 #journey {
-  background: var(--background-color);
+  background-image: url('../../assets/img/splatterBG02.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top 0 left 50%;
+  overflow-y: hidden;
+  z-index: 0;
   /* padding: 15rem 0; */
-  transition: 0.5s ease-in-out;
+  border-top: 5px solid transparent;
+  transition: all 0.5s ease-in-out;
   padding: 7rem 0;
 }
 
 #journey.scrolled {
   border-top: 5px solid var(--accent-color);
-  transition: 0.5s ease-in-out;
 }
 
 .journey-container {
@@ -19,10 +24,6 @@
 
 .journey-header {
   position: relative;
-  background-image: url('../../assets/blobs/blob2.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   height: 30rem;
   width: 30rem;
   margin-bottom: 5rem;
@@ -65,15 +66,15 @@
 
 .block {
   display: block;
-  border: 2px solid var(--journey-accent-color);
-  background-color: black;
-  border-radius: 1rem;
+  width: 40rem;
   padding: 3rem;
+  
 }
 
 .journey-content h4 {
-  font-size: var(--text-xl);
+  font-size: var(--text-l);
   color: var(--text-color-medium);
+  line-height: 3rem;
 }
 
 .journey-links {
@@ -172,6 +173,11 @@
 
 
 @media screen and (max-width: 999px) {
+
+
+  #journey {
+    background-size: cover;
+  }
 
   .journey-content {
     display: flex;

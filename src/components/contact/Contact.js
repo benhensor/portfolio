@@ -11,8 +11,6 @@ export default function Contact () {
 
   const formInitialDetails = {
     name: '',
-    // firstName: '',
-    // lastName: '',
     email: '',
     phone: '',
     message: ''
@@ -21,20 +19,16 @@ export default function Contact () {
   const [formDetails, setFormDetails] = useState(formInitialDetails)
   const [buttonText, setButtonText] = useState('SEND')
   const [status, setStatus] = useState({})
-  // state to track when user is scrolling
   const [scrolled, setScrolled] = useState(false);
 
 
-  // triggered when user scrolls
+
   useEffect(() => {
-    // function to update scrolling state
+    
     const onScroll = () => {
-    // check if user has scrolled more than 50px
-    if (window.scrollY > 3250) {
-      // set state to true
+    if (window.scrollY > 3500) {
       setScrolled(true)
     } else {
-      // set state to false
       setScrolled(false)
     }
     }
@@ -42,8 +36,6 @@ export default function Contact () {
   
       return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-
 
 
   const onFormUpdate = (category, value) => {

@@ -8,25 +8,21 @@ import './journey.css';
 
 export default function Journey () {
 
-  // state to track when user is scrolling
   const [scrolled, setScrolled] = useState(false);
 
 
-  // triggered when user scrolls
+
   useEffect(() => {
-    // function to update scrolling state
+    
     const onScroll = () => {
-    // check if user has scrolled more than 50px
-    if (window.scrollY > 1000) {
-      // set state to true
+    if (window.scrollY > 600) {
       setScrolled(true)
     } else {
-      // set state to false
       setScrolled(false)
     }
     }
       window.addEventListener('scroll', onScroll);
-
+  
       return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -80,8 +76,8 @@ export default function Journey () {
                 <div className="block-text">
                   <h4>Thank you for visiting my portfolio, please check out some of my projects below. I will be adding more as they become completed. If you would like to connect with me, check out my GitHub page or get in touch then please follow the links below!</h4>
                 </div>
-              
-                <div className="journey-links">
+            </div>
+            <div className="journey-links">
                 <div className="journey-icons">
                 <a href="https://github.com/benhensor" rel="noreferrer" target="_blank">
                   <img src={navIcon1} alt="Github" />
@@ -97,7 +93,6 @@ export default function Journey () {
                 <a href="#connect"><MdMail className="journey-connect-icon" onClick={() => console.log('connect')}/></a>
                 </div>
               </div>
-            </div>
           </div>
         </div>
 

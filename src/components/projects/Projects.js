@@ -10,20 +10,16 @@ import './projects.css';
 
 export default function Projects () {
 
-  // state to track when user is scrolling
   const [scrolled, setScrolled] = useState(false);
 
 
-  // triggered when user scrolls
+
   useEffect(() => {
-    // function to update scrolling state
+    
     const onScroll = () => {
-    // check if user has scrolled more than 50px
-    if (window.scrollY > 2000) {
-      // set state to true
+    if (window.scrollY > 2300) {
       setScrolled(true)
     } else {
-      // set state to false
       setScrolled(false)
     }
     }
