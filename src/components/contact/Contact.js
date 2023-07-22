@@ -134,7 +134,7 @@ export default function Contact () {
     rightEye.style.transform = `translate(${rightEyeMoveX}px, ${rightEyeMoveY}px)`;
   };
   
- 
+
 
   return (
     <section id="connect" className={scrolled ? 'scrolled' : ''}>
