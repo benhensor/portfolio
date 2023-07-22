@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { MdMail } from 'react-icons/md';
 import logo from '../../assets/img/logo2023.png';
 import navIcon1 from '../../assets/icons/nav-icon1.svg';
 import navIcon2 from '../../assets/icons/nav-icon2.svg';
