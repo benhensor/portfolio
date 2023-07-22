@@ -5,6 +5,7 @@ import logo from '../../assets/img/logo2023.png';
 import navIcon1 from '../../assets/icons/nav-icon1.svg';
 import navIcon2 from '../../assets/icons/nav-icon2.svg';
 import navIcon3 from '../../assets/icons/nav-icon3.svg';
+import send from '../../assets/icons/send.svg';
 import './header.css';
 
 
@@ -72,9 +73,13 @@ export default function Header () {
     <header className={scrolled ? 'scrolled' : ''}>
       <nav>
 
-        <div className="logo-container">
-          <img src={logo} alt="logo" onClick={scrollToTop}/>
+        <div className="header-logo-container">
+          <img className="header-logo" src={logo} alt="logo" onClick={scrollToTop}/>
+          <div className="nav-mobile-name">
+            <h1>Ben Hensor Dev</h1>
+          </div>
         </div>
+        
         <div id="mobile-controls" onClick={handleClick}>
           {isOpen ? <FaTimes className="visible" /> : <FaBars />}
         </div>
@@ -108,7 +113,7 @@ export default function Header () {
               </a>
             </div>
             <a href="#connect"><button className="connect-button" onClick={() => console.log('connect')}><span>Let's Connect!</span></button></a>
-            <a href="#connect"><MdMail className="connect-icon" onClick={() => console.log('connect')}/></a>
+            <a href="#connect"><img src={send} alt="" className="connect-icon" onClick={() => handleClick('connect')}/></a>
           </div>
 
         </div>

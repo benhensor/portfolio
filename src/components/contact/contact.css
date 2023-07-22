@@ -16,6 +16,12 @@
   align-items: center;
 }
 
+.temp-notice {
+  font-size: var(--text-l);
+  color: var(--text-color-medium);
+  margin-bottom: 4rem;
+}
+
 .cat-face-container {
   /* outline: 1px solid #f00 !important; */
   overflow: hidden;
@@ -61,8 +67,6 @@
   align-items: center;
   width: 50rem;
   gap: 2rem;
-
-  margin-bottom: 10rem;
 }
 
 .contact-icon {
@@ -81,16 +85,20 @@
   margin-bottom: 4rem;
 }
 
+.contact-container .ow {
+  color: var(--accent-color);
+}
+
 #contact form {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 #contact form label {
   font-size: var(--text-r);
   color: var(--text-color-medium);
   margin-bottom: 1rem;
+  border-radius: 0.3rem;
 }
 
 #contact form input {
@@ -98,6 +106,7 @@
   border: none;
   font-size: var(--text-l);
   margin-bottom: 2rem;
+  border-radius: 0.3rem;
 }
 
 #contact form textarea {
@@ -106,20 +115,21 @@
   font-size: var(--text-l);
   margin-bottom: 4rem;
   resize: none;
+  border-radius: 0.3rem;
 }
 
 .contact-submit-button {
   display: flex;
   align-items: center;
   background-color: #0037ff;
-  color: #fff;
+  color: var(--text-color-medium);
   font-size: var(--text-l);
-  width: 100%;
-  padding: 1rem;
+  padding: 1rem 4rem;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
   margin-bottom: 4rem;
+  border-radius: 0.3rem;
 }
 
 .contact-submit-button span {
@@ -154,30 +164,166 @@
 }
 
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1023px) {
+
+  #connect {
+    padding: 5rem 0;
+  }
+
 
   .contact-container {
-    margin: 0;
+    margin: 0 10%;
+  }
+
+  .cat-face-container {
+    min-height: 25rem;
   }
 
   .cat-face {
-    min-width: 80rem;
-    max-width: 80rem;    
+    top: 0;
+    left: 50%;
+    min-width: 50rem;
+    max-width: 50rem;    
   }
 
   .cat-eyes {
-    width: 50rem;
+    position: absolute;
+    top: -35px;
+    left: 21rem;
+    width: 32rem;
     /* outline: 1px solid #f00 !important; */
   }
 
   .cat-leftEye,
   .cat-rightEye {
-    width: 25rem;
-    height: 25rem;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .contact-icon {
+    height: 4rem;
+    margin-right: 0;
+  }
+  
+  .contact-container h1 {
+    font-size: var(--text-xxxl);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
   }
 
   .contact-card {
-    width: 40rem;
+ 
+    width: 100%;
+  }
+
+  #contact form label {
+    font-size: var(--text-s);
+    margin-bottom: 0.5rem;
+  }
+
+  #contact form input {
+    padding: 0.5rem;
+    font-size: var(--text-r);
+  }
+  
+  #contact form textarea {
+    padding: 0.5rem;
+    font-size: var(--text-r);
+  }
+
+  .contact-submit-button {
+    color: var(--text-color-medium);
+    font-size: var(--text-r);
+    padding: 0.8rem 4rem;
+    transition: background-color 0.2s;
+    border-radius: 0.3rem;
+  }
+
+}
+
+
+
+
+
+@media screen and (max-width: 599px) {
+
+  #connect {
+    padding: 5rem 0;
+  }
+
+
+  .contact-container {
+    margin: 0 10%;
+  }
+
+  .cat-face-container {
+    min-height: 13rem;
+  }
+
+  .cat-face {
+    top: 0;
+    left: 50%;
+    min-width: 30rem;
+    max-width: 30rem;    
+  }
+
+  .cat-eyes {
+    width: 19rem;
+    /* outline: 1px solid #f00 !important; */
+    position: absolute;
+    top: -60px;
+    left: 10rem;
+  }
+
+  .cat-leftEye,
+  .cat-rightEye {
+    width: 20rem;
+    height: 20rem;
+  
+  }
+
+  .contact-icon {
+    height: 4rem;
+    margin-right: 0;
+  }
+  
+  .contact-container h1 {
+    font-size: var(--text-xxxl);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .contact-card {
+    width: 100%;
+  }
+
+  #contact form label {
+    font-size: var(--text-s);
+    margin-bottom: 0.5rem;
+  }
+
+  #contact form input {
+    padding: 0.5rem;
+    font-size: var(--text-r);
+  }
+  
+  #contact form textarea {
+    padding: 0.5rem;
+    font-size: var(--text-r);
+  }
+
+  .contact-submit-button {
+    color: var(--text-color-medium);
+    font-size: var(--text-r);
+    padding: 0.8rem 4rem;
+    transition: background-color 0.2s;
+    border-radius: 0.3rem;
   }
 
 }

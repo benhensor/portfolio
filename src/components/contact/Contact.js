@@ -20,6 +20,7 @@ export default function Contact () {
   const [buttonText, setButtonText] = useState('SEND')
   const [status, setStatus] = useState({})
   const [scrolled, setScrolled] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
 
 
@@ -77,9 +78,24 @@ export default function Contact () {
 
 
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    const onResize = () => {
+      setScreenWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
+
+
+  useEffect(() => {
+    if (screenWidth >= 1024) {
+      window.addEventListener('mousemove', handleMouseMove);
+    } else {
+      window.removeEventListener('mousemove', handleMouseMove);
+    }
+
+
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [screenWidth]);
 
 
 
@@ -124,6 +140,9 @@ export default function Contact () {
     <section id="connect" className={scrolled ? 'scrolled' : ''}>
       <div id="contact">
       <div className="contact-container">
+      <div className="temp-notice">
+          <h1>More coming soon!</h1>
+        </div>
       <div className="cat-face-container">
       <div><img className="cat-face" src={catFace} alt=""/></div>
       <div className="cat-eyes">
@@ -139,7 +158,7 @@ export default function Contact () {
         <div className="contact-card">
         <h1>
           <span><img className="contact-icon" src={mailIcon} alt="" /></span>
-          <span>Contact Meow</span>
+          <span>Contact Me<span className="ow" >ow</span></span>
         </h1>
           
           <form className="contact-form" onSubmit={handleSubmit} action="">
