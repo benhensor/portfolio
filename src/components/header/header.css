@@ -11,7 +11,7 @@ header {
 
 header.scrolled {
   background-color: #141717;
-  border-bottom: 5px solid var(--accent-color);
+  /* border-bottom: 5px solid var(--accent-color); */
 }
 
 nav {

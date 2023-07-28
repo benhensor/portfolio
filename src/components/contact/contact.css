@@ -5,9 +5,9 @@
   transition: all 0.5s ease-in-out;
 }
 
-#connect.scrolled {
+/* #connect.scrolled {
   border-top: 5px solid var(--accent-color);
-}
+} */
 
 .contact-container {
   margin: 0 10%;
@@ -118,12 +118,19 @@
   border-radius: 0.3rem;
 }
 
+#contact form input:focus,
+#contact form textarea:focus {
+  outline: transparent;
+}
+
 .contact-submit-button {
   display: flex;
   align-items: center;
-  background-color: #0037ff;
+  background-color: #827632;
   color: var(--text-color-medium);
   font-size: var(--text-l);
+  letter-spacing: 0.1rem;
+  font-weight: bold;
   padding: 1rem 4rem;
   border: none;
   cursor: pointer;
@@ -143,7 +150,8 @@
 }
 
 .contact-submit-button:hover {
-  background-color: #0e57a4;
+  background-color: #bdae5b;
+  color: #39351d;
 }
 
 .cotact-status-message::before {

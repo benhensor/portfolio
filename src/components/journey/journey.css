@@ -11,9 +11,9 @@
   padding: 7rem 0;
 }
 
-#journey.scrolled {
+/* #journey.scrolled {
   border-top: 5px solid var(--accent-color);
-}
+} */
 
 .journey-container {
   margin: 0 10%;
