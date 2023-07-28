@@ -5,18 +5,15 @@ header {
   top: 0;
   z-index: 100;
   width: 100%;
-  border-bottom: 5px solid transparent;
   transition: all 0.5s ease-in-out;
 }
 
 header.scrolled {
   background-color: #141717;
-  border-bottom: 5px solid var(--accent-color);
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 2rem 10%;
   position: relative;
@@ -25,8 +22,8 @@ nav {
 
 .header-logo-container {
   display: flex;
-  width: 100%;
   align-items: center;
+  flex-grow: 1;
 }
 
 .header-logo {
@@ -35,20 +32,20 @@ nav {
 }
 
 .nav-mobile-name {
-  display: block;
+  display: none;
   letter-spacing: 0.5rem;
   margin-left: 2rem;
 }
 
 .nav-menu-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
 .nav-menu {
-  display: none;
+  display: block;
   align-items: center;
 }
 
@@ -194,6 +191,7 @@ nav {
   }
 
   .nav-mobile-name {
+    display: block;
     letter-spacing: 0.5rem;
   }
   

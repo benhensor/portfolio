@@ -5,9 +5,9 @@
   transition: all 0.5s ease-in-out;
 }
 
-#connect.scrolled {
+/* #connect.scrolled {
   border-top: 5px solid var(--accent-color);
-}
+} */
 
 .contact-container {
   margin: 0 10%;
@@ -155,7 +155,7 @@
   background-color: #0e57a4;
 }
 
-.cotact-status-message::before {
+.contact-status-message::before {
   content: 'Hello';
 }
 

@@ -1,19 +1,14 @@
 #journey {
-  background-image: url('../../assets/img/splatterBG02.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top 0 left 50%;
-  overflow-y: hidden;
   z-index: 0;
   /* padding: 15rem 0; */
-  border-top: 5px solid transparent;
+  /* border-top: 5px solid transparent; */
   transition: all 0.5s ease-in-out;
   padding: 7rem 0;
 }
 
-#journey.scrolled {
+/* #journey.scrolled {
   border-top: 5px solid var(--accent-color);
-}
+} */
 
 .journey-container {
   margin: 0 10%;
@@ -26,7 +21,7 @@
   position: relative;
   height: 30rem;
   width: 30rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .journey-header h1 {
@@ -44,30 +39,28 @@
   font-size: var(--text-xxxl);
 }
 
-.journey-row {
-  display: flex;
-  align-items: center;
-  
-}
-
 .journey-content {
   display: flex;
-  flex-direction: column;
+  flex: repeat(2, 1fr);
+  justify-content: center;
   gap: 7rem;
   width: 100%;
 }
 
-.block-one,
-.block-two,
-.block-three {
+.journey-column-one,
+.journey-column-two {
   display: flex;
-  gap: 7rem;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.journey-column-two {
+  margin-top: 7rem;
 }
 
 .block {
   display: block;
-  width: 40rem;
-  padding: 3rem;
+  width: 35rem;
   
 }
 
@@ -78,17 +71,20 @@
 }
 
 .journey-links {
+  margin-top: 5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
-  margin-top: 3rem;
+  
 }
 
 .journey-icons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 3rem;
+  width: 100%;
 }
 
 .journey-icons a {
@@ -133,7 +129,7 @@
   color: #fff;
   border: 1px solid #fff;
   padding: 14px 34px;
-  margin-left: 2rem;
+  margin-top: 2rem;
   font-size: var(--text-l);
   position: relative;
   background-color: transparent;
@@ -161,6 +157,7 @@
 }
 
 .journey-connect-button:hover {
+  scale: 1.1;
   color: #121212;
 }
 
@@ -223,6 +220,11 @@
     display: block;
     width: 5rem;
     height: 5rem;
+    filter: brightness(100);
+  }
+
+  .journey-connect-icon:hover {
+    scale: 1.1;
   }
 
 }

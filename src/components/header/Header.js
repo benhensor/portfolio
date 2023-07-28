@@ -52,7 +52,7 @@ export default function Header () {
     const header = document.querySelector('header');
     if (section && header) {
       const headerHeight = header.offsetHeight;
-      const targetPosition = section.offsetTop - (headerHeight - 5);
+      const targetPosition = section.offsetTop - (headerHeight);
   
       setTimeout(() => {
         window.scrollTo({

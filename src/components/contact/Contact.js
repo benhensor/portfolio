@@ -164,10 +164,6 @@ export default function Contact () {
           <form className="contact-form" onSubmit={handleSubmit} action="">
             <label htmlFor="name">Your Name (Required)</label>
             <input type="text" name="name" id="name" required value={formDetails.name} onChange={(e) => onFormUpdate('name', e.target.value)} />
-            {/* <label htmlFor="firstName">First Name:</label>
-            <input type="text" value={formDetails.firstName} name="firstName" id="firstName" required onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-            <label htmlFor="lastName">Last Name:</label>
-            <input type="text" value={formDetails.lastName} name="lastName" id="lastName" required onChange={(e) => onFormUpdate('lastName', e.target.value)} /> */}
             <label htmlFor="emailFrom">Your Email (Required)</label>
             <input type="email" name="email_from" id="emailFrom" required value={formDetails.email} onChange={(e) => onFormUpdate('email', e.target.value)} />
             <label htmlFor="phone">Phone Number:</label>

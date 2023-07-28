@@ -2,7 +2,6 @@ footer {
     background-color: #222;
     color: #fff;
     text-align: center;
-    border-top: 5px solid var(--accent-color);
 }
 
 .footer-container {

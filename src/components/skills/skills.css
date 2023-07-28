@@ -7,36 +7,30 @@
   z-index: 0;
   padding: 15rem 0;
   /* background: linear-gradient(180deg, #141717 0%, #1d1f20 100%); */
-  border-top: 5px solid transparent;
+  position: relative;
   transition: all 0.5s ease-in-out;
+
 }
 
-#skills.scrolled {
-  border-top: 5px solid var(--accent-color);
-  
-}
-/* 
-.skills-background-container {
-  
-
+/* #skills.scrolled {
+   border-top: 5px solid var(--accent-color);
+   
 } */
+ 
+.skills-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: none;
+  overflow: hidden;
+
+} 
 
 .skills-container {
   margin: 0 10%;
   position: relative;
   z-index: 10;
 }
-
-/* .skills-header {
-
-}
-
-
-
-.skills-background {
-  
-  
-} */
 
 .skills-header h1 {
   position: relative;
@@ -53,10 +47,6 @@
   font-size: var(--text-xl);
   color: var(--text-color-medium);
 }
-
-/* .skills-row {
-  margin-top: 50rem;
-} */
 
 .skills-content {
   overflow-x: scroll;

@@ -10,7 +10,7 @@
 }
 
 #projects.scrolled {
-  border-top: 5px solid var(--accent-color);
+  /* border-top: 5px solid var(--accent-color); */
   transition: 0.5s ease-in-out;
 }
 
@@ -102,6 +102,10 @@
 
 .project1-logo {
   width: 80%;
+}
+
+.project2-logo {
+  width: 40%;
 }
 
 .project-title {

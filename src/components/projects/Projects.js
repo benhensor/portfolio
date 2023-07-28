@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PaprbackLogo from '../../assets/img/paprback_orangebooks_whitetext.svg';
 import BookShelf from '../../assets/img/bookshelfHero.png';
-// import BenHensorSoundLogo from '../../assets/img/logo2023.png';
+import BenHensorSoundLogo from '../../assets/img/logo2023.png';
 import navIcon1 from '../../assets/icons/nav-icon1.svg';
 import navIcon4 from '../../assets/icons/nav-icon4.svg';
 import './projects.css';
@@ -39,6 +39,7 @@ export default function Projects () {
           <h2>Feel free to check out some of my projects, more coming soon...</h2>
         </div>
         <div className="projects-row">
+
           <div className="project1">
             <div className="project-card">
               <img className="project-image" src={BookShelf} alt="Open book in front of a bookshelf" />
@@ -59,10 +60,30 @@ export default function Projects () {
                 </div>
               </div>
             </div>
-            
-
-
           </div>
+
+          <div className="project2">
+            <div className="project-card">
+              <img className="project-image" src={BookShelf} alt="Open book in front of a bookshelf" />
+              <div className="project-content">
+              <div className="project-logo-container">
+                <img className="project2-logo" src={BenHensorSoundLogo} alt="" />
+              </div>
+                <h2 className="project-title">Ben Hensor Sound</h2>
+                <p>
+                  I was a professional Sound Editor in the film industry for over a decade before learning to code.
+                </p>
+                <p>
+                  Here is a recreation of my old website using React. It is a single page application with a responsive design.
+                </p>
+                <div className="project-icons">
+                <a href="https://github.com/benhensor/benhensorsound" rel="noreferrer" target="_blank" className="project-link"><img src={navIcon1} alt="Github" /></a>
+                <a href="https://benhensorsound.netlify.app/" rel="noreferrer" target="blank" className="project-link"><img src={navIcon4} alt="Netlify" /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
