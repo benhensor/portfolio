@@ -19,7 +19,8 @@
 .temp-notice {
   font-size: var(--text-l);
   color: var(--text-color-medium);
-  margin-bottom: 4rem;
+  width: 100%;
+  margin: 10rem;
 }
 
 .cat-face-container {
@@ -107,6 +108,10 @@
   font-size: var(--text-l);
   margin-bottom: 2rem;
   border-radius: 0.3rem;
+}
+
+#contact form input:focus {
+  outline: 2px solid var(--accent-color);
 }
 
 #contact form textarea {
@@ -283,7 +288,7 @@
     /* outline: 1px solid #f00 !important; */
     position: absolute;
     top: -60px;
-    left: 7rem;
+    left: 10rem;
   }
 
   .cat-leftEye,

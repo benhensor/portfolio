@@ -52,7 +52,7 @@ export default function Contact () {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setButtonText('Sending...')
-    let response = await fetch('http://localhost:5001/api/contact', {
+    let response = await fetch('http://localhost:5000/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -134,7 +134,7 @@ export default function Contact () {
     rightEye.style.transform = `translate(${rightEyeMoveX}px, ${rightEyeMoveY}px)`;
   };
   
- 
+
 
   return (
     <section id="connect" className={scrolled ? 'scrolled' : ''}>
