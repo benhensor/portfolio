@@ -5,29 +5,33 @@ header {
   top: 0;
   z-index: 100;
   width: 100%;
+  border-bottom: 0.3rem solid transparent;
   transition: all 0.5s ease-in-out;
 }
 
 header.scrolled {
+  border-bottom: 0.3rem solid var(--highlight-color);
   background-color: #141717;
+  transition: all 0.5s ease-in-out;
 }
 
 nav {
   display: flex;
   align-items: center;
-  padding: 2rem 10%;
+  padding: 2rem 20%;
   position: relative;
-  
+  width: 100%; 
 }
 
 .header-logo-container {
   display: flex;
   align-items: center;
   flex-grow: 1;
+  margin-right: 2rem;
 }
 
 .header-logo {
-  width: 5.6rem;
+  width: 7rem;
   cursor: pointer;
 }
 
@@ -54,8 +58,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: 2rem;
-  margin: 0 4rem;
+  gap: 4rem;
 }
 
 .header-menu li {
@@ -67,6 +70,10 @@ nav {
   font-size: var(--text-l);
   text-decoration: none;
   transition: 0.1s ease-in-out;
+}
+
+.header-menu li:hover .menu-link {
+  color: var(--aux-highlight-color);
 }
 
 .header-menu .menu-link.active {
@@ -166,6 +173,31 @@ nav {
 #mobile-controls {
   display: none;
 }
+
+
+@media screen and (max-width: 1268px) {
+
+  .header-logo {
+    width: 5rem;
+  }
+
+  .header-menu {
+    gap: 2rem;
+  }
+
+  .connect-button {
+    padding: 1.5rem 2rem;
+    margin-left: 2rem;
+    font-size: var(--text-s);
+  }
+
+  .header-menu .menu-link {
+    font-size: var(--text-r);
+
+  }
+
+}
+
 
 
 @media screen and (max-width: 1023px) {

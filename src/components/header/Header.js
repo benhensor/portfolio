@@ -70,6 +70,7 @@ export default function Header () {
 
   return (
     <header className={scrolled ? 'scrolled' : ''}>
+    
       <nav>
 
         <div className="header-logo-container">

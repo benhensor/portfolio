@@ -19,24 +19,7 @@ export default function Contact () {
   const [formDetails, setFormDetails] = useState(formInitialDetails)
   const [buttonText, setButtonText] = useState('SEND')
   const [status, setStatus] = useState({})
-  const [scrolled, setScrolled] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-
-
-  useEffect(() => {
-    
-    const onScroll = () => {
-    if (window.scrollY > 3500) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-    }
-      window.addEventListener('scroll', onScroll);
-  
-      return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
 
   const onFormUpdate = (category, value) => {
@@ -110,9 +93,9 @@ export default function Contact () {
     const rightEyeBoundingBox = rightEye.getBoundingClientRect();
   
     // Calculate the center positions of the eyes
-    const leftEyeCenterX = leftEyeBoundingBox.left + leftEyeBoundingBox.width;
+    const leftEyeCenterX = leftEyeBoundingBox.left + leftEyeBoundingBox.width / 2;
     const leftEyeCenterY = leftEyeBoundingBox.top + leftEyeBoundingBox.height * 4;
-    const rightEyeCenterX = rightEyeBoundingBox.left + rightEyeBoundingBox.width;
+    const rightEyeCenterX = rightEyeBoundingBox.left + rightEyeBoundingBox.width / 2;
     const rightEyeCenterY = rightEyeBoundingBox.top + rightEyeBoundingBox.height * 4;
   
     // Calculate the distance between the mouse and the eye centers
@@ -121,7 +104,7 @@ export default function Contact () {
     const rightEyeDeltaX = mouseX - rightEyeCenterX;
     const rightEyeDeltaY = mouseY - rightEyeCenterY;
   
-    const maxEyeMove = 40; // Adjust this value to control the eye movement range
+    const maxEyeMove = 50; // Adjust this value to control the eye movement range
   
     // Calculate the eye movement within the specific range
     const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * (maxEyeMove * 2);
@@ -137,7 +120,7 @@ export default function Contact () {
 
 
   return (
-    <section id="connect" className={scrolled ? 'scrolled' : ''}>
+    <section id="connect">
       <div id="contact">
       <div className="contact-container">
       <div className="temp-notice">
@@ -158,7 +141,7 @@ export default function Contact () {
         <div className="contact-card">
         <h1>
           <span><img className="contact-icon" src={mailIcon} alt="" /></span>
-          <span>Contact Me<span className="ow" >ow</span></span>
+          <span>Contact Me<span className="ow">ow</span></span>
         </h1>
           
           <form className="contact-form" onSubmit={handleSubmit} action="">

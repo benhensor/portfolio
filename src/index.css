@@ -11,7 +11,8 @@
 
   --accent-color: #DE9E36;
   --highlight-color: #fafbdf;
-  --journey-accent-color: #ff0066;
+  --aux-highlight-color: #d8fdfe;
+  --wave-highlight-color: #0eebe7;
   --background-color: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
   --card-background-color: linear-gradient(to bottom right, #2f3636, #171e1e);
 
@@ -21,7 +22,7 @@
   --text-color-light: #eeeeee;
   --text-color-medium: #cccccc;
   --text-color-dark: #323232;
-  --copy-color: #5C5C5C;
+  --text-color-soft: #8c8c8c;
   --copy-dkbg-color: #8D8D8D;
 
 

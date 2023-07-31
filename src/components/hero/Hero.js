@@ -13,25 +13,6 @@ export default function Hero () {
 
   const textRotate = ['Junior Developer', 'Sound Designer', 'Cat Fanatic!'];
   const [currentPhrase, setCurrentPhrase] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
-
-
-
-  useEffect(() => {
-    
-    const onScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-    }
-      window.addEventListener('scroll', onScroll);
-  
-      return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,12 +25,10 @@ export default function Hero () {
   }, );
 
   return (
-    <section id="home" className={scrolled ? 'scrolled' : ''}>
+    <section id="home">
       <div className='hero'>
-      
         <div className="hero-container">
-
-          <div className='hero-animation-container'>
+          <div id='hero-animation-container'>
             <img className='circleVector1' src={circleVec1} alt='circle vector' />
             <img className='circleVector2' src={circleVec2} alt='circle vector' /> 
             <img className='circleVector3' src={circleVec3} alt='circle vector' />
@@ -82,6 +61,17 @@ export default function Hero () {
           </div>
           <a href="#connect"><button onClick={() => console.log('connect')}>Let's Connect<ArrowRightCircle size={25}/></button></a>
         </div>
+          <div className="hero-wave">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35"
+              className="stroke-fill"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="shape-fill"></path>
+          </svg>
+          </div>
       </div>
     </section>
   )
