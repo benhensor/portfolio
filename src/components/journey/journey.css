@@ -1,5 +1,5 @@
 #journey {
-  background: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
+  background: var(--background-color);
   padding: 7rem 0;
   z-index: 0;
   position: relative;
@@ -35,7 +35,7 @@
 
 .journey-header {
   position: relative;
-  height: 30rem;
+  height: 20rem;
   width: 30rem;
   margin-bottom: 4rem;
 }
@@ -57,9 +57,8 @@
 
 .journey-content {
   display: flex;
-  flex: repeat(2, 1fr);
-  justify-content: center;
-  gap: 10rem;
+  justify-content: space-between;
+  gap: 10%;
   width: 100%;
   margin-bottom: 15rem;
 }
@@ -67,6 +66,7 @@
 .journey-column-one,
 .journey-column-two {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   gap: 10rem;
@@ -78,7 +78,7 @@
 
 .block {
   display: block;
-  width: 35rem;
+  width: 100%;
   background: linear-gradient(180deg, #606d6d48 0%, #2d363940 100%);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
@@ -95,7 +95,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+}
+
+.journey-link {
+  display: flex;
+  align-items: center;
+}
+
+.journey-link-description {
+  display: none;
+  margin-left: 4rem;
 }
 
 .journey-icons {
@@ -262,6 +271,10 @@
     font-size: var(--text-l);
   }
 
+  /* .journey-link-description {
+    display: block;
+  } */
+
   .journey-icons {
     display: flex;
     justify-content: space-between;
@@ -296,8 +309,8 @@
 
   }
 
-  .journey-content {
-    
+  .journey-link-description {
+    display: block;
   }
 
   .journey-icons {

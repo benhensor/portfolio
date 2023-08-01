@@ -3,8 +3,6 @@ import PaprbackLogo from '../../assets/img/paprback_orangebooks_whitetext.svg';
 import BookShelf from '../../assets/img/bookshelfHero.png';
 import MixingDesk from '../../assets/img/mixingDesk.jpeg';
 import BenHensorSoundLogo from '../../assets/img/bhsoundLogo.svg';
-import navIcon1 from '../../assets/icons/nav-icon1.svg';
-import navIcon4 from '../../assets/icons/nav-icon4.svg';
 import './projects.css';
 
 
@@ -20,62 +18,59 @@ export default function Projects () {
         <div className="projects-subheader">
           <h2>Feel free to check out some of my projects, more coming soon...</h2>
         </div>
+
+
+
         <div className="projects-row">
 
-          <div className="project1">
-            <div className="project-card">
-              <img className="project-image" src={BookShelf} alt="Open book in front of a bookshelf" />
-              <div className="project-logo-container">
+          <div className="project-card">
+            <img className="project-image" src={BookShelf} alt=""/>
+            <div className="project-content">
+              <div className="project-title">
                 <img className="project1-logo" src={PaprbackLogo} alt="" />
+                {/* <h1>Paprback</h1> */}
               </div>
-              <div className="project-content">
-                <h3>Paprback</h3>
-                <p className="project-description">
-                  Paperback is a software solution designed to connect book lovers for the purpose of exchanging and donating unwanted books.
-                </p>
-                <div className="project-stack">
-                  <span>Tech Stack: </span>
-                  <p>React JS</p>
-                  <p>Node JS</p>
-                  <p>Express</p>
-                  <p>PosgreSQL</p>
-                  <p>Netlify</p>
-                  <p>Render</p>
-                </div>
-                <div className="project-icons">
-                <a href="https://github.com/benhensor/soc_byteclub_paprback" rel="noreferrer" target="_blank" className="project-link"><img src={navIcon1} alt="Github" /></a>
-                <a href="https://bcpaprback.netlify.app/" rel="noreferrer" target="blank" className="project-link"><img src={navIcon4} alt="Netlify" /></a>
-                </div>
+              <p><span>Paprback</span> is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.</p>
+              <p className="project-stack-title">Tech Stack:</p>
+              <div className="project-stack">
+                <p>React | PostgreSQL | Node.js | Express | Netlify | Render</p>
+              </div>
+              <div className="project-icons">
+                <a href="https://paprback.netlify.app/" target="_blank" rel="noreferrer">
+                  Live site
+                </a>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" target="_blank" rel="noreferrer">
+                  Code
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="project2">
-            <div className="project-card">
-              <img className="project-image" src={MixingDesk} alt="Open book in front of a bookshelf" />
-              <div className="project-logo-container">
+          <div className="project-card">
+            <img className="project-image" src={MixingDesk} alt=""/>
+            <div className="project-content">
+              <div className="project-title">
                 <img className="project2-logo" src={BenHensorSoundLogo} alt="" />
+                <h1>Ben Hensor Sound</h1>
               </div>
-              <div className="project-content">
-                <h3>Ben Hensor Sound</h3>
-                <p className="project-description">
-                  A re-creation of my personal website, this time with a focus on my audio production work.
-                </p>
-                <div className="project-stack">
-                  <span>Tech Stack: </span>
-                  <p>React JS</p>
-                  <p>Node JS</p>
-                  <p>Express</p>
-                  <p>Vimeo</p>
-                  <p>Netlify</p>
-                </div>
-                <div className="project-icons">
-                <a href="https://github.com/benhensor/benhensorsound" rel="noreferrer" target="_blank" className="project-link"><img src={navIcon1} alt="Github" /></a>
-                <a href="https://benhensorsound.netlify.app/" rel="noreferrer" target="blank" className="project-link"><img src={navIcon4} alt="Netlify" /></a>
-                </div>
+              <p>This is a recreation of my Sound Design website.</p>
+              <p className="project-stack-title">Tech Stack:</p>
+              <div className="project-stack">
+                <p>React |  Node.js | Express | Netlify</p>
+              </div>
+              <div className="project-icons">
+                <a href="https://benhensorsound.netlify.app/" target="_blank" rel="noreferrer">
+                  Live site
+                </a>
+                <a href="https://github.com/benhensor/benhensorsound" target="_blank" rel="noreferrer">
+                  Code
+                </a>
               </div>
             </div>
           </div>
+
+
+          
 
         </div>
 

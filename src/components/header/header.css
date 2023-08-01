@@ -11,16 +11,22 @@ header {
 
 header.scrolled {
   border-bottom: 0.3rem solid var(--highlight-color);
-  background-color: #141717;
+  background-color: var(--background-static);
   transition: all 0.5s ease-in-out;
 }
 
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 2rem 20%;
   position: relative;
   width: 100%; 
+}
+
+.header-logo-name {
+  display: flex;
+  align-items: center;
 }
 
 .header-logo-container {
@@ -329,7 +335,7 @@ nav {
     padding-top: 6.5rem;
     padding-right: 10%;
     position: fixed;
-    top: 8.8rem;
+    top: 6.5rem;
     right: -30rem;
     width: 20rem;
     height: 100vh;
@@ -381,6 +387,5 @@ nav {
     display: block;
     width: 4.2rem;
     height: 4.2rem;
-    margin-top: 2.5rem;
   }
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { MdMail } from 'react-icons/md';
 import navIcon1 from '../../assets/icons/nav-icon1.svg';
 import navIcon2 from '../../assets/icons/nav-icon2.svg';
 import navIcon3 from '../../assets/icons/nav-icon3.svg';
+import navIcon5 from '../../assets/icons/nav-icon5.svg';
 import './journey.css';
 
 
@@ -80,17 +80,30 @@ export default function Journey () {
 
                 <div className="journey-links">
                   <div className="journey-icons">
-                  <a href="https://github.com/benhensor" rel="noreferrer" target="_blank">
-                    <img src={navIcon1} alt="Github" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/benhensor/" rel="noreferrer" target="_blank">
-                    <img src={navIcon2} alt="LinkedIn" />
-                  </a>
-                  <a href="https://www.imdb.com/name/nm5978088/?ref_=rvi_nm" rel="noreferrer" target="_blank">
-                    <img src={navIcon3} alt="" />
-                  </a>
-                  <a href="#connect"><MdMail className="journey-connect-icon" onClick={() => console.log('connect')}/>
-                  </a>
+                    <div className="journey-link">
+                    <a href="https://github.com/benhensor" rel="noreferrer" target="_blank">
+                      <img src={navIcon1} alt="Github" />
+                    </a>
+                    <h3 className="journey-link-description">Github</h3>
+                    </div>
+                    <div className="journey-link">
+                    <a href="https://www.linkedin.com/in/benhensor/" rel="noreferrer" target="_blank">
+                      <img src={navIcon2} alt="LinkedIn" />
+                    </a>
+                    <h3 className="journey-link-description">LinkedIn</h3>
+                    </div>
+                    <div className="journey-link">
+                    <a href="https://www.imdb.com/name/nm5978088/?ref_=rvi_nm" rel="noreferrer" target="_blank">
+                      <img src={navIcon3} alt="IMDB" />
+                    </a>
+                    <h3 className="journey-link-description">IMDB</h3>
+                    </div>
+                    <div className="journey-link">
+                    <a href="#connect" onClick={() => console.log('connect')}>
+                      <img src={navIcon5} alt="" />
+                    </a>
+                    <h3 className="journey-link-description">Connect with me!</h3>
+                    </div>
                   </div>
                   
                 </div>
@@ -161,7 +174,6 @@ export default function Journey () {
                 </a>
                 </div>
                 <a href="#connect"><button className="journey-connect-button" onClick={() => console.log('connect')}><span>Let's Connect!</span></button></a>
-                <a href="#connect"><MdMail className="journey-connect-icon" onClick={() => console.log('connect')}/></a>
               </div>
 
             </div>

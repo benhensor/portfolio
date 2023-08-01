@@ -73,11 +73,13 @@ export default function Header () {
     
       <nav>
 
-        <div className="header-logo-container">
-          <img className="header-logo" src={logo} alt="logo" onClick={scrollToTop}/>
-          <div className="nav-mobile-name">
-            <h1>Ben Hensor Dev</h1>
-          </div>
+        <div className="header-logo-name">
+        <a href="#home" className="header-logo-container" onClick={scrollToTop}>
+          <img className="header-logo" src={logo} alt="logo" />
+        </a>
+        <div className="nav-mobile-name">
+          <h1>Ben Hensor Dev</h1>
+        </div>
         </div>
         
         <div id="mobile-controls" onClick={handleClick}>
