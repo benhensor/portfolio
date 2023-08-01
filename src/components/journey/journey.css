@@ -5,10 +5,6 @@
   position: relative;
 }
 
-/* #journey.scrolled {
-  border-top: 5px solid var(--accent-color);
-} */
-
 .journey-background-mask {
   position: absolute;
   top: 0;

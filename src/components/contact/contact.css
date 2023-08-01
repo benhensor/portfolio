@@ -1,5 +1,4 @@
 #connect {
-  
   background: var(--background-color);
 }
 
@@ -138,8 +137,9 @@
   border-radius: 0.3rem;
 }
 
+#contact form input:focus,
 #contact form textarea:focus {
-  outline: 2px solid var(--accent-color);
+  outline: transparent;
 }
 
 .contact-submit-button {
@@ -148,6 +148,8 @@
   background-color: var(--button-inactive);
   color: var(--text-color-medium);
   font-size: var(--text-l);
+  letter-spacing: 0.1rem;
+  font-weight: bold;
   padding: 1rem 4rem;
   border: none;
   cursor: pointer;
