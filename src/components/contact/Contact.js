@@ -30,8 +30,6 @@ export default function Contact () {
   }
 
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     setButtonText('Sending...')
@@ -46,6 +44,7 @@ export default function Contact () {
       let result = await response.json()
       setFormDetails(formInitialDetails)
       if (result.code === 200) {
+        console.log(formDetails)
         setStatus({ success: true, message: 'Message sent successfully!'})
         setTimeout(() => {
         setStatus({});
