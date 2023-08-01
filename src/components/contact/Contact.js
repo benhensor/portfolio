@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import catFace from '../../assets/img/catFaceBanner.png';
 import leftEye from '../../assets/img/leftEye.svg';
 import rightEye from '../../assets/img/rightEye.svg';
@@ -20,6 +20,9 @@ export default function Contact () {
   const [buttonText, setButtonText] = useState('SEND')
   const [status, setStatus] = useState({})
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const catFaceContainerRef = useRef(null);
 
 
   const onFormUpdate = (category, value) => {
@@ -28,6 +31,35 @@ export default function Contact () {
       [category]: value
     })
   }
+
+  useEffect(() => {
+    // Create an Intersection Observer instance
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // If the cat face container is in view, start listening to mousemove
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          window.addEventListener('mousemove', handleMouseMove);
+        } else {
+          // If the cat face container is out of view, remove the mousemove listener
+          setIsVisible(false);
+          window.removeEventListener('mousemove', handleMouseMove);
+        }
+      },
+      {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px', // No margin
+        threshold: 0.5, // 50% visibility threshold
+      }
+    );
+
+    // Start observing the cat face container element
+    observer.observe(catFaceContainerRef.current);
+    console.log(isVisible)
+    // Clean up the observer on unmount
+    return () => observer.disconnect();
+  }, [isVisible]);
+
 
 
   const handleSubmit = async (e) => {
@@ -125,7 +157,7 @@ export default function Contact () {
       <div className="temp-notice">
         <h1>More coming soon!</h1>
       </div>
-      <div className="cat-face-container">
+      <div className="cat-face-container" ref={catFaceContainerRef}>
       <div><img className="cat-face" src={catFace} alt=""/></div>
       <div className="cat-eyes">
         <div><img className="cat-leftEye" src={leftEye} alt=""/></div>
@@ -142,8 +174,8 @@ export default function Contact () {
 
         <div className="contact-message">
           <p>My goal is to work with great people and do great things!</p>
-          <p>I am passionate about Front End Development and tech in general. I am actively seeking junior developer roles and would love to hear from you if you like what you see.</p>
-          <p>So, if you have any questions or would like to work together then please send me a message and I'll get back to you as soon as I can!</p>
+          <p>I am passionate about Software Development and tech in general. I'm currently looking for Junior Developer roles within the industry, with a focus on Front End Development.</p>
+          <p>If you have any questions or anything at all then please send me a message and 'll get back to you as soon as possible. Thanks for stopping by!</p>
         </div>
 
         <h1>

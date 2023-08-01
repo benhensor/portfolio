@@ -31,10 +31,6 @@ export default function Projects () {
                 {/* <h1>Paprback</h1> */}
               </div>
               <p><span>Paprback</span> is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.</p>
-              <p className="project-stack-title">Tech Stack:</p>
-              <div className="project-stack">
-                <p>React | PostgreSQL | Node.js | Express | Netlify | Render</p>
-              </div>
               <div className="project-icons">
                 <a href="https://paprback.netlify.app/" target="_blank" rel="noreferrer">
                   Live site
@@ -53,11 +49,8 @@ export default function Projects () {
                 <img className="project2-logo" src={BenHensorSoundLogo} alt="" />
                 <h1>Ben Hensor Sound</h1>
               </div>
-              <p>This is a recreation of my Sound Design website.</p>
-              <p className="project-stack-title">Tech Stack:</p>
-              <div className="project-stack">
-                <p>React |  Node.js | Express | Netlify</p>
-              </div>
+              <p>This is a recreation of my Sound Design website built in React with an Express mail server.</p>
+              
               <div className="project-icons">
                 <a href="https://benhensorsound.netlify.app/" target="_blank" rel="noreferrer">
                   Live site
