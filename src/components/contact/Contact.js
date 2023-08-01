@@ -19,24 +19,7 @@ export default function Contact () {
   const [formDetails, setFormDetails] = useState(formInitialDetails)
   const [buttonText, setButtonText] = useState('SEND')
   const [status, setStatus] = useState({})
-  const [scrolled, setScrolled] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-
-
-  useEffect(() => {
-    
-    const onScroll = () => {
-    if (window.scrollY > 3500) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-    }
-      window.addEventListener('scroll', onScroll);
-  
-      return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
 
   const onFormUpdate = (category, value) => {
@@ -110,24 +93,24 @@ export default function Contact () {
     const rightEyeBoundingBox = rightEye.getBoundingClientRect();
   
     // Calculate the center positions of the eyes
-    const leftEyeCenterX = leftEyeBoundingBox.left + leftEyeBoundingBox.width;
-    const leftEyeCenterY = leftEyeBoundingBox.top + leftEyeBoundingBox.height * 4;
-    const rightEyeCenterX = rightEyeBoundingBox.left + rightEyeBoundingBox.width;
-    const rightEyeCenterY = rightEyeBoundingBox.top + rightEyeBoundingBox.height * 4;
+    const leftEyeCenterX = leftEyeBoundingBox.left + leftEyeBoundingBox.width / 2;
+    const leftEyeCenterY = leftEyeBoundingBox.top + leftEyeBoundingBox.height * 1.5;
+    const rightEyeCenterX = rightEyeBoundingBox.left + rightEyeBoundingBox.width / 2;
+    const rightEyeCenterY = rightEyeBoundingBox.top + rightEyeBoundingBox.height * 1.5;
   
     // Calculate the distance between the mouse and the eye centers
-    const leftEyeDeltaX = mouseX - leftEyeCenterX;
-    const leftEyeDeltaY = mouseY - leftEyeCenterY;
-    const rightEyeDeltaX = mouseX - rightEyeCenterX;
-    const rightEyeDeltaY = mouseY - rightEyeCenterY;
+    const leftEyeDeltaX = mouseX - leftEyeCenterX - 1000;
+    const leftEyeDeltaY = mouseY - leftEyeCenterY * 2;
+    const rightEyeDeltaX = mouseX - rightEyeCenterX - 200;
+    const rightEyeDeltaY = mouseY - rightEyeCenterY * 2;
   
-    const maxEyeMove = 40; // Adjust this value to control the eye movement range
+    const maxEyeMove = 35; // Adjust this value to control the eye movement range
   
     // Calculate the eye movement within the specific range
-    const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * (maxEyeMove * 2);
-    const leftEyeMoveY = (leftEyeDeltaY / window.innerHeight) * maxEyeMove;
-    const rightEyeMoveX = (rightEyeDeltaX / window.innerWidth) * (maxEyeMove * 2);
-    const rightEyeMoveY = (rightEyeDeltaY / window.innerHeight) * maxEyeMove;
+    const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * (maxEyeMove );
+    const leftEyeMoveY = (leftEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.5);
+    const rightEyeMoveX = (rightEyeDeltaX / window.innerWidth) * (maxEyeMove );
+    const rightEyeMoveY = (rightEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.5);
   
     // Update the CSS style of the eye elements to apply the movement
     leftEye.style.transform = `translate(${leftEyeMoveX}px, ${leftEyeMoveY}px)`;
@@ -137,12 +120,12 @@ export default function Contact () {
 
 
   return (
-    <section id="connect" className={scrolled ? 'scrolled' : ''}>
+    <section id="connect">
       <div id="contact">
       <div className="contact-container">
       <div className="temp-notice">
-          <h1>More coming soon!</h1>
-        </div>
+        <h1>More coming soon!</h1>
+      </div>
       <div className="cat-face-container">
       <div><img className="cat-face" src={catFace} alt=""/></div>
       <div className="cat-eyes">
@@ -156,18 +139,22 @@ export default function Contact () {
         
 
         <div className="contact-card">
+        
+
+        <div className="contact-message">
+          <p>My goal is to work with great people and do great things!</p>
+          <p>I am passionate about Front End Development and tech in general. I am actively seeking junior developer roles and would love to hear from you if you like what you see.</p>
+          <p>So, if you have any questions or would like to work together then please send me a message and I'll get back to you as soon as I can!</p>
+        </div>
+
         <h1>
           <span><img className="contact-icon" src={mailIcon} alt="" /></span>
-          <span>Contact Me<span className="ow" >ow</span></span>
+          <span>Contact Me<span className="ow">ow</span></span>
         </h1>
           
           <form className="contact-form" onSubmit={handleSubmit} action="">
             <label htmlFor="name">Your Name (Required)</label>
             <input type="text" name="name" id="name" required value={formDetails.name} onChange={(e) => onFormUpdate('name', e.target.value)} />
-            {/* <label htmlFor="firstName">First Name:</label>
-            <input type="text" value={formDetails.firstName} name="firstName" id="firstName" required onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-            <label htmlFor="lastName">Last Name:</label>
-            <input type="text" value={formDetails.lastName} name="lastName" id="lastName" required onChange={(e) => onFormUpdate('lastName', e.target.value)} /> */}
             <label htmlFor="emailFrom">Your Email (Required)</label>
             <input type="email" name="email_from" id="emailFrom" required value={formDetails.email} onChange={(e) => onFormUpdate('email', e.target.value)} />
             <label htmlFor="phone">Phone Number:</label>

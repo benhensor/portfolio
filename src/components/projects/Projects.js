@@ -1,36 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PaprbackLogo from '../../assets/img/paprback_orangebooks_whitetext.svg';
 import BookShelf from '../../assets/img/bookshelfHero.png';
-// import BenHensorSoundLogo from '../../assets/img/logo2023.png';
-import navIcon1 from '../../assets/icons/nav-icon1.svg';
-import navIcon4 from '../../assets/icons/nav-icon4.svg';
+import MixingDesk from '../../assets/img/mixingDesk.jpeg';
+import BenHensorSoundLogo from '../../assets/img/bhsoundLogo.svg';
 import './projects.css';
 
 
 
 export default function Projects () {
 
-  const [scrolled, setScrolled] = useState(false);
-
-
-
-  useEffect(() => {
-    
-    const onScroll = () => {
-    if (window.scrollY > 2300) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-    }
-      window.addEventListener('scroll', onScroll);
-  
-      return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-
   return (
-    <section id='projects' className={scrolled ? 'scrolled' : ''}>
+    <section id='projects'>
       <div className='projects-container'>
         <div className="projects-header">
           <h1>Projects</h1>
@@ -38,33 +18,76 @@ export default function Projects () {
         <div className="projects-subheader">
           <h2>Feel free to check out some of my projects, more coming soon...</h2>
         </div>
+
+
+
         <div className="projects-row">
-          <div className="project1">
-            <div className="project-card">
-              <img className="project-image" src={BookShelf} alt="Open book in front of a bookshelf" />
-              <div className="project-content">
-              <div className="project-logo-container">
+
+          <div className="project-card">
+            <img className="project-image" src={BookShelf} alt=""/>
+            <div className="project-content">
+              <div className="project-title">
                 <img className="project1-logo" src={PaprbackLogo} alt="" />
+                {/* <h1>Paprback</h1> */}
               </div>
-                <h2 className="project-title">Paprback</h2>
-                <p>
-                  Paperback is a software solution designed to connect book lovers for the purpose of exchanging and donating unwanted books.
-                </p>
-                <p>
-                  This was my final project for the School of Code bootcamp. It was built in 5 weeks by a team of 6 junior developers. The app is built in React with a Node.js backend, Express server and a PostgreSQL database. The application is hosted on Netlify and Render.
-                </p>
-                <div className="project-icons">
-                <a href="https://github.com/benhensor/soc_byteclub_paprback" rel="noreferrer" target="_blank" className="project-link"><img src={navIcon1} alt="Github" /></a>
-                <a href="https://bcpaprback.netlify.app/" rel="noreferrer" target="blank" className="project-link"><img src={navIcon4} alt="Netlify" /></a>
-                </div>
+              <p><span>Paprback</span> is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.</p>
+              <p className="project-stack-title">Tech Stack:</p>
+              <div className="project-stack">
+                <p>React | PostgreSQL | Node.js | Express | Netlify | Render</p>
+              </div>
+              <div className="project-icons">
+                <a href="https://paprback.netlify.app/" target="_blank" rel="noreferrer">
+                  Live site
+                </a>
+                <a href="https://github.com/benhensor/soc_byteclub_paprback" target="_blank" rel="noreferrer">
+                  Code
+                </a>
               </div>
             </div>
-            
-
-
           </div>
+
+          <div className="project-card">
+            <img className="project-image" src={MixingDesk} alt=""/>
+            <div className="project-content">
+              <div className="project-title">
+                <img className="project2-logo" src={BenHensorSoundLogo} alt="" />
+                <h1>Ben Hensor Sound</h1>
+              </div>
+              <p>This is a recreation of my Sound Design website.</p>
+              <p className="project-stack-title">Tech Stack:</p>
+              <div className="project-stack">
+                <p>React |  Node.js | Express | Netlify</p>
+              </div>
+              <div className="project-icons">
+                <a href="https://benhensorsound.netlify.app/" target="_blank" rel="noreferrer">
+                  Live site
+                </a>
+                <a href="https://github.com/benhensor/benhensorsound" target="_blank" rel="noreferrer">
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          
+
         </div>
+
+        
+
       </div>
+      <div className="projects-wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35"
+          className="stroke-fill"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="shape-fill"></path>
+        </svg>
+        </div>
     </section>
 
   )
