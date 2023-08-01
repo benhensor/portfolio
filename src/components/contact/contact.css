@@ -74,8 +74,11 @@
 .contact-icon {
   height: 6rem;
   transform: rotate(45deg);
-  fill: #fff;
   margin-right: 1rem;
+}
+
+.contact-icon svg {
+  clip-path: var(--accent-color);
 }
 
 .contact-container h1 {
@@ -100,7 +103,7 @@
 }
 
 .contact-message p {
-  text-align: center;
+  text-align: left;
   margin-bottom: 3rem;
 }
 
@@ -135,6 +138,7 @@
   margin-bottom: 4rem;
   resize: none;
   border-radius: 0.3rem;
+  font-family: var(--font-poppins);
 }
 
 #contact form input:focus,
@@ -153,7 +157,7 @@
   padding: 1rem 4rem;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all background-color 0.1s;
   margin-bottom: 4rem;
   border-radius: 0.3rem;
 }
@@ -169,7 +173,6 @@
 }
 
 .contact-submit-button:hover {
-  color: var(--text-color-dark);
   background-color: var(--button-hover);
 }
 
@@ -279,7 +282,7 @@
 @media screen and (max-width: 599px) {
 
 
-  #connect {
+  #contact {
     margin: 0 10%;
   }
 
