@@ -67,7 +67,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 2rem;
   margin-bottom: 10rem;
 }
 
@@ -229,6 +228,10 @@
   .cat-rightEye {
     width: 20rem;
     height: 20rem;
+  }
+
+  .contact-message {
+    width: 100%;
   }
 
   .contact-icon {

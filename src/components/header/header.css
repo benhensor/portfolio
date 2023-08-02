@@ -302,9 +302,9 @@ nav {
     transition: 0.5s ease-in-out;
   }
 
-  /* .header-logo-container {
-    max-width: 4rem;
-  } */
+  .header-logo-container {
+    margin-right: 1rem;
+  }
 
   .header-logo {
     width: 4.2rem;
