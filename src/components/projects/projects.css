@@ -141,7 +141,7 @@
 .project-icons {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .project-icons a {
@@ -149,10 +149,10 @@
   font-family: var(--font-poppins);
   font-weight: bold;
   text-decoration: none;
-  color: var(--button-inactive);
+  color: #ffffff;
   width: 100%;
   padding: 0.5rem;
-  transition: all 0.3s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 .project-icons a:hover {
