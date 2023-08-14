@@ -3,6 +3,8 @@ import PaprbackLogo from '../../assets/img/paprback_orangebooks_whitetext.svg';
 import BookShelf from '../../assets/img/bookshelfHero.png';
 import MixingDesk from '../../assets/img/mixingDesk.jpeg';
 import BenHensorSoundLogo from '../../assets/img/bhsoundLogo.svg';
+import SeasonItBackground from '../../assets/img/seasons-banner3.jpeg';
+import SeasonItLogo from '../../assets/img/seasonit-logo.png';
 import './projects.css';
 
 
@@ -62,7 +64,25 @@ export default function Projects () {
             </div>
           </div>
 
-
+          <div className="project-card">
+            <img className="project-image" src={SeasonItBackground} alt=""/>
+            <div className="project-content">
+              <div className="project-title">
+                <img className="project3-logo" src={SeasonItLogo} alt="" />
+                <h1>Seasonit</h1>
+              </div>
+              <p>An app to help you discover seasonal produce throughout the year in the UK.</p>
+              
+              <div className="project-icons">
+                <a href="https://seasonit.netlify.app/" target="_blank" rel="noreferrer">
+                  Live site
+                </a>
+                <a href="https://github.com/benhensor/seasonit" target="_blank" rel="noreferrer">
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
           
 
         </div>
