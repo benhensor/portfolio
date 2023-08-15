@@ -49,8 +49,11 @@
   left: 0;
   width: 100%;
   height: 3px;
-  box-shadow: 0 10px 25px rgba(250, 251, 223, 1);
-  
+  box-shadow: 0 10px 25px rgba(250, 251, 223, 1),
+  0 10px 25px rgba(250, 251, 223, 1),
+  0 10px 25px rgba(250, 251, 223, 1),
+  0 10px 25px rgba(250, 251, 223, 1);
+  filter: brightness(300);
 }
 
 .skills-slider::-webkit-scrollbar {

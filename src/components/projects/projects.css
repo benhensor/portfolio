@@ -67,11 +67,11 @@
 }
 
 .project-content {
-  height: 30%;
+  height: 40rem;
   width: 100%;
   padding: 2rem;
   position: absolute;
-  bottom: 0;
+  bottom: -28rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -81,7 +81,6 @@
 }
 
 .project-card:hover .project-content {
-  height: 100%;
   bottom: 0;
   background: rgba(27, 27, 27, 0.8);
 }
@@ -91,6 +90,15 @@
   align-items: center;
 
   min-height: 5rem;
+}
+
+.project-info {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
 }
 
 .project1-logo {
@@ -115,13 +123,7 @@
 .project-content p {
   font-size: var(--text-r);
 
-  opacity: 0;
   margin-bottom: 3rem;
-  transition: all 0.3s ease-out;
-}
-
-.project-card:hover p {
-  opacity: 1;
 }
 
 .project-content span {

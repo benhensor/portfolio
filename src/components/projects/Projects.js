@@ -32,14 +32,16 @@ export default function Projects () {
                 <img className="project1-logo" src={PaprbackLogo} alt="" />
                 {/* <h1>Paprback</h1> */}
               </div>
-              <p><span>Paprback</span> is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.</p>
-              <div className="project-icons">
-                <a href="https://paprback.netlify.app/" target="_blank" rel="noreferrer">
-                  Live site
-                </a>
-                <a href="https://github.com/benhensor/soc_byteclub_paprback" target="_blank" rel="noreferrer">
-                  Code
-                </a>
+              <div className="project-info">
+                <p><span>Paprback</span> is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.</p>
+                <div className="project-icons">
+                  <a href="https://paprback.netlify.app/" target="_blank" rel="noreferrer">
+                    Live site
+                  </a>
+                  <a href="https://github.com/benhensor/soc_byteclub_paprback" target="_blank" rel="noreferrer">
+                    Code
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -51,6 +53,7 @@ export default function Projects () {
                 <img className="project2-logo" src={BenHensorSoundLogo} alt="" />
                 <h1>Ben Hensor Sound</h1>
               </div>
+              <div className="project-info">
               <p>This is a recreation of my Sound Design website built in React with an Express mail server.</p>
               
               <div className="project-icons">
@@ -60,6 +63,7 @@ export default function Projects () {
                 <a href="https://github.com/benhensor/benhensorsound" target="_blank" rel="noreferrer">
                   Code
                 </a>
+              </div>
               </div>
             </div>
           </div>
@@ -71,6 +75,7 @@ export default function Projects () {
                 <img className="project3-logo" src={SeasonItLogo} alt="" />
                 <h1>Seasonit</h1>
               </div>
+              <div className="project-info">
               <p>An app to help you discover seasonal produce throughout the year in the UK.</p>
               
               <div className="project-icons">
@@ -80,6 +85,7 @@ export default function Projects () {
                 <a href="https://github.com/benhensor/seasonit" target="_blank" rel="noreferrer">
                   Code
                 </a>
+              </div>
               </div>
             </div>
           </div>
