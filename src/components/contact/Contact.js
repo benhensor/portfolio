@@ -154,9 +154,6 @@ export default function Contact () {
     <section id="connect">
       <div id="contact">
       <div className="contact-container">
-      <div className="temp-notice">
-        <h1>More coming soon!</h1>
-      </div>
       <div className="cat-face-container" ref={catFaceContainerRef}>
       <div><img className="cat-face" src={catFace} alt=""/></div>
       <div className="cat-eyes">

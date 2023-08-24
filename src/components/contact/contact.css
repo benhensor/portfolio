@@ -1,5 +1,6 @@
 #connect {
   background: var(--background-color);
+  margin-top: 10rem;
 }
 
 #contact {
@@ -109,6 +110,7 @@
 #contact form {
   display: flex;
   flex-direction: column;
+  width: 50rem;
 }
 
 #contact form label {
@@ -253,6 +255,10 @@
     width: 100%;
   }
 
+  #contact form {
+    width: 35rem;
+  }
+
   #contact form label {
     font-size: var(--text-s);
     margin-bottom: 0.5rem;
@@ -334,6 +340,10 @@
 
   .contact-card {
     width: 100%;
+  }
+
+  #contact form {
+    width: 30rem;
   }
 
   #contact form label {

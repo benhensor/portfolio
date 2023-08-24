@@ -18,7 +18,7 @@ export default function Projects () {
           <h1>Projects</h1>
         </div>
         <div className="projects-subheader">
-          <h2>Feel free to check out some of my projects, more coming soon...</h2>
+          <h2>Feel free to check out some of my projects below</h2>
         </div>
 
 
@@ -93,7 +93,9 @@ export default function Projects () {
 
         </div>
 
-        
+      <div className="temp-notice">
+        <h1>More coming soon!</h1>
+      </div>
 
       </div>
       <div className="projects-wave">

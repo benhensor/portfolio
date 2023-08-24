@@ -225,7 +225,7 @@ nav {
   #mobile-controls {
     display: flex;
     align-items: center;
-    
+    width: 2.5rem;
     color: #fff;
     font-size: var(--text-xxxl);
   }
@@ -305,7 +305,7 @@ nav {
   }
 
   .header-logo-container {
-    margin-right: 1rem;
+    margin-right: 0;
   }
 
   .header-logo {
@@ -326,7 +326,7 @@ nav {
 
   .nav-mobile-name {
     display: block;
-    font-size: var(--text-s);
+    font-size: var(--text-xs);
     letter-spacing: 0.5rem;
   }
   

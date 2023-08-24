@@ -170,10 +170,15 @@
 }
 
 .temp-notice {
-  font-size: var(--text-l);
+  text-align: center;
+  
   color: var(--text-color-medium);
   width: 100%;
   margin: 10rem;
+}
+
+.temp-notice h1 {
+  font-size: var(--text-xxxxl);
 }
 
 .projects-wave {
@@ -223,6 +228,10 @@
     margin-bottom: 10rem;
   }
 
+  .temp-notice h1 {
+    font-size: var(--text-xxl);
+  }
+
  
 }
 
@@ -235,6 +244,10 @@
 
   .projects-row {
     flex-direction: column;
+  }
+
+  .temp-notice h1 {
+    font-size: var(--text-xl);
   }
 
 }
