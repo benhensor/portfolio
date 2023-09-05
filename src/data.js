@@ -23,11 +23,11 @@ import elementUI from './assets/icons/tech/element-ui.svg';
 import netlify from './assets/icons/tech/netlify.svg';
 import prettier from './assets/icons/tech/prettier.svg';
 
-import paperbackLogo from './assets/img/paprback_orangebooks_whitetext.svg';
+import paperbackLogo from './assets/img/paprback_logo_books.svg';
 import bookShelf from './assets/img/bookshelfHero.png';
 import bhSoundLogo from './assets/img/bhsoundLogo.svg';
 import mixingDesk from './assets/img/mixingDesk.jpeg';
-import seasonItLogo from './assets/img/seasonit-logo.png';
+import seasonItLogo from './assets/img/seasonit-logo.svg';
 import seasonItBackground from './assets/img/seasons-banner3.jpeg';
 
 const tech = [
@@ -138,7 +138,7 @@ const tech = [
 const projects = [
   {
     key: 1,
-    title: '',
+    title: 'Paprback',
     logo: paperbackLogo,
     image: bookShelf,
     description: 'Paprback is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.',

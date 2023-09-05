@@ -1,10 +1,4 @@
 import React from 'react';
-import PaprbackLogo from '../../assets/img/paprback_orangebooks_whitetext.svg';
-import BookShelf from '../../assets/img/bookshelfHero.png';
-import MixingDesk from '../../assets/img/mixingDesk.jpeg';
-import BenHensorSoundLogo from '../../assets/img/bhsoundLogo.svg';
-import SeasonItBackground from '../../assets/img/seasons-banner3.jpeg';
-import SeasonItLogo from '../../assets/img/seasonit-logo.png';
 import { projects } from '../../data';
 import './projects.css';
 
