@@ -101,18 +101,9 @@
   opacity: 1;
 }
 
-.project1-logo {
-  width: 14rem;
-}
-
-.project2-logo {
+.project-logo {
+  height: 4rem;
   margin-right: 1rem;
-  width: 4rem;
-}
-
-.project3-logo {
-  margin-right: 1rem;
-  width: 5rem;
 }
 
 .project-content h1 {
@@ -130,22 +121,6 @@
   font-weight: bold;
 }
 
-.project-stack {
-  font-size: var(--text-s);
-  line-height: 2rem;
-  text-align: justify;
-  transition: all 0.3s ease-out;
-}
-
-.project-stack-title {
-  font-size: var(--text-l);
-}
-
-.project-link {
-  color: #fff;
-  font-size: var(--text-xl);
-  text-decoration: none;
-}
 
 .project-icons {
   display: flex;

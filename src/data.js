@@ -23,7 +23,14 @@ import elementUI from './assets/icons/tech/element-ui.svg';
 import netlify from './assets/icons/tech/netlify.svg';
 import prettier from './assets/icons/tech/prettier.svg';
 
-export const tech = [
+import paperbackLogo from './assets/img/paprback_orangebooks_whitetext.svg';
+import bookShelf from './assets/img/bookshelfHero.png';
+import bhSoundLogo from './assets/img/bhsoundLogo.svg';
+import mixingDesk from './assets/img/mixingDesk.jpeg';
+import seasonItLogo from './assets/img/seasonit-logo.png';
+import seasonItBackground from './assets/img/seasons-banner3.jpeg';
+
+const tech = [
   {
     name: 'HTML 5',
     icon: html
@@ -126,4 +133,37 @@ export const tech = [
   },
 ]
 
-export default tech;
+// Projects data
+
+const projects = [
+  {
+    key: 1,
+    title: '',
+    logo: paperbackLogo,
+    image: bookShelf,
+    description: 'Paprback is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.',
+    live: 'https://bcpaprback.netlify.app/',
+    code: 'https://github.com/benhensor/soc_byteclub_paprback'
+  },
+  {
+    key: 2,
+    title: 'Ben Hensor Sound',
+    logo: bhSoundLogo,
+    image: mixingDesk,
+    description: 'This is a recreation of my Sound Design website built in React with an Express mail server.',
+    live: 'https://benhensorsound.netlify.app/',
+    code: 'https://github.com/benhensor/benhensorsound'
+  },
+  {
+    key: 3,
+    title: 'Season It',
+    logo: seasonItLogo,
+    image: seasonItBackground,
+    description: 'An app to help you discover seasonal produce throughout the year in the UK.',
+    live: 'https://seasonit.netlify.app/',
+    code: 'https://github.com/benhensor/season-it'
+  }
+]
+
+
+export { tech, projects }

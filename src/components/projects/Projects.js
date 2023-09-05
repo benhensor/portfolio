@@ -5,6 +5,7 @@ import MixingDesk from '../../assets/img/mixingDesk.jpeg';
 import BenHensorSoundLogo from '../../assets/img/bhsoundLogo.svg';
 import SeasonItBackground from '../../assets/img/seasons-banner3.jpeg';
 import SeasonItLogo from '../../assets/img/seasonit-logo.png';
+import { projects } from '../../data';
 import './projects.css';
 
 
@@ -24,72 +25,28 @@ export default function Projects () {
 
 
         <div className="projects-row">
-
-          <div className="project-card">
-            <img className="project-image" src={BookShelf} alt=""/>
+        {projects.map((project) => (
+          <div className="project-card" key={project.key}>
+            <img className="project-image" src={project.image} alt=""/>
             <div className="project-content">
               <div className="project-title">
-                <img className="project1-logo" src={PaprbackLogo} alt="" />
-                {/* <h1>Paprback</h1> */}
+                <img className="project-logo" src={project.logo} alt="" />
+                <h1>{project.title}</h1>
               </div>
               <div className="project-info">
-                <p><span>Paprback</span> is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.</p>
+                <p>{project.description}</p>
                 <div className="project-icons">
-                  <a href="https://paprback.netlify.app/" target="_blank" rel="noreferrer">
+                  <a href={project.live} target="_blank" rel="noreferrer">
                     Live site
                   </a>
-                  <a href="https://github.com/benhensor/soc_byteclub_paprback" target="_blank" rel="noreferrer">
+                  <a href={project.code} target="_blank" rel="noreferrer">
                     Code
                   </a>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="project-card">
-            <img className="project-image" src={MixingDesk} alt=""/>
-            <div className="project-content">
-              <div className="project-title">
-                <img className="project2-logo" src={BenHensorSoundLogo} alt="" />
-                <h1>Ben Hensor Sound</h1>
-              </div>
-              <div className="project-info">
-              <p>This is a recreation of my Sound Design website built in React with an Express mail server.</p>
-              
-              <div className="project-icons">
-                <a href="https://benhensorsound.netlify.app/" target="_blank" rel="noreferrer">
-                  Live site
-                </a>
-                <a href="https://github.com/benhensor/benhensorsound" target="_blank" rel="noreferrer">
-                  Code
-                </a>
-              </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-card">
-            <img className="project-image" src={SeasonItBackground} alt=""/>
-            <div className="project-content">
-              <div className="project-title">
-                <img className="project3-logo" src={SeasonItLogo} alt="" />
-                <h1>Seasonit</h1>
-              </div>
-              <div className="project-info">
-              <p>An app to help you discover seasonal produce throughout the year in the UK.</p>
-              
-              <div className="project-icons">
-                <a href="https://seasonit.netlify.app/" target="_blank" rel="noreferrer">
-                  Live site
-                </a>
-                <a href="https://github.com/benhensor/seasonit" target="_blank" rel="noreferrer">
-                  Code
-                </a>
-              </div>
-              </div>
-            </div>
-          </div>
-          
+        ))}          
 
         </div>
 

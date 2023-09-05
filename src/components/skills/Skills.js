@@ -1,5 +1,5 @@
 import React from 'react';
-import tech from '../../tech';
+import { tech } from '../../data';
 import './skills.css';
 
 
