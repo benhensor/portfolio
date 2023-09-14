@@ -1,4 +1,4 @@
-# Ben Hensor - Junior Full Stack Developer
+# Ben Hensor - Full Stack Developer
 
 Hello and welcome to the repository for my portfolio site. 
 
