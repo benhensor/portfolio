@@ -82,7 +82,7 @@
   padding: 3rem;
 }
 
-.journey-content h4 {
+.journey-content p {
   font-size: var(--text-xl);
   color: var(--text-color-medium);
   line-height: 3rem;
