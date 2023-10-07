@@ -40,7 +40,7 @@ export default function Journey () {
 
                 <div className="block">
                   <div className="block-text">
-                    <h4>Hi, I'm Ben, a Full Stack Developer based in Bristol, UK.</h4>
+                    <h4>Hi, I'm Ben, a Junior Developer based in Bristol, UK.</h4>
                   </div>
                 </div>
                 <div className="block">
