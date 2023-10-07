@@ -40,7 +40,7 @@ export default function Journey () {
 
                 <div className="block">
                   <div className="block-text">
-                    <h4>Hi, I'm Ben, a Junior Developer based in Bristol, UK.</h4>
+                    <h4>Hi, I'm Ben, a Full Stack Developer based in Bristol, UK.</h4>
                   </div>
                 </div>
                 <div className="block">
@@ -70,7 +70,7 @@ export default function Journey () {
                 </div>
                 <div className="block">
                   <div className="block-text">
-                    <h4>Thank you for visiting my portfolio, please check out some of my projects below. I will be adding more as they become completed. If you would like to connect with me, check out my GitHub page or get in touch then please follow the links below!</h4>
+                    <h4>Thank you for visiting my portfolio, please check out some of my projects below. I will be adding more as they become completed. If you would like to connect with me, check out my GitHub page or get in touch then please follow the links!</h4>
                   </div>
                 </div>
 
