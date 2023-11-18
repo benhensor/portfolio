@@ -1,82 +1,103 @@
-import express, { Router, json } from 'express';
-import cors from 'cors';
-import { createTransport } from 'nodemailer';
-import dotenv from 'dotenv';
+import express, { Router, json } from 'express'
+import cors from 'cors'
+import { createTransport } from 'nodemailer'
+import dotenv from 'dotenv'
+import rateLimit from 'express-rate-limit'
+import helmet from 'helmet'
+import { body, validationResult } from 'express-validator'
 
-const router = Router();
-dotenv.config();
+dotenv.config()
 
+if (!process.env.EMAIL_ADDRESS || !process.env.EMAIL_PASS) {
+console.error('Required environment variables are missing.')
+process.exit(1) // Exit the application
+}
 
-
-
-const PORT = process.env.PORT || 5000;
+const router = Router()
+const PORT = process.env.PORT || 5000
 
 // Server used to send emails
-const app = express();
-app.use(cors());
-app.use(json());
-app.use('/', router);
-console.log(process.env.EMAIL_ADDRESS)
-console.log(process.env.EMAIL_PASS)
+const app = express()
+app.use(helmet())
+app.use(cors())
 
-app.get('/api', (req, res) => {
-  res.json({ message: 'Hello from server!' });
-});
+// Rate limiting
+const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // 100 requests per windowMs
+})
+
+app.use('/api/', apiLimiter)
+app.use(json())
+app.use('/', router)
 
 const contactEmail = createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_ADDRESS,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_ADDRESS,
+        pass: process.env.EMAIL_PASS,
+    },
+})
 
-contactEmail.verify((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Ready to Send');
-  }
-});
+contactEmail.verify(async(error) => {
+    if (error) {
+        console.log(error)
+    } else {
+        console.log('Ready to Send')
+    }
+})
 
-router.post('/api/contact', async (req, res) => {
-  try {
-    const name = req.body.name || 'No name provided';
-    const email = req.body.email;
-    const phone = req.body.phone;
-    const message = req.body.message;
-    
-    // Validate the incoming data if needed
+// Routes
+app.get('/api', (res) => {
+    res.json({ message: 'Hello from server!' })
+})
 
-    const mail = {
-      from: name,
-      to: process.env.EMAIL_ADDRESS,
-      subject: 'Contact Form Submission - Portfolio',
-      html:  `<p>Name: ${name}</p>
-              <p>Email: ${email}</p>
-              <p>Phone: ${phone}</p>
-              <p>Message: ${message}</p>`,
-    };
+router.post('/api/contact', [
+    body('email').isEmail().normalizeEmail(),
+    body('name').trim().escape(),
+], async (req, res) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ code: 400, status: 'Bad Request', errors: errors.array() })
+    }
+    try {
+        const name = req.body.name || 'No name provided'
+        const email = req.body.email
+        const phone = req.body.phone
+        const message = req.body.message
+        
+        // Validate the incoming data if needed
 
-    // Send the email
-    contactEmail.sendMail(mail, (error) => {
-      if (error) {
-        // If there is an error sending the email, handle it here
-        console.error('Error sending email:', error);
-        res.status(500).json({ error: 'Failed to send email.' });
-      } else {
-        // If the email is sent successfully, respond with a success message
-        res.json({ code: 200, status: 'Message Sent' });
-        console.log("Server: ", mail);
-      }
-    });
-  } catch (error) {
-    // If any other error occurs during the processing, handle it here
-    console.error('Error processing request:', error);
-    res.status(500).json({ error: 'Internal server error.' });
-  }
-});
+        const mail = {
+        from: name,
+        to: process.env.EMAIL_ADDRESS,
+        subject: 'Contact Form Submission - Portfolio',
+        html:  `<p>Name: ${name}</p>
+                <p>Email: ${email}</p>
+                <p>Phone: ${phone}</p>
+                <p>Message: ${message}</p>`,
+        }
+
+        // Send the email
+        await contactEmail.sendMail(mail)
+        res.json({ code: 200, status: 'Message Sent' })
+
+    } catch (error) {
+        // If any other error occurs during the processing, handle it here
+        console.error('Error processing request:', error)
+        res.status(500).json({ error: 'Internal server error.' })
+    }
+})
+
+app.get('/health', (req, res) => {
+    res.status(200).send('Server is healthy.')
+})
+
+app.use((err, req, res, next) => {
+    console.error(err.stack)
+    res.status(500).send('Something broke!')
+})
 
 app.listen(PORT, () => {
-  console.log(`Server Running on Port: ${PORT}`)
-});
+console.log(`Server Running on Port: ${PORT}`)
+})

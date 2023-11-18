@@ -1,0 +1,99 @@
+/*======================== FONTS ========================*/
+
+@import url("../assets/fonts/fonts.css");
+
+/*==================== CSS VARIABLES ====================*/
+
+:root {
+	/* Global Colours */
+
+	--accent-color: #de9e36;
+	--highlight-color: #fafbdf;
+	--aux-highlight-color: #d8fdfe;
+	--wave-highlight-color: #0eebe7;
+	--background-color: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
+	--card-background-color: linear-gradient(to bottom right, #2f3636, #171e1e);
+	--background-static: #141717;
+
+	/* Button Colors */
+
+	--button-inactive: #006767;
+	--button-hover: #00c5c5;
+	--button-active: #de9e36;
+
+	--text-color-light: #eeeeee;
+	--text-color-medium: #cccccc;
+	--text-color-dark: #323232;
+	--text-color-soft: #8c8c8c;
+	--copy-dkbg-color: #8d8d8d;
+
+	/* Global Fonts */
+
+	--font-centra: "Centra", sans-serif;
+	--font-roboto: "Roboto", sans-serif;
+	--font-poppins: "Poppins", sans-serif;
+
+	/* Global Font Sizes */
+
+	font-size: 62.5%;
+
+	--text-xxs: 0.8rem;
+	--text-xs: 1rem;
+	--text-s: 1.2rem;
+	--text-r: 1.6rem;
+	--text-l: 1.8rem;
+	--text-xl: 2.2rem;
+	--text-xxl: 2.8rem;
+	--text-xxxl: 3.2rem;
+	--text-xxxxl: 4rem;
+	--text-xxxxxl: 6rem;
+	--text-xxxxxxl: 8rem;
+	--text-xxxxxxxl: 10rem;
+
+	/* Global Margins */
+
+	--margin-body-desktop: 0 10%;
+	--margin-body-mobile: 2rem 10%;
+}
+
+/*========================== BASE =======================*/
+
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	/* outline: 1px solid #f00 !important; */
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 7.5rem;
+	user-select: none;
+}
+
+body {
+	font-size: 1.6rem;
+	background-color: #141717 !important;
+	color: var(--text-color-light) !important;
+	font-family: "Centra", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+}
+
+img {
+	max-width: 100%;
+}

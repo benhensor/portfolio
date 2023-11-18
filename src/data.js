@@ -29,141 +29,185 @@ import bhSoundLogo from './assets/img/bhsoundLogo.svg';
 import mixingDesk from './assets/img/mixingDesk.jpeg';
 import seasonItLogo from './assets/img/seasonit-logo.svg';
 import seasonItBackground from './assets/img/seasons-banner3.jpeg';
+import sneakersLogo from './assets/img/sneakersLogo.svg';
+import sneakersBackground from './assets/img/sneakersBackground.jpg';
 
 const tech = [
-  {
+{
     name: 'HTML 5',
     icon: html
-  },
-  {
+},
+{
     name: 'CSS 3',
     icon: css
-  },
-  {
+},
+{
     name: 'JavaScript',
     icon: javascript
-  },
-  {
+},
+{
     name: 'React',
     icon: react
-  },
-  {
+},
+{
     name: 'Node.js',
     icon: node
-  },
-  {
+},
+{
     name: 'Auth0',
     icon: auth0
-  },
-  {
+},
+{
     name: 'MongoDB',
     icon: mongodb
-  },
-  {
+},
+{
     name: 'Elephant SQL',
     icon: postfresql
-  },
-  {
+},
+{
     name: 'Git',
     icon: git
-  },
-  {
+},
+{
     name: 'GitHub',
     icon: gitlab
-  },
-  {
+},
+{
     name: 'VS Code',
     icon: vs
-  },
-  {
+},
+{
     name: 'Figma',
     icon: figma
-  },
-  {
+},
+{
     name: 'Bootstrap',
     icon: bootstrap
-  },
-  {
+},
+{
     name: 'Sass',
     icon: sass
-  },
-  {
+},
+{
     name: 'Tailwind',
     icon: tailwind
-  },
-  {
+},
+{
     name: 'Jest',
     icon: jest
-  },
-  {
+},
+{
     name: 'NPM',
     icon: npm
-  },
-  {
+},
+{
     name: 'Postman',
     icon: postman
-  },
-  {
+},
+{
     name: 'Photoshop',
     icon: ps
-  },
-  {
+},
+{
     name: 'Babel',
     icon: babel
-  },
-  {
+},
+{
     name: 'VS Code',
     icon: vs
-  },
-  {
+},
+{
     name: 'Semantic UI',
     icon: semanticUi
-  },
-  {
+},
+{
     name: 'Element-UI',
     icon: elementUI
-  },
-  {
+},
+{
     name: 'Netlify',
     icon: netlify
-  },
-  {
+},
+{
     name: 'Prettier',
     icon: prettier
-  },
+},
 ]
 
-// Projects data
+// Journey data
+
+const journey = [
+{
+    key: 1,
+    text: "Hi, I'm Ben, a Full Stack Developer based in Bristol, UK."
+},
+{
+    key: 2,
+    text: "I started out creating music and sound effects for local theatre companies..."
+},
+{
+    key: 3,
+    text: "Driven by my love for audio production, I trained at the prestigious National Film & Television School, honed my skills and became a professional Sound Designer, working in Film, Television, and Commercials."
+},
+{
+    key: 4,
+    text: "However, following the pandemic, I realised the need to adapt and explore new avenues. It was during this time that I made a bold decision to pursue my other passion: Software Development!"
+},
+{
+    key: 5,
+    text: "To kickstart this new chapter, I enrolled onto the School of Code. Through determination and a lot of hard work, I completed the immensely challenging coding bootcamp..."
+},
+{
+    key: 6,
+    text: "Throughout this journey, I have embraced the opportunity to acquire a wealth of new knowledge and skills. Building upon my successes in my first role as a Full Stack Developer, I am now looking forward to the next chapter in my career."
+},
+{
+    key: 7,
+    text: "Thank you for visiting my portfolio, please check out some of my projects below. I will be adding more as they become completed. If you would like to connect with me, check out my GitHub page or get in touch then please follow the links!"
+}
+]
+
+    // Projects data
 
 const projects = [
-  {
+{
     key: 1,
     title: 'Paprback',
     logo: paperbackLogo,
     image: bookShelf,
-    description: 'Paprback is a software solution to connect people in their local area for the purpose of exchanging and donating unwanted books.',
+    description: 'Connecting people in their local area for the purpose of exchanging and donating unwanted books.',
     live: 'https://bcpaprback.netlify.app/',
     code: 'https://github.com/benhensor/soc_byteclub_paprback'
-  },
-  {
+},
+{
     key: 2,
     title: 'Ben Hensor Sound',
     logo: bhSoundLogo,
     image: mixingDesk,
-    description: 'This is a recreation of my Sound Design website built in React with an Express mail server.',
+    description: 'A recreation of my Sound Design website built in React with an Express mail server.',
     live: 'https://benhensorsound.netlify.app/',
     code: 'https://github.com/benhensor/benhensorsound'
-  },
-  {
+},
+{
     key: 3,
     title: 'Season It',
     logo: seasonItLogo,
     image: seasonItBackground,
-    description: 'An app to help you discover seasonal produce throughout the year in the UK.',
+    description: 'Discover seasonal produce throughout the year in the UK.',
     live: 'https://seasonit.netlify.app/',
     code: 'https://github.com/benhensor/season-it'
-  }
+},
+{
+    key: 4,
+    title: 'Sneakers',
+    logo: sneakersLogo,
+    image: sneakersBackground,
+    description: 'A Frontend Mentor e-commerce page built with React.',
+    live: 'https://frontendmentor-sneakers.netlify.app/',
+    code: 'https://github.com/benhensor/e-commerce_page'
+}
 ]
 
 
-export { tech, projects }
+export { tech, journey, projects }

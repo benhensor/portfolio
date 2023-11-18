@@ -1,38 +1,33 @@
-import React, { useEffect } from 'react';
-import Header from './components/header/Header';
-import Hero from './components/hero/Hero';
-import Skills from './components/skills/Skills';
-import Journey from './components/journey/Journey';
-import Projects from './components/projects/Projects';
-import Contact from './components/contact/Contact';
-import Footer from './components/footer/Footer';
-import './App.css';
+import React, { useEffect } from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Skills from './components/Skills'
+import Journey from './components/Journey'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import './styles/app.css'
 
 function App() {
+	useEffect(() => {
+		fetch('/api')
+			.then((res) => res.json())
+			.then((data) => console.log(data))
+	}, [])
 
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
-
-
-
-
-
-  return (
-    <main className="App">
-      <Header />
-      <div className="content">
-      <Hero />
-      <Skills />
-      <Journey />
-      <Projects />
-      <Contact />
-      </div>
-      <Footer />
-    </main>
-  );
+	return (
+		<main className='app'>
+			<Header />
+			<div className='content'>
+				<Hero />
+				<Skills />
+				<Journey />
+				<Projects />
+				<Contact />
+			</div>
+			<Footer />
+		</main>
+	);
 }
 
-export default App;
+export default App
