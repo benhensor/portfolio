@@ -117,10 +117,6 @@
 	transition: all 1s ease-out;
 }
 
-.project-card:hover .project-info {
-	
-}
-
 .project-logo {
 	height: 4rem;
 	margin-right: 1rem;
@@ -244,10 +240,6 @@
 }
 
 @media screen and (max-width: 599px) {
-	.projects-container {
-		
-	}
-
 	.projects-grid {
 		grid-template-columns: repeat(1, auto);
 		gap: 4rem;
