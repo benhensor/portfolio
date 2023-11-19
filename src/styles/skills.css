@@ -15,7 +15,7 @@
   flex-direction: column;
   width: 100%;
   max-width: 1440px;
-  padding-bottom: 20rem;
+  padding: 0 5% 20rem 5%;
 }
 
 .skills-header h1 {
