@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 5000
 
 // Server used to send emails
 const app = express()
+app.set('trust proxy', 1);
 app.use(helmet())
 app.use(cors())
 
@@ -48,7 +49,7 @@ contactEmail.verify(async(error) => {
 })
 
 // Routes
-app.get('/api', (res) => {
+app.get('/api', (req, res) => {
     res.json({ message: 'Hello from server!' })
 })
 

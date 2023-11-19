@@ -52,10 +52,8 @@ export default function Contact () {
             threshold: 0.5, // 50% visibility threshold
         }
         )
-
         // Start observing the cat face container element
         observer.observe(catFaceContainerRef.current)
-        console.log(isVisible)
         // Clean up the observer on unmount
         return () => observer.disconnect()
     }, [isVisible])
@@ -199,7 +197,7 @@ export default function Contact () {
                         </form>
                     </div>
                 </div>
-            </div>
+            </div>          
         </section>
     )
 }

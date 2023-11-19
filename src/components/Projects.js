@@ -18,22 +18,25 @@ export default function Projects() {
 				<div className='projects-grid'>
 					{projects.map((project) => (
 						<div className='project-card' key={project.key}>
-							<img className='project-image' src={project.image} alt='' />
-							<div className='project-content'>
-								<div className='project-title'>
-									<img className='project-logo' src={project.logo} alt='' />
-									<h1>{project.title}</h1>
-								</div>
-								<div className='project-info'>
-									<p>{project.description}</p>
+							<div className="project-card-contents">
+								<img className='project-image' src={project.image} alt='' />
+								<div className='project-content'>
+									<div className='project-title'>
+										<img className='project-logo' src={project.logo} alt='' />
+										<h1>{project.title}</h1>
+									</div>
+									<div className='project-info'>
+										<p>{project.description}</p>
+									</div>
 									<div className='project-icons'>
-										<a href={project.live} target='_blank' rel='noreferrer'>
-											Live site
-										</a>
 										<a href={project.code} target='_blank' rel='noreferrer'>
 											<FaGithub className='project-icon-github' />
 										</a>
+										<a href={project.live} target='_blank' rel='noreferrer'>
+											Live site
+										</a>
 									</div>
+									
 								</div>
 							</div>
 						</div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from '../assets/img/logo2023.png'
+import { FooterWave } from './Waves'
 import '../styles/footer.css'
 
 
@@ -41,6 +42,7 @@ function Footer() {
 
   return (
     <footer>
+      <FooterWave />
       <div className='footer-container'>
         <div className='footer-content'>
         <a href='#home' className='footer-logo-container' onClick={scrollToTop}>

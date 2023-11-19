@@ -200,7 +200,7 @@ const projects = [
 },
 {
     key: 4,
-    title: 'Sneakers',
+    title: '',
     logo: sneakersLogo,
     image: sneakersBackground,
     description: 'A Frontend Mentor e-commerce page built with React.',
