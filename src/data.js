@@ -31,6 +31,7 @@ import seasonItLogo from './assets/img/seasonit-logo.svg';
 import seasonItBackground from './assets/img/seasons-banner3.jpeg';
 import sneakersLogo from './assets/img/sneakersLogo.svg';
 import sneakersBackground from './assets/img/sneakersBackground.jpg';
+import countriesBackground from './assets/img/countriesBackground.png';
 
 const tech = [
 {
@@ -171,42 +172,51 @@ const journey = [
     // Projects data
 
 const projects = [
-{
-    key: 1,
-    title: 'Paprback',
-    logo: paperbackLogo,
-    image: bookShelf,
-    description: 'Connecting people in their local area for the purpose of exchanging and donating unwanted books.',
-    live: 'https://bcpaprback.netlify.app/',
-    code: 'https://github.com/benhensor/soc_byteclub_paprback'
-},
-{
-    key: 2,
-    title: 'Ben Hensor Sound',
-    logo: bhSoundLogo,
-    image: mixingDesk,
-    description: 'A recreation of my Sound Design website built in React with an Express mail server.',
-    live: 'https://benhensorsound.netlify.app/',
-    code: 'https://github.com/benhensor/benhensorsound'
-},
-{
-    key: 3,
-    title: 'Season It',
-    logo: seasonItLogo,
-    image: seasonItBackground,
-    description: 'Discover seasonal produce throughout the year in the UK.',
-    live: 'https://seasonit.netlify.app/',
-    code: 'https://github.com/benhensor/season-it'
-},
-{
-    key: 4,
-    title: '',
-    logo: sneakersLogo,
-    image: sneakersBackground,
-    description: 'A Frontend Mentor e-commerce page built with React.',
-    live: 'https://frontendmentor-sneakers.netlify.app/',
-    code: 'https://github.com/benhensor/e-commerce_page'
-}
+    {
+        key: 1,
+        title: 'Paprback',
+        logo: paperbackLogo,
+        image: bookShelf,
+        description: 'Connecting people in their local area for the purpose of exchanging and donating unwanted books.',
+        live: 'https://bcpaprback.netlify.app/',
+        code: 'https://github.com/benhensor/soc_byteclub_paprback'
+    },
+    {
+        key: 2,
+        title: 'Ben Hensor Sound',
+        logo: bhSoundLogo,
+        image: mixingDesk,
+        description: 'A recreation of my Sound Design website built in React with an Express mail server.',
+        live: 'https://benhensorsound.netlify.app/',
+        code: 'https://github.com/benhensor/benhensorsound'
+    },
+    {
+        key: 3,
+        title: 'Season It',
+        logo: seasonItLogo,
+        image: seasonItBackground,
+        description: 'Discover seasonal produce throughout the year in the UK.',
+        live: 'https://seasonit.netlify.app/',
+        code: 'https://github.com/benhensor/season-it'
+    },
+    {
+        key: 4,
+        title: '',
+        logo: sneakersLogo,
+        image: sneakersBackground,
+        description: 'A Frontend Mentor e-commerce page built with React.',
+        live: 'https://frontendmentor-sneakers.netlify.app/',
+        code: 'https://github.com/benhensor/e-commerce_page'
+    },
+    {
+        key: 5,
+        title: 'RESTful Countries API',
+        logo: null,
+        image: countriesBackground,
+        description: 'A Frontend Mentor country finder page built with React.',
+        live: 'https://fe-country-finder.netlify.app/',
+        code: 'https://github.com/benhensor/countries_api.git'
+    }
 ]
 
 
