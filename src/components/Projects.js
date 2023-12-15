@@ -15,32 +15,34 @@ export default function Projects() {
 					<h2>Feel free to check out some of my projects below</h2>
 				</div>
 
-				<div className='projects-grid'>
-					{projects.map((project) => (
-						<div className='project-card' key={project.key}>
-							<div className="project-card-contents">
-								<img className='project-image' src={project.image} alt='' />
-								<div className='project-content'>
-									<div className='project-title'>
-										<img className='project-logo' src={project.logo} alt='' />
-										<h1>{project.title}</h1>
-									</div>
-									<div className='project-info'>
-										<p>{project.description}</p>
-									</div>
-									<div className='project-icons'>
-										<a href={project.code} target='_blank' rel='noreferrer'>
-											<FaGithub className='project-icon-github' />
-										</a>
-										<a href={project.live} target='_blank' rel='noreferrer'>
-											Live site
-										</a>
-									</div>
-									
+				<div className="projects-display">
+					<div className='projects-grid'>
+						{projects.map((project) => (
+							<div className='project-card' key={project.key}>
+								<div className="project-image">
+									<img src={project.image} alt={project.title} />
 								</div>
+									<div className='project-content'>
+										<div className='project-title'>
+											<h2>{project.title}</h2>
+										</div>
+										<div className='project-info'>
+											<p>{project.description}</p>
+										</div>
+										<div className='project-icons'>
+											<a href={project.code} target='_blank' rel='noreferrer'>
+												<FaGithub className='project-icon-github' />
+											</a>
+											<a href={project.live} target='_blank' rel='noreferrer'>
+												Live site
+											</a>
+										</div>
+										
+									</div>
+								
 							</div>
-						</div>
-					))}
+						))}
+					</div>
 				</div>
 
 				<div className='temp-notice'>

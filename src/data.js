@@ -32,6 +32,7 @@ import seasonItBackground from './assets/img/seasons-banner3.jpeg';
 import sneakersLogo from './assets/img/sneakersLogo.svg';
 import sneakersBackground from './assets/img/sneakersBackground.jpg';
 import countriesBackground from './assets/img/countriesBackground.png';
+import audiophileBackground from './assets/img/image-header.jpg';
 
 const tech = [
 {
@@ -201,7 +202,7 @@ const projects = [
     },
     {
         key: 4,
-        title: '',
+        title: 'Sneakers',
         logo: sneakersLogo,
         image: sneakersBackground,
         description: 'A Frontend Mentor e-commerce page built with React.',
@@ -216,6 +217,15 @@ const projects = [
         description: 'A Frontend Mentor country finder page built with React.',
         live: 'https://fe-country-finder.netlify.app/',
         code: 'https://github.com/benhensor/countries_api.git'
+    },
+    {
+        key: 6,
+        title: 'Audiophile',
+        logo: null,
+        image: audiophileBackground,
+        description: 'A Frontend Mentor e-commerce site built with React.',
+        live: 'https://fm-audiophile.netlify.app/',
+        code: 'https://github.com/benhensor/audiophile.git'
     }
 ]
 
