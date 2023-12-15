@@ -211,15 +211,13 @@
 
 @media screen and (max-width: 1255px) {
 	.projects-grid {
-		grid-template-columns: repeat(2, auto);
-		justify-content: center;
+		gap: 15rem 5rem;
 	}
 }
 
 @media screen and (max-width: 800px) {
 	.projects-grid {
-		grid-template-columns: repeat(1, auto);
-		justify-content: center;
+		gap: 15rem 5rem;
 	}
 }
 
@@ -237,8 +235,7 @@
 	}
 
 	.projects-grid {
-		gap: 2rem;
-		margin-bottom: 10rem;
+		
 	}
 
 	.temp-notice h1 {
@@ -248,8 +245,7 @@
 
 @media screen and (max-width: 599px) {
 	.projects-grid {
-		grid-template-columns: repeat(1, auto);
-		gap: 4rem;
+		margin-bottom: 10rem;
 	}
 
 	.temp-notice h1 {
