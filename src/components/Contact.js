@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useWindowSize } from '../hooks/useWindowSize'
 import catFace from '../assets/img/catFaceBanner.png'
 import leftEye from '../assets/img/leftEye.png'
 import rightEye from '../assets/img/rightEye.png'
@@ -9,28 +10,35 @@ import '../styles/contact.css'
 
 export default function Contact () {
 
-    const formInitialDetails = {
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-    }
-
-    const [formDetails, setFormDetails] = useState(formInitialDetails)
+    const [formDetails, setFormDetails] = useState({
+                                                name: '',
+                                                email: '',
+                                                phone: '',
+                                                message: ''
+                                            })
     const [buttonText, setButtonText] = useState('SEND')
     const [status, setStatus] = useState({})
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const [isVisible, setIsVisible] = useState(false)
 
     const catFaceContainerRef = useRef(null)
+    const screenWidth = useWindowSize()
 
 
-    const onFormUpdate = (category, value) => {
+    const handleFormUpdate = (e) => {
+        const { name, value } = e.target
         setFormDetails({
-        ...formDetails,
-        [category]: value
+            ...formDetails,
+            [name]: value
         })
     }
+
+
+    // const onFormUpdate = (category, value) => {
+    //     setFormDetails({
+    //     ...formDetails,
+    //     [category]: value
+    //     })
+    // }
 
     useEffect(() => {
         // Create an Intersection Observer instance
@@ -62,52 +70,44 @@ export default function Contact () {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setButtonText('Sending...')
-        let response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            },
-            body: JSON.stringify(formDetails)
-        })
-        setButtonText('SEND')
-        let result = await response.json()
-        setFormDetails(formInitialDetails)
-        if (result.code === 200) {
-            console.log(formDetails)
-            setStatus({ success: true, message: 'Message sent successfully!'})
-            setTimeout(() => {
-            setStatus({})
-            }, 2000)
-        } else {
-            setStatus({ success: false, message: 'Something went wrong, please try again later.'})
-            setTimeout(() => {
-            setStatus({})
-            }, 2000)
-        }
+        try {
+            setButtonText('Sending...')
+            const response = await fetch('http://localhost:5000/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                },
+                body: JSON.stringify(formDetails)
+            })
+            const result = await response.json()
+            setFormDetails({
+                name: '',
+                email: '',
+                phone: '',
+                message: ''
+            })
+            setStatus(result)
+        } catch (error) {
+            console.error('Submisson error:', error)
+            setStatus({ success: false, message: 'Something went wrong!' })
+        } finally {
+            setButtonText('SEND')
+        }            
     }
 
 
 
     useEffect(() => {
-        const onResize = () => {
-        setScreenWidth(window.innerWidth)
+        const shouldAddEvent = screenWidth >= 1024 && isVisible
+        if (shouldAddEvent) {
+            window.addEventListener('mousemove', handleMouseMove)
         }
-        window.addEventListener('resize', onResize)
-        return () => window.removeEventListener('resize', onResize)
-    }, [])
-
-
-    useEffect(() => {
-        if (screenWidth >= 1024) {
-        window.addEventListener('mousemove', handleMouseMove)
-        } else {
-        window.removeEventListener('mousemove', handleMouseMove)
+        return () => {
+            if (shouldAddEvent) {
+                window.removeEventListener('mousemove', handleMouseMove)
+            }
         }
-
-
-        return () => window.removeEventListener('mousemove', handleMouseMove)
-    }, [screenWidth])
+    }, [screenWidth, isVisible])
 
 
 
@@ -152,6 +152,12 @@ export default function Contact () {
         <section id="connect">
             <div id="contact">
                 <div className="contact-container">
+
+                <div className="contact-message">
+                            <p>My goal is to work with great people and do great things!</p>
+                            <p>I am passionate about Software Development and tech in general. I'm currently looking for Junior Developer roles within the industry, with a focus on Front End Development.</p>
+                            <p>If you have any questions or anything at all then please send me a message and 'll get back to you as soon as possible. Thanks for stopping by!</p>
+                        </div>
                     <div className="cat-face-container" ref={catFaceContainerRef}>
                         <div><img className="cat-face" src={catFace} alt=""/></div>
                             <div className="cat-eyes">
@@ -165,13 +171,6 @@ export default function Contact () {
                         
 
                         <div className="contact-card">
-                        
-
-                        <div className="contact-message">
-                            <p>My goal is to work with great people and do great things!</p>
-                            <p>I am passionate about Software Development and tech in general. I'm currently looking for Junior Developer roles within the industry, with a focus on Front End Development.</p>
-                            <p>If you have any questions or anything at all then please send me a message and 'll get back to you as soon as possible. Thanks for stopping by!</p>
-                        </div>
 
                         <h1>
                         <span><img className="contact-icon" src={mailIcon} alt="" /></span>
@@ -180,13 +179,13 @@ export default function Contact () {
                         
                         <form className="contact-form" onSubmit={handleSubmit} action="">
                             <label htmlFor="name">Your Name (Required)</label>
-                            <input type="text" name="name" id="name" required value={formDetails.name} onChange={(e) => onFormUpdate('name', e.target.value)} />
+                            <input type="text" name="name" id="name" required value={formDetails.name} onChange={handleFormUpdate} />
                             <label htmlFor="emailFrom">Your Email (Required)</label>
-                            <input type="email" name="email_from" id="emailFrom" required value={formDetails.email} onChange={(e) => onFormUpdate('email', e.target.value)} />
+                            <input type="email" name="email" id="emailFrom" required value={formDetails.email} onChange={handleFormUpdate} />
                             <label htmlFor="phone">Phone Number:</label>
-                            <input type="tel" value={formDetails.phone} onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                            <input type="tel" name="phone" value={formDetails.phone} onChange={handleFormUpdate} />
                             <label htmlFor="message">Your Message (Required)</label>
-                            <textarea name="message" id="message" cols="30" rows="10" required value={formDetails.message} onChange={(e) => onFormUpdate('message', e.target.value)} />
+                            <textarea name="message" id="message" cols="30" rows="10" required value={formDetails.message} onChange={handleFormUpdate} />
                             <button className="contact-submit-button" type="submit"><span>{buttonText}</span></button>
                             {
                             status.message &&

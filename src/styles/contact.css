@@ -1,7 +1,5 @@
 #connect {
   background: var(--background-color);
-  margin-top: 10rem;
-
 }
 
 #contact {
@@ -177,6 +175,7 @@
 }
 
 .contact-submit-button:hover {
+  color: var(--text-color-dark);
   background-color: var(--button-hover);
 }
 
@@ -285,10 +284,6 @@
   }
 
 }
-
-
-
-
 
 @media screen and (max-width: 599px) {
 
