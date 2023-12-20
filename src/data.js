@@ -166,7 +166,7 @@ const journey = [
 },
 {
     key: 7,
-    text: "Thank you for visiting my portfolio, please check out some of my projects below. I will be adding more as they become completed. If you would like to connect with me, check out my GitHub page or get in touch then please follow the links!"
+    text: "Thank you for visiting my portfolio, please check out some of my projects below. I am actively seeking new opportunities, so please feel free to get in touch!"
 }
 ]
 
