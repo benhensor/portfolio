@@ -33,6 +33,7 @@ import sneakersLogo from './assets/img/sneakersLogo.svg';
 import sneakersBackground from './assets/img/sneakersBackground.jpg';
 import countriesBackground from './assets/img/countriesBackground.png';
 import audiophileBackground from './assets/img/image-header.jpg';
+import designoBackground from './assets/img/designoBackground.jpg';
 
 const tech = [
 {
@@ -226,6 +227,15 @@ const projects = [
         description: 'A Frontend Mentor e-commerce site built with React.',
         live: 'https://fm-audiophile.netlify.app/',
         code: 'https://github.com/benhensor/audiophile.git'
+    },
+    {
+        key: 7,
+        title: 'Designo',
+        logo: null,
+        image: designoBackground,
+        description: 'A Frontend Mentor multi-page site built with React and Styled Components.',
+        live: 'https://bhfm-designo.netlify.app/',
+        code: 'https://github.com/benhensor'
     }
 ]
 
