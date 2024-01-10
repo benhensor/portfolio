@@ -141,6 +141,10 @@
 	color: var(--text-color-medium);
 }
 
+.project-card:hover .project-info {
+	color: var(--text-color-light);
+}
+
 .project-icons {
 	display: flex;
 	justify-content: space-evenly;
