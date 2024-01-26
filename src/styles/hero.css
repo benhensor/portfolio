@@ -172,11 +172,11 @@
 .circleVector2, 
 .circleVector3,
 .circleVector4 {
-  position: absolute;
-  top: 25rem;
-  left: 25rem;
-  mix-blend-mode:screen;
-  opacity: 0.5;
+    position: absolute;
+    top: 25rem;
+    left: 25rem;
+    mix-blend-mode:screen;
+    opacity: 0.5;
 }
 
 .circleVector1 {
@@ -187,9 +187,9 @@
 }
 
 .circleVector2 {
-  animation: rotateB 40s linear infinite;
-  scale: 180%;
-  filter: blur(13px);
+    animation: rotateB 40s linear infinite;
+    scale: 180%;
+    filter: blur(13px);
 }
 
 .circleVector3 {

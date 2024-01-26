@@ -34,6 +34,7 @@ import sneakersBackground from './assets/img/sneakersBackground.jpg';
 import countriesBackground from './assets/img/countriesBackground.png';
 import audiophileBackground from './assets/img/image-header.jpg';
 import designoBackground from './assets/img/designoBackground.jpg';
+import weatherAppBackground from './assets/img/weather-app.png';
 
 const tech = [
 {
@@ -235,7 +236,16 @@ const projects = [
         image: designoBackground,
         description: 'A Frontend Mentor multi-page site built with React and Styled Components.',
         live: 'https://bhfm-designo.netlify.app/',
-        code: 'https://github.com/benhensor'
+        code: 'https://github.com/benhensor/designo.git'
+    },
+    {
+        key: 8,
+        title: 'Weather App',
+        logo: null,
+        image: weatherAppBackground,
+        description: 'A simple React weather app.',
+        live: 'https://weather-a0yriosp6-ben-s-projects-3a069c6e.vercel.app/',
+        code: 'https://github.com/benhensor/weather-app.git'
     }
 ]
 
