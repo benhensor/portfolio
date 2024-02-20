@@ -198,7 +198,7 @@ const projects = [
         title: 'SeasonIt 2.0',
         logo: seasonItLogo,
         image: seasonItBackground,
-        description: 'Discover seasonal produce throughout the year in the UK.<br> Full Stack MERN application.',
+        description: 'Discover seasonal produce throughout the year in the UK. Full Stack MERN application.',
         live: 'https://seasonit-v2.vercel.app/',
         code: 'https://github.com/benhensor/seasonit_v2'
     },
