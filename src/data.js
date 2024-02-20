@@ -27,8 +27,8 @@ import paperbackLogo from './assets/img/paprback_logo_books.svg';
 import bookShelf from './assets/img/bookshelfHero.png';
 import bhSoundLogo from './assets/img/bhsoundLogo.svg';
 import mixingDesk from './assets/img/mixingDesk.jpeg';
-import seasonItLogo from './assets/img/seasonit-logo.svg';
-import seasonItBackground from './assets/img/seasons-banner3.jpeg';
+import seasonItLogo from './assets/img/seasonit2Logo.svg';
+import seasonItBackground from './assets/img/vegetablePattern.png';
 import sneakersLogo from './assets/img/sneakersLogo.svg';
 import sneakersBackground from './assets/img/sneakersBackground.jpg';
 import countriesBackground from './assets/img/countriesBackground.png';
@@ -195,12 +195,12 @@ const projects = [
     },
     {
         key: 3,
-        title: 'Season It',
+        title: 'SeasonIt 2.0',
         logo: seasonItLogo,
         image: seasonItBackground,
-        description: 'Discover seasonal produce throughout the year in the UK.',
-        live: 'https://seasonit.netlify.app/',
-        code: 'https://github.com/benhensor/season-it'
+        description: 'Discover seasonal produce throughout the year in the UK.<br> Full Stack MERN application.',
+        live: 'https://seasonit-v2.vercel.app/',
+        code: 'https://github.com/benhensor/seasonit_v2'
     },
     {
         key: 4,
