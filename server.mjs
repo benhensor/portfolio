@@ -19,6 +19,7 @@ const PORT = process.env.PORT || 5000
 // Server used to send emails
 const app = express()
 app.set('trust proxy', 1);
+app.use(json())
 app.use(helmet())
 app.use(cors())
 
@@ -28,8 +29,7 @@ const apiLimiter = rateLimit({
     max: 100 // 100 requests per windowMs
 })
 
-app.use('/api/', apiLimiter)
-app.use(json())
+app.use('/api', apiLimiter)
 app.use('/', router)
 
 const contactEmail = createTransport({

@@ -88,7 +88,7 @@ export default function Contact () {
             })
             setStatus(result)
         } catch (error) {
-            console.error('Submisson error:', error)
+            console.error('Error:', error)
             setStatus({ success: false, message: 'Something went wrong!' })
         } finally {
             setButtonText('SEND')
