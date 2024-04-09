@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Skills from './components/Skills'
@@ -9,11 +9,7 @@ import Footer from './components/Footer'
 import './styles/app.css'
 
 function App() {
-	useEffect(() => {
-		fetch('/api')
-			.then((res) => res.json())
-			.then((data) => console.log(data))
-	}, [])
+
 
 	return (
 		<main className='app'>
