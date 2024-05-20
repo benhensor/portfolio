@@ -35,6 +35,7 @@ import countriesBackground from './assets/img/countriesBackground.png';
 import audiophileBackground from './assets/img/image-header.jpg';
 import designoBackground from './assets/img/designoBackground.jpg';
 import weatherAppBackground from './assets/img/weather-app.png';
+import jamBackground from './assets/img/jamBackground.webp'
 
 const tech = [
 {
@@ -246,6 +247,15 @@ const projects = [
         description: 'A simple React weather app.',
         live: 'https://weather-a0yriosp6-ben-s-projects-3a069c6e.vercel.app/',
         code: 'https://github.com/benhensor/weather-app.git'
+    },
+    {
+        key: 9,
+        title: 'Jam',
+        logo: null,
+        image: jamBackground,
+        description: 'A Playlist Generator powered by the Spotify API.',
+        live: 'https://jam-client.vercel.app/',
+        code: 'https://github.com/benhensor/codecademy-react/tree/main/spotify-playlist-app'
     }
 ]
 

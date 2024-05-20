@@ -6,8 +6,6 @@ import rightEye from '../assets/img/rightEye.png'
 import mailIcon from '../assets/icons/mailPlane.svg'
 import '../styles/contact.css'
 
-
-
 export default function Contact () {
 
     const [formDetails, setFormDetails] = useState({
