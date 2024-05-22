@@ -254,7 +254,7 @@ const projects = [
         logo: null,
         image: jamBackground,
         description: 'A Playlist Generator powered by the Spotify API.',
-        live: 'https://jam-client-nx5vlm9o0-ben-s-projects-3a069c6e.vercel.app/',
+        live: 'https://jam-client.vercel.app/',
         code: 'https://github.com/benhensor/codecademy-react/tree/main/spotify-playlist-app'
     }
 ]
