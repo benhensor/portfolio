@@ -36,6 +36,7 @@ import audiophileBackground from './assets/img/image-header.jpg';
 import designoBackground from './assets/img/designoBackground.jpg';
 import weatherAppBackground from './assets/img/weather-app.png';
 import jamBackground from './assets/img/jamBackground.webp'
+import flashcardsBackground from './assets/img/flashcards1.webp'
 
 const tech = [
 {
@@ -256,6 +257,15 @@ const projects = [
         description: 'A Playlist Generator powered by the Spotify API.',
         live: 'https://jam-client.vercel.app/',
         code: 'https://github.com/benhensor/jam'
+    },
+    {
+        key: 10,
+        title: 'Quiz Generator',
+        logo: null,
+        image: flashcardsBackground,
+        description: 'A Flashcards app for creating quizzes using React and Redux Toolkit.',
+        live: 'https://codecademy-react.vercel.app/',
+        code: 'https://github.com/benhensor/codecademy-react/tree/main/flashcards'
     }
 ]
 
