@@ -37,6 +37,7 @@ import designoBackground from './assets/img/designoBackground.jpg';
 import weatherAppBackground from './assets/img/weather-app.png';
 import jamBackground from './assets/img/jamBackground.webp'
 import flashcardsBackground from './assets/img/flashcards1.webp'
+import redditBackground from './assets/img/reddit-logo.svg'
 
 const tech = [
 {
@@ -266,7 +267,17 @@ const projects = [
         description: 'A Flashcards app for creating quizzes using React and Redux Toolkit.',
         live: 'https://bh-flashcards-app.vercel.app/',
         code: 'https://github.com/benhensor/codecademy-react/tree/main/flashcards'
-    }
+    },
+    {
+        key: 11,
+        title: 'Reddit Clone',
+        logo: null,
+        image: redditBackground,
+        description: 'A Reddit clone built with React, Redux Toolkit, and the Reddit API.',
+        live: 'https://reddit-api-bh.vercel.app/',
+        code: 'https://github.com/benhensor/reddit-api'
+    },
+
 ]
 
 
