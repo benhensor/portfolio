@@ -10,7 +10,9 @@
 	--accent-color: #de9e36;
 	--highlight-color: #fafbdf;
 	--aux-highlight-color: #d8fdfe;
-	--wave-highlight-color: #0eebe7;
+	--wave-highlight-color: #00c5c5;
+	--orange: #de9e36;
+	--blue: #00c5c5;
 	--background-color: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
 	--card-background-color: linear-gradient(to bottom right, #2f3636, #171e1e);
 	--background-static: #141717;
@@ -54,6 +56,8 @@
 
 	--margin-body-desktop: 0 10%;
 	--margin-body-mobile: 2rem 10%;
+	--m-desktop: 0 3rem;
+	--m-mobile: 0 2rem;
 }
 
 /*========================== BASE =======================*/
