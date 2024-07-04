@@ -1,9 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { useWindowSize } from '../hooks/useWindowSize'
+import React, { useState } from 'react'
 import Cat from './cat/Cat'
-import catFace from '../assets/img/catFaceBanner.webp'
-import leftEye from '../assets/img/leftEye.webp'
-import rightEye from '../assets/img/rightEye.webp'
 import mailIcon from '../assets/icons/mailPlane.svg'
 import '../styles/contact.css'
 
@@ -182,18 +178,4 @@ export default function Contact() {
 			</div>
 		</section>
 	)
-}
-
-// Utility function for throttling
-function throttle(func, limit) {
-	let inThrottle
-	return function () {
-		const args = arguments
-		const context = this
-		if (!inThrottle) {
-			func.apply(context, args)
-			inThrottle = true
-			setTimeout(() => (inThrottle = false), limit)
-		}
-	}
 }

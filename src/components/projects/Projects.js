@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { useInView } from 'framer-motion'
+// import { useInView } from 'framer-motion'
 import Project from './Project'
 import { projects } from '../../data'
 import Wave from '../Wave'
@@ -8,7 +8,7 @@ import '../../styles/projects.css'
 
 export default function Projects() {
 	const projectsRef = useRef(null)
-	const isInView = useInView(projectsRef, { amount: 0.5 })
+	// const isInView = useInView(projectsRef, { amount: 0.5 })
 
 	return (
 		<ProjectsSection ref={projectsRef} id="projects">
