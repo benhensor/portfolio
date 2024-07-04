@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 export const HeroWave = () => (
 	<div className="hero-wave">
@@ -114,3 +115,34 @@ export const FooterWave = () => (
 		</svg>
 	</div>
 );
+
+const WaveContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+`;
+
+const WaveSvg = styled.svg`
+  position: relative;
+  display: block;
+  width: calc(125% + 1.3px);
+  height: 120px;
+  @media only screen and (max-width: 768px) {
+		height: 50px;
+	}
+`;
+
+const StrokePath = styled.path`
+  stroke: var(--wave-highlight-color);
+  stroke-width: 3px;
+  @media only screen and (max-width: 768px) {
+		stroke-width: 5px;
+	}
+`;
+
+const ShapePath = styled.path`
+  fill: transparent;
+`;

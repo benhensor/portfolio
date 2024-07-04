@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../assets/img/logo2023.png'
+import logo from '../assets/img/logo2023.webp'
 import { FooterWave } from './Waves'
 import '../styles/footer.css'
 
