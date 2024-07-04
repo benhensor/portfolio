@@ -78,6 +78,7 @@ html {
 	scroll-behavior: smooth;
 	scroll-padding-top: 7.5rem;
 	user-select: none;
+	overflow-x: hidden;
 }
 
 body {
@@ -85,6 +86,14 @@ body {
 	background-color: #141717 !important;
 	color: var(--text-color-light) !important;
 	font-family: "Centra", sans-serif !important;
+	overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 h1,

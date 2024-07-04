@@ -64,7 +64,7 @@ export default function Header() {
 			}
 			setIsOpen(false)
 		},
-		[activeLink]
+		[activeLink, setActiveLink]
 	)
 
 	const scrollToTop = useCallback(() => {

@@ -86,10 +86,9 @@ export const LogoContainer = styled.div`
 export const HeaderName = styled.h1`
 	font-size: 1.5em;
 	font-weight: 100;
-	margin-left: 0.5em;
+	margin-left: 0.3em;
 	z-index: 100;
 	color: #ffffff;
-	opacity: ${({ $scrolled }) => ($scrolled ? 1 : 0.2)};
 	transition: all 0.5s ease-in-out;
 	@media screen and (max-width: 768px) {
 		font-size: 1.2em;

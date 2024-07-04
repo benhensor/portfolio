@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { aboutInfo } from '../data'
 import profile from '../assets/img/profile.webp'
@@ -14,20 +14,20 @@ import {
  import Wave from './Wave'
 
 export default function About() {
+
 	const contentRef = useRef(null)
 	const isInView = useInView(contentRef, { amount: 0.5 })
 	const controls = useAnimation()
 
 	const { heading, subHeading, sentences } = aboutInfo
 
-
 	useEffect(() => {
-		if (isInView) {
-			controls.start('visible')
-		} else {
-			controls.start('hidden')
-		}
-	}, [isInView, controls])
+    if (isInView) {
+      controls.start('visible')
+    } else {
+      controls.start('hidden')
+    }
+  }, [isInView, controls])
 
 	const scrollToContact = () => {
 		document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
@@ -172,8 +172,8 @@ export default function About() {
 			</AboutContent>
       <Wave 
         transform="none"
-        width="calc(125% + 3px)"
-        height="120px"
+        width="calc(150% + 3px)"
+        height="70px"
       />
 		</AboutContainer>
 	)

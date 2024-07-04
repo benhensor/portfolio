@@ -6,10 +6,9 @@ import HeroPhrases from './HeroPhrases'
 import HeroArrow from './HeroArrow'
 import Wave from '../Wave'
 
-
 export default function Hero() {
 	const heroRef = useRef(null)
-    const [scrolled, setScrolled] = useState(false)
+	const [scrolled, setScrolled] = useState(false)
 
 	useEffect(() => {
 		const onScroll = () => {
@@ -24,42 +23,30 @@ export default function Hero() {
 	}, [])
 
 	return (
-		<HeroSection
-			id="home"
-			ref={heroRef}
-			$scrolled={scrolled}
-		>
+		<HeroSection id="home" ref={heroRef} $scrolled={scrolled}>
 			<HeroContent>
 				<HeroAnimation />
-				{/* <HeroGradientAnimation /> */}
-				<HeroTitleContainer $scrolled={scrolled}>
-					<HeroTitleAnimation title='Ben Hensor'/>
+				<HeroTitleContainer>
+					<HeroTitleAnimation title="Ben Hensor" />
 					<HeroPhrases />
 					<HeroArrow />
 				</HeroTitleContainer>
-				
 			</HeroContent>
-            <Wave 
-            transform="none"
-            width="calc(175% + 3px)"
-            height="153px"
-        />
+			<Wave transform="none" width="calc(175% + 3px)" height="100px" />
 		</HeroSection>
 	)
 }
 
 const HeroSection = styled.div`
-    position: relative;
-    top: 6rem;
+	position: relative;
 	width: 100vw;
-	height: 200rem;
+	height: 180rem;
 	min-height: 0;
 	background-color: #000;
 	transition: all 0.5s ease-in-out;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* overflow: hidden; */
 	z-index: 10;
 `
 
@@ -70,7 +57,6 @@ const HeroContent = styled.div`
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	
 `
 
 const HeroTitleContainer = styled.div`
@@ -82,6 +68,6 @@ const HeroTitleContainer = styled.div`
 	align-items: center;
 	gap: 1em;
 	mix-blend-mode: screen;
-	opacity: ${({ $scrolled }) => $scrolled ? 0 : 0.75};
+	opacity: ${({ $scrolled }) => ($scrolled ? 0 : 0.75)};
 	transition: all 0.1s ease-in-out;
 `

@@ -14,6 +14,8 @@ import {
 import Wave from '../Wave'
 
 export default function Skills() {
+
+	const contentRef = useRef(null)
 	const techRef = useRef(null)
 	const isInView = useInView(techRef, { amount: 0.5 })
 	const controls = useAnimation()
@@ -73,7 +75,7 @@ export default function Skills() {
 	}
 
 	return (
-		<TechStack ref={techRef} id="tech">
+		<TechStack ref={contentRef} id="tech">
 			<Content
 				ref={techRef}
 				initial="hidden"
@@ -100,8 +102,8 @@ export default function Skills() {
 			</Content>
 			<Wave 
 				transform="rotateY(180deg)"
-				width="calc(125% + 3px)"
-				height="120px"
+				width="calc(205% + 3px)"
+				height="80px"
 			/>
 		</TechStack>
 	)

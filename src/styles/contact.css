@@ -114,6 +114,12 @@
   width: 50rem;
 }
 
+#contact .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
 #contact form label {
   font-size: var(--text-r);
   color: var(--text-color-medium);
