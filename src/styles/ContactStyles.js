@@ -85,6 +85,9 @@ export const ContactHeader = styled.h1`
     img {
       height: 3rem;
     }
+    .ow {
+      display: none;
+    }
   }
 `
 
