@@ -136,6 +136,7 @@ const Content = styled(motion.div)`
 	margin: 10rem 0 30rem 0;
 	@media screen and (max-width: 768px) {
 		flex-direction: column;
+		margin: 7rem 0 20rem 0;
 	}
 `
 

@@ -1,64 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import { useWindowSize } from '../../hooks/useWindowSize'
-import styled from 'styled-components'
+import {
+	CatSection,
+	CatContent,
+	CatHead,
+	CatFace,
+	CatEyes,
+	CatEye,
+} from '../../styles/CatStyles'
 import catFace from '../../assets/img/catFaceBanner.webp'
 import leftEye from '../../assets/img/leftEye.webp'
 import rightEye from '../../assets/img/rightEye.webp'
 
-const CatSection = styled(motion.section)`
-	width: 100%;
-	height: auto;
-`
-
-const CatContent = styled.div`
-	width: 100%;
-	max-width: 1000px;
-	height: 100%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-`
-
-const CatHead = styled.div`
-	position: relative;
-	mix-blend-mode: screen;
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	min-height: 43em;
-	overflow: hidden;
-`
-
-const CatFace = styled.img`
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	min-width: 100rem;
-	max-width: 100rem;
-	z-index: 1;
-`
-
-const CatEyes = styled.div`
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-	width: 60rem;
-	z-index: 0;
-`
-
-const CatEye = styled.img`
-	width: 30rem;
-	height: 30rem;
-	z-index: 0;
-`
-
 export default function Cat() {
 	const catRef = useRef(null)
-	const { scrollYProgress } = useScroll({ domTarget: catRef })
 	const screenWidth = useWindowSize()
 
 	const [isVisible, setIsVisible] = useState(false)
@@ -142,14 +97,9 @@ export default function Cat() {
 		rightEye.style.transform = `translate(${rightEyeMoveX}px, ${rightEyeMoveY}px)`
 	}
 
-	const catYPosition = useTransform(
-		scrollYProgress,
-		[0.85, 0.9],
-		['-100em', '10em']
-	)
 
 	return (
-			<CatSection ref={catRef} style={{ bottom: catYPosition }}>
+			<CatSection ref={catRef}>
 				<CatContent>
 					<CatHead>
 						<div>

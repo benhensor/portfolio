@@ -26,6 +26,7 @@ export const AboutContent = styled(motion.div)`
 	margin: 20rem 0 30rem 0;
 	@media screen and (max-width: 768px) {
 		flex-direction: column-reverse;
+		margin: 10rem 0 20rem 0;
 	}
 `
 

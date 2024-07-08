@@ -11,7 +11,7 @@ import './styles/app.css'
 
 export default function App() {
 	return (
-		<Main className="app">
+		<Main>
 			<Header />
 			<Content>
 				<Hero />

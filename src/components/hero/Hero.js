@@ -23,7 +23,7 @@ export default function Hero() {
 	}, [])
 
 	return (
-		<HeroSection id="home" ref={heroRef} $scrolled={scrolled}>
+		<HeroSection ref={heroRef} $scrolled={scrolled}>
 			<HeroContent>
 				<HeroAnimation />
 				<HeroTitleContainer>
@@ -48,6 +48,9 @@ const HeroSection = styled.div`
 	align-items: center;
 	justify-content: center;
 	z-index: 10;
+	@media only screen and (max-width: 768px) {
+		height: 100rem;
+	}
 `
 
 const HeroContent = styled.div`
