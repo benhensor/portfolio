@@ -53,7 +53,7 @@ export default function Header() {
 			const header = document.querySelector('header')
 			if (section && header) {
 				const headerHeight = header.offsetHeight
-				const targetPosition = section.offsetTop - headerHeight
+				const targetPosition = value === 'home' ? 0 : section.offsetTop - headerHeight
 
 				setTimeout(() => {
 					window.scrollTo({
@@ -73,7 +73,7 @@ export default function Header() {
 
 	return (
 		<>
-			<StyledHeader id="home" ref={headerRef} $scrolled={scrolled}>
+			<StyledHeader ref={headerRef} $scrolled={scrolled}>
 				<HeaderContent>
 					<Navbar>
 						<LogoContainer>

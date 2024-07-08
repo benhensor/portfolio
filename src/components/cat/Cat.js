@@ -45,7 +45,7 @@ export default function Cat() {
 	}, [isVisible])
 
 	useEffect(() => {
-		const shouldAddEvent = screenWidth >= 1024 && isVisible
+		const shouldAddEvent = screenWidth >= 1000 && isVisible
 		if (shouldAddEvent) {
 			window.addEventListener('mousemove', handleMouseMove)
 		}
@@ -79,10 +79,10 @@ export default function Cat() {
 		// Calculate the distance between the mouse and the eye centers
 		const leftEyeDeltaX = mouseX - leftEyeCenterX - 1000
 		const leftEyeDeltaY = mouseY - leftEyeCenterY * 2
-		const rightEyeDeltaX = mouseX - rightEyeCenterX - 50
+		const rightEyeDeltaX = mouseX - rightEyeCenterX - 100
 		const rightEyeDeltaY = mouseY - rightEyeCenterY * 2
 
-		const maxEyeMove = 35 // Adjust this value to control the eye movement range
+		const maxEyeMove = 30 // Adjust this value to control the eye movement range
 
 		// Calculate the eye movement within the specific range
 		const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * maxEyeMove

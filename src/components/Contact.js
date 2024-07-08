@@ -1,66 +1,114 @@
-import React, { useState } from 'react'
-import {
-	ContactSection,
-	ContactContainer,
-	ContactMessage,
-	ContactCard,
-	ContactHeader,
-	ContactForm,
-	FormGroup,
-	StatusMessage,
-} from '../styles/ContactStyles'
+import React, { useRef, useState } from 'react'
+import { useInView } from 'framer-motion'
+import MailIcon from '../assets/icons/mailPlane.svg'
+import { FcCheckmark, FcCancel } from "react-icons/fc"
 import Cat from './cat/Cat'
-import mailIcon from '../assets/icons/mailPlane.svg'
 import Wave from './Wave'
+import {
+  ContactSection,
+  ContactContainer,
+	ContactMessage,
+  ContactHeader,
+  ContactIcon,
+  ContactForm,
+  ContactLabel,
+  ContactInput,
+  ContactTextarea,
+  ContactButton,
+  ContactStatus,
+  InputWrapper,
+  ValidIcon,
+  InvalidIcon,
+  ErrorMessage
+} from '../styles/ContactStyles'
 
 export default function Contact() {
-	const [formDetails, setFormDetails] = useState({
-		name: '',
-		email: '',
-		phone: '',
-		message: '',
-	})
-	const [buttonText, setButtonText] = useState('SEND')
-	const [status, setStatus] = useState({})
 
-	const handleFormUpdate = (e) => {
-		const { name, value } = e.target
-		setFormDetails({
-			...formDetails,
-			[name]: value,
-		})
-	}
+  const contactRef = useRef(null)
+  const isInView = useInView(contactRef, { amount: 0.5 })
 
-	const handleSubmit = async (e) => {
-		e.preventDefault()
-		try {
-			setButtonText('Sending...')
-			const response = await fetch('http://localhost:5000/api/contact', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json;charset=utf-8',
-				},
-				body: JSON.stringify(formDetails),
-			})
-			const result = await response.json()
-			setFormDetails({
-				name: '',
-				email: '',
-				phone: '',
-				message: '',
-			})
-			setStatus(result)
-		} catch (error) {
-			console.error('Error:', error)
-			setStatus({ success: false, message: 'Something went wrong!' })
-		} finally {
-			setButtonText('SEND')
-		}
-	}
+  const [formDetails, setFormDetails] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [buttonText, setButtonText] = useState('SEND')
+  const [formErrors, setFormErrors] = useState({})
+  const [status, setStatus] = useState({ success: null, message: '' })
 
-	return (
-		<ContactSection id='contact'>
-			<ContactContainer>
+  const updateForm = (e) => {
+    const { name, value } = e.target
+    setFormDetails({
+      ...formDetails,
+      [name]: value
+    })
+  }
+
+  const submitEmail = async (e) => {
+    e.preventDefault()
+    try {
+      const errors = validate(formDetails)
+      if (Object.keys(errors).length) {
+        setFormErrors(errors)
+        return
+      }
+      setFormErrors({})
+      setButtonText('SENDING...')
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(formDetails) 
+      })
+      const result = await response.json()
+      setFormDetails({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+      setStatus(result)
+    } catch (error) {
+      console.error('Submission error:', error)
+      setStatus({ success: false, message: 'Submission failed. Please try again.' })
+    } finally {
+      setButtonText('SEND')
+    }
+  }
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.name) {
+      errors.name = "Required";
+    } else if (values.name.length > 15) {
+      errors.name = "Must be 15 characters or less";
+    }
+
+    if (!values.email) {
+      errors.email = "Required";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = "Invalid email address";
+    }
+
+    if (!values.phone) {
+      errors.phone = "Required";
+    } else if (!/^\d{9,16}/g.test(values.phone)) {
+      errors.phone = "Invalid phone number";
+    }
+
+    return errors;
+  };
+
+  const isValid = (field) => !formErrors[field] && formDetails[field]
+
+  return (
+		<ContactSection id="contact">
+			<ContactContainer ref={contactRef}>
 				<ContactMessage>
 					<p>
 						My goal is to work with great people and do great
@@ -79,117 +127,82 @@ export default function Contact() {
 					</p>
 				</ContactMessage>
 				<Cat />
+				<ContactHeader><ContactIcon src={MailIcon} alt='Mail Icon' />Contact Me<span className='ow'>ow</span></ContactHeader>
+				
+				<ContactForm onSubmit={submitEmail}>
+					<ContactLabel htmlFor='name'>Name</ContactLabel>
+					<InputWrapper>
+						<ContactInput
+							type='text'
+							id='name'
+							name='name'
+							value={formDetails.name}
+							onChange={updateForm}
+							placeholder='Name'
+							aria-describedby='name-error'
+							required
+							style={{border: formErrors.name ? '1px solid var(--error)' : '1px solid var(--blue)'}}
+						/>
+						{formErrors.name ? <InvalidIcon aria-hidden='true'><FcCancel /></InvalidIcon> : isValid('name') && <ValidIcon aria-hidden='true'><FcCheckmark /></ValidIcon>}
+					</InputWrapper>
+					{formErrors.name && <ErrorMessage id='name-error' role="alert" aria-live="assertive">{formErrors.name}</ErrorMessage>}
 
-				<ContactCard>
-					<ContactHeader>
-						<span>
-							<img
-								className='contact-icon'
-								src={mailIcon}
-								alt=''
-							/>
-						</span>
-						<span>
-							Contact Me<span className='ow'>ow</span>
-						</span>
-					</ContactHeader>
+					<ContactLabel htmlFor='email'>Email</ContactLabel>
+					<InputWrapper>
+						<ContactInput
+							type='email'
+							id='email'
+							name='email'
+							value={formDetails.email}
+							onChange={updateForm}
+							placeholder='Email'
+							aria-describedby='email-error'
+							required
+							style={{border: formErrors.email ? '1px solid var(--error)' : '1px solid var(--blue)'}}
+						/>
+						{formErrors.email ? <InvalidIcon aria-hidden='true'><FcCancel /></InvalidIcon> : isValid('email') && <ValidIcon aria-hidden='true'><FcCheckmark /></ValidIcon>}
+					</InputWrapper>
+					{formErrors.email && <ErrorMessage id='email-error' role='alert' aria-live="assertive">{formErrors.email}</ErrorMessage>}
+					
+					<ContactLabel htmlFor='phone'>Phone</ContactLabel>
+					<InputWrapper>
+						<ContactInput
+							type='tel'
+							id='phone'
+							name='phone'
+							value={formDetails.phone}
+							onChange={updateForm}
+							placeholder='Phone'
+							aria-describedby='phone-error'
+							style={{border: formErrors.phone ? '1px solid var(--error)' : '1px solid var(--blue)'}}
+						/>
+						{formErrors.phone ? <InvalidIcon aria-hidden='true'><FcCancel /></InvalidIcon> : isValid('phone') && <ValidIcon aria-hidden='true'><FcCheckmark /></ValidIcon>}
+					</InputWrapper>
+					{formErrors.phone && <ErrorMessage id='phone-error' role='alert' aria-live="assertive">{formErrors.phone}</ErrorMessage>}
 
-					<ContactForm
-						onSubmit={handleSubmit}
-						aria-label='Contact Form'
-					>
-						<FormGroup>
-							<label htmlFor='name'>
-								Your Name{' '}
-								<span aria-hidden='true'>(Required)</span>
-							</label>
-							<input
-								type='text'
-								name='name'
-								id='name'
-								required
-								value={formDetails.name}
-								onChange={handleFormUpdate}
-								aria-required='true'
-								aria-invalid={formDetails.name === ''}
-							/>
-						</FormGroup>
+					<ContactLabel htmlFor='message'>Message</ContactLabel>
+					<InputWrapper>
+						<ContactTextarea
+							id='message'
+							name='message'
+							value={formDetails.message}
+							onChange={updateForm}
+							placeholder='Message'
+							aria-describedby='message-error'
+							required
+						/>
+					</InputWrapper>
+					{formErrors.message && <ErrorMessage id='message-error' role='alert' aria-live="assertive">{formErrors.message}</ErrorMessage>}
 
-						<FormGroup>
-							<label htmlFor='emailFrom'>
-								Your Email{' '}
-								<span aria-hidden='true'>(Required)</span>
-							</label>
-							<input
-								type='email'
-								name='email'
-								id='emailFrom'
-								required
-								value={formDetails.email}
-								onChange={handleFormUpdate}
-								aria-required='true'
-								aria-invalid={formDetails.email === ''}
-							/>
-						</FormGroup>
-
-						<FormGroup>
-							<label htmlFor='phone'>Phone Number</label>
-							<input
-								type='tel'
-								name='phone'
-								id='phone'
-								value={formDetails.phone}
-								onChange={handleFormUpdate}
-								aria-describedby='phoneHint'
-							/>
-						</FormGroup>
-
-						<FormGroup>
-							<label htmlFor='message'>
-								Your Message{' '}
-								<span aria-hidden='true'>(Required)</span>
-							</label>
-							<textarea
-								name='message'
-								id='message'
-								cols='30'
-								rows='10'
-								required
-								value={formDetails.message}
-								onChange={handleFormUpdate}
-								aria-required='true'
-								aria-invalid={formDetails.message === ''}
-							/>
-						</FormGroup>
-
-						<button
-							type='submit'
-							aria-disabled={
-								!formDetails.name ||
-								!formDetails.email ||
-								!formDetails.message
-							}
-						>
-							<span>{buttonText}</span>
-						</button>
-
-						{status.message && (
-							<StatusMessage role='alert' aria-live='polite'>
-								<p
-									className={
-										status.success === false
-											? 'danger'
-											: 'success'
-									}
-								>
-									{status.message}
-								</p>
-							</StatusMessage>
-						)}
-					</ContactForm>
-				</ContactCard>
+					<ContactButton type='submit' aria-label='Send'>{buttonText}</ContactButton>
+				</ContactForm>
+				{status.message && <ContactStatus role='alert' aria-live='polite' $success={status.success}>{status.message}</ContactStatus>}
 			</ContactContainer>
-			<Wave transform='none' width='calc(175% + 3px)' height='100px' />
+			<Wave 
+        transform="rotateY(180deg)"
+        width="calc(225% + 3px)"
+        height="70px"
+      />
 		</ContactSection>
-	)
+  )
 }

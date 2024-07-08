@@ -23,7 +23,7 @@ export default function Hero() {
 	}, [])
 
 	return (
-		<HeroSection ref={heroRef} $scrolled={scrolled}>
+		<HeroSection id='home' ref={heroRef} $scrolled={scrolled}>
 			<HeroContent>
 				<HeroAnimation />
 				<HeroTitleContainer>

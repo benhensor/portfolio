@@ -1,10 +1,26 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const ProjectsSection = styled.section`
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+`
+
+export const BGWord = styled.span`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: clamp(4rem, 20vw, 15rem);
+	font-weight: 700;
+	color: var(--text-color-dark);
+	z-index: 0;
+	@media screen and (max-width: 768px) {
+		top: 55%;
+		left: 50%;
+	}
 `
 
 export const ProjectsContainer = styled.div`
@@ -40,7 +56,6 @@ export const ProjectGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-
   @media (max-width: 999px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -50,6 +65,6 @@ export const ProjectGrid = styled.div`
   }
 `
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(motion.div)`
   width: 100%;
 `

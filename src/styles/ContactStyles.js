@@ -1,30 +1,24 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const ContactSection = styled.section`
-  background: var(--background-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `
 
 export const ContactContainer = styled.div`
+  width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 5rem 0;
+  height: 100%;
+  margin: 0 auto 20rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   @media only screen and (max-width: 999px) {
-    padding: 5rem 0rem;
-  }
-  @media only screen and (max-width: 768px) {
-    padding: 5rem 2.5rem;
-  }
-  @media only screen and (max-width: 480px) {
-    padding: 5rem 2rem;
+    padding: 0 2rem;
   }
 `
 
@@ -34,7 +28,7 @@ export const ContactMessage = styled.div`
   max-width: 60rem;
   margin: 10rem 0;
   p {
-    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    font-size: clamp(1.6rem, 2vw, 2rem);
     text-align: left;
     margin-bottom: 3rem;
   }
@@ -43,127 +37,127 @@ export const ContactMessage = styled.div`
   }
 `
 
-export const ContactCard = styled.div`
+export const ContactHeader = styled.h1`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-bottom: 10rem;
+  color: var(--text-color-lt);
+  margin-bottom: 1em;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  span {
+    color: var(--orange);
+  }
 `
 
-export const ContactHeader = styled.h1`
-  font-size: var(--text-xxxxl);
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 4rem;
-  img {
-    height: 6rem;
-    transform: rotate(45deg);
-    margin-right: 1rem;
-  }
-  .ow {
-    color: var(--accent-color);
-  }
-  @media only screen and (max-width: 999px) {
-    font-size: var(--text-xxxl);
-    img {
-      height: 5rem;
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    font-size: var(--text-xxl);
-    img {
-      height: 4rem;
-    }
-  }
-  @media only screen and (max-width: 480px) {
-    font-size: var(--text-xl);
-    img {
-      height: 3rem;
-    }
-    .ow {
-      display: none;
-    }
-  }
+export const ContactIcon = styled.img`
+  position: relative;
+  bottom: clamp(.215rem, 1vw, .75rem);
+  width: clamp(3rem, 5vw, 5rem);
+  margin-right: .5rem;
+  rotate: 45deg;
 `
 
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 50rem;
-  button {
-    display: flex;
-    align-items: center;
-    background-color: var(--button-inactive);
-    color: var(--text-color-medium);
-    font-size: var(--text-l);
-    letter-spacing: 0.1rem;
-    font-weight: bold;
-    padding: 1rem 4rem;
-    border: none;
-    cursor: pointer;
-    transition: all background-color 0.1s;
-    margin: 4rem 0;
-    border-radius: 0.3rem;
-    span {
-      flex: 1;
-      text-align: center;
-    }
-    &:hover {
-      color: var(--text-color-dark);
-      background-color: var(--button-hover);
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-`
-
-export const FormGroup = styled.div`
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  margin-bottom: 2rem;
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  label {
-    color: var(--text-color-medium);
-    margin-bottom: 1rem;
-    border-radius: 0.3rem;
+  max-width: 500px;
+  color: var(--text-color-lt);
+`
+
+export const InputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+`
+
+export const ValidIcon = styled.div`
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 2rem;
+`
+
+export const InvalidIcon = styled.div`
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 2rem;
+`
+
+export const ContactLabel = styled.label`
+  font-size: 1.2rem;
+  color: var(--text-color-soft);
+  margin-left: 1rem;
+  margin-bottom: 0.2em;
+`
+
+export const ContactInput = styled.input`
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  color: var(--text-color-lt);
+  border-radius: 0.5rem;
+  border: 1px solid var(--blue);
+  margin-bottom: 1em;
+  background: var(--background-static);
+  &::placeholder {
+    color: var(--text-color-dk);
   }
-  input {
-    padding: 1rem;
-    border: none;
-    margin-bottom: 1rem;
-    border-radius: 0.3rem;
-    &:focus {
-      outline: 2px solid var(--accent-color);
-    }
-    textarea {
-      padding: 1rem;
-      border: none;
-      margin-bottom: 4rem;
-      resize: none;
-      border-radius: 0.3rem;
-      font-family: var(--font-poppins);
-      &:focus {
-        outline: 2px solid var(--accent-color);
-      }
-    }
+  &:focus {
+    outline: none;
   }
 `
 
-export const StatusMessage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 5rem;
-  p {
-    font-size: var(--text-l);
-    color: var(--text-color-medium);
-    margin-bottom: 2rem;
+export const ContactTextarea = styled.textarea`
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  color: var(--text-color-lt);
+  border-radius: 0.5rem;
+  resize: vertical;
+  min-height: 10em;
+  margin-bottom: 3em;
+  border: 1px solid var(--blue);
+  margin-bottom: 1em;
+  background: var(--background-static);
+  &::placeholder {
+    color: var(--text-color-dk);
   }
+  &:focus {
+    outline: none;
+  }
+`
+
+export const ContactButton = styled.button`
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 0.5rem;
+  background: var(--orange);
+  color: var(--text-color-dk);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background: var(--ltOrange);
+    color: var(--text-color-dk);
+  }
+`
+
+export const ContactStatus = styled.p`
+  font-size: 1.2em;
+  color: ${({ $success }) => ($success ? 'green' : 'red')};
+  margin-top: 1em;
+`
+
+export const ErrorMessage = styled.p`
+  color: var(--error);
+  font-size: 0.8rem;
+  margin-top: -0.8em;
+  margin-bottom: 0.8em;
+  margin-left: 1rem;
 `

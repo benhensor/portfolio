@@ -6,32 +6,19 @@ import About from './components/About'
 import Projects from './components/projects/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import styled from 'styled-components'
-import './styles/app.css'
 
 export default function App() {
 	return (
-		<Main>
+		<>
 			<Header />
-			<Content>
+			<main>
 				<Hero />
 				<About />
 				<Tech />
 				<Projects />
 				<Contact />
-			</Content>
+			</main>
 			<Footer />
-		</Main>
+		</>
 	)
 }
-
-const Main = styled.main`
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-`
-
-const Content = styled.div`
-	/* margin-top: 10rem; */
-	flex: 1;
-`
