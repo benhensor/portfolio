@@ -130,7 +130,7 @@ export const ContactTextarea = styled.textarea`
   border: none;
   width: 100%;
   background: #222;
-  border-bottom: 5px solid var(--dkBlue);
+  border-bottom: 3px solid var(--dkBlue);
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
