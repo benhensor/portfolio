@@ -102,7 +102,7 @@ export const ImageContainer = styled(motion.div)`
 
 export const Image = styled.img`
 	width: 25rem;
-	height: 25rem;
+	height: 37rem;
 	object-position: center;
 	position: relative;
 	top: -2.7em;
@@ -111,12 +111,12 @@ export const Image = styled.img`
 		top: -2.5em;
 		left: 2.5em;
 		width: 15rem;
-		height: 15rem;
+		height: 23rem;
 	}
 	@media screen and (max-width: 546px) {
 		top: -2rem;
 		left: 2rem;
 		width: 10rem;
-		height: 10rem;
+		height: 15rem;
 	}
 `
