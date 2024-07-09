@@ -5,8 +5,10 @@ import { FcCheckmark, FcCancel } from "react-icons/fc"
 import Cat from './cat/Cat'
 import Wave from './Wave'
 import {
-  ContactSection,
-  ContactContainer,
+  Section,
+  Container,
+} from '../styles/GlobalStyles'
+import {
 	ContactMessage,
   ContactHeader,
   ContactIcon,
@@ -107,8 +109,8 @@ export default function Contact() {
   const isValid = (field) => !formErrors[field] && formDetails[field]
 
   return (
-		<ContactSection id="contact">
-			<ContactContainer ref={contactRef}>
+		<Section id="contact">
+			<Container ref={contactRef}>
 				<ContactMessage>
 					<p>
 						My goal is to work with great people and do great
@@ -127,10 +129,10 @@ export default function Contact() {
 					</p>
 				</ContactMessage>
 				<Cat />
-				<ContactHeader><ContactIcon src={MailIcon} alt='Mail Icon' />Contact Me<span className='ow'>ow</span></ContactHeader>
+				<ContactHeader><ContactIcon src={MailIcon} alt='Mail Icon' />Contact <span className='me'>&nbsp;Me</span><span className='ow'>ow</span></ContactHeader>
 				
 				<ContactForm onSubmit={submitEmail}>
-					<ContactLabel htmlFor='name'>Name</ContactLabel>
+					<ContactLabel className='sr-only' htmlFor='name'>Name</ContactLabel>
 					<InputWrapper>
 						<ContactInput
 							type='text'
@@ -141,13 +143,13 @@ export default function Contact() {
 							placeholder='Name'
 							aria-describedby='name-error'
 							required
-							style={{border: formErrors.name ? '1px solid var(--error)' : '1px solid var(--blue)'}}
+							$borderBottom={formErrors.name ? '3px solid var(--error)' : '3px solid var(--dkBlue)'}
 						/>
 						{formErrors.name ? <InvalidIcon aria-hidden='true'><FcCancel /></InvalidIcon> : isValid('name') && <ValidIcon aria-hidden='true'><FcCheckmark /></ValidIcon>}
 					</InputWrapper>
 					{formErrors.name && <ErrorMessage id='name-error' role="alert" aria-live="assertive">{formErrors.name}</ErrorMessage>}
 
-					<ContactLabel htmlFor='email'>Email</ContactLabel>
+					<ContactLabel className='sr-only' htmlFor='email'>Email</ContactLabel>
 					<InputWrapper>
 						<ContactInput
 							type='email'
@@ -158,13 +160,13 @@ export default function Contact() {
 							placeholder='Email'
 							aria-describedby='email-error'
 							required
-							style={{border: formErrors.email ? '1px solid var(--error)' : '1px solid var(--blue)'}}
+							$borderBottom={formErrors.email ? '3px solid var(--error)' : '3px solid var(--dkBlue)'}
 						/>
 						{formErrors.email ? <InvalidIcon aria-hidden='true'><FcCancel /></InvalidIcon> : isValid('email') && <ValidIcon aria-hidden='true'><FcCheckmark /></ValidIcon>}
 					</InputWrapper>
 					{formErrors.email && <ErrorMessage id='email-error' role='alert' aria-live="assertive">{formErrors.email}</ErrorMessage>}
 					
-					<ContactLabel htmlFor='phone'>Phone</ContactLabel>
+					<ContactLabel className='sr-only' htmlFor='phone'>Phone</ContactLabel>
 					<InputWrapper>
 						<ContactInput
 							type='tel'
@@ -174,13 +176,13 @@ export default function Contact() {
 							onChange={updateForm}
 							placeholder='Phone'
 							aria-describedby='phone-error'
-							style={{border: formErrors.phone ? '1px solid var(--error)' : '1px solid var(--blue)'}}
+							$borderBottom={formErrors.phone ? '3px solid var(--error)' : '3px solid var(--dkBlue)'}
 						/>
 						{formErrors.phone ? <InvalidIcon aria-hidden='true'><FcCancel /></InvalidIcon> : isValid('phone') && <ValidIcon aria-hidden='true'><FcCheckmark /></ValidIcon>}
 					</InputWrapper>
 					{formErrors.phone && <ErrorMessage id='phone-error' role='alert' aria-live="assertive">{formErrors.phone}</ErrorMessage>}
 
-					<ContactLabel htmlFor='message'>Message</ContactLabel>
+					<ContactLabel className='sr-only' htmlFor='message'>Message</ContactLabel>
 					<InputWrapper>
 						<ContactTextarea
 							id='message'
@@ -197,12 +199,12 @@ export default function Contact() {
 					<ContactButton type='submit' aria-label='Send'>{buttonText}</ContactButton>
 				</ContactForm>
 				{status.message && <ContactStatus role='alert' aria-live='polite' $success={status.success}>{status.message}</ContactStatus>}
-			</ContactContainer>
+			</Container>
 			<Wave 
         transform="rotateY(180deg)"
         width="calc(225% + 3px)"
         height="70px"
       />
-		</ContactSection>
+		</Section>
   )
 }

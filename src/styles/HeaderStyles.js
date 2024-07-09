@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { FaBars, FaTimes } from 'react-icons/fa'
 import { ReactComponent as Send } from '../assets/icons/send.svg'
 
 export const StyledHeader = styled.header`
@@ -30,7 +29,7 @@ export const Navbar = styled.nav`
 	background: var(--background-static);
 	color: white;
 	@media screen and (max-width: 999px) {
-		padding: var(--m-desktop);
+		padding: var(--m-tablet);
 	}
 	@media screen and (max-width: 768px) {
 		padding: var(--m-mobile);
@@ -114,19 +113,20 @@ export const Contact = styled.li`
 		background-color: transparent;
 		rotate: -45deg;
 		&:hover {
-			color: var(--button-hover);
+			color: var(--orange);
 		}
 	}
 `
 export const StyledSend = styled(Send)`
 	width: 1.5em;
+	height: 1.5em;
 	& path {
 		fill: ${({ $activeLink }) =>
-			$activeLink ? 'var(--button-hover)' : 'white'};
+			$activeLink ? 'var(--orange)' : 'white'};
 	}
 	&:hover {
 		& path {
-			fill: var(--button-hover);
+			fill: var(--orange);
 		}
 	}
 `
@@ -138,17 +138,11 @@ export const MenuControls = styled.button`
 	color: white;
 	z-index: 1000;
 	&:hover {
-		color: var(--button-hover);
+		color: var(--orange);
 	}
 	@media screen and (max-width: 768px) {
 		display: block;
 	}
-`
-export const StyledFaBars = styled(FaBars)`
-	font-size: 3rem;
-`
-export const StyledFaTimes = styled(FaTimes)`
-	font-size: 3rem;
 `
 
 export const MobileMenu = styled.ul`

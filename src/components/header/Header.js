@@ -10,8 +10,6 @@ import {
 	HeaderName,
 	HeaderMenu,
 	MenuControls,
-	StyledFaBars,
-	StyledFaTimes,
 	MobileMenu,
 	Icons,
 } from '../../styles/HeaderStyles'
@@ -19,6 +17,7 @@ import NavIcon1 from '../icons/NavIcon1'
 import NavIcon2 from '../icons/NavIcon2'
 import NavIcon3 from '../icons/NavIcon3'
 import Logo from '../../assets/img/logo2023.webp'
+import MenuIcon from '../icons/MenuIcon'
 
 export default function Header() {
 	
@@ -113,9 +112,8 @@ export default function Header() {
 							type="button"
 							aria-label="Toggle navigation"
 							aria-expanded={isOpen}
-							onClick={() => toggleMenu(!isOpen)}
 						>
-							{isOpen ? <StyledFaTimes /> : <StyledFaBars />}
+							<MenuIcon isOpen={isOpen} onClick={() => toggleMenu(!isOpen)}></MenuIcon>
 						</MenuControls>
 					</Navbar>
 				</HeaderContent>

@@ -20,7 +20,7 @@ export default function Project({ project }) {
             target="_blank"
             rel="noreferrer"
           >
-            <FaGithub className="project-icon-github" />
+            <FaGithub className="project-icon-github" style={{ fontSize: '2.6rem'}} />
           </a>
           <a
             href={project.live}
@@ -77,7 +77,7 @@ const ProjectContent = styled.div`
   transition: all .3s ease-out;
   z-index: 2;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     &::after {
       content: '';
       position: absolute;

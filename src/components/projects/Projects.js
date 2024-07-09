@@ -2,9 +2,13 @@ import React, { useRef, useEffect } from 'react'
 import { useInView, useAnimation } from 'framer-motion'
 import Project from './Project'
 import {
-	ProjectsSection,
+	Section,
+	Container,
 	BGWord,
-	ProjectsContainer,
+} from '../../styles/GlobalStyles'
+import {
+	Heading,
+	SubHeading,
 	ProjectGrid,
 	Wrapper,
 } from '../../styles/ProjectsStyles'
@@ -33,15 +37,15 @@ export default function Projects() {
 	}
 
 	return (
-		<ProjectsSection ref={projectsRef} id="projects">
+		<Section ref={projectsRef} id="projects">
 
 			<BGWord>
 				PROJECTS
 			</BGWord>
 
-			<ProjectsContainer>
-				<h1>Projects</h1>
-				<h2>Feel free to check out some of my projects below</h2>
+			<Container>
+				<Heading>Projects</Heading>
+				<SubHeading>Feel free to check out some of my projects below</SubHeading>
 
 				<ProjectGrid>
 					{projects.map((project, i) => (
@@ -58,12 +62,11 @@ export default function Projects() {
 					))}
 				</ProjectGrid>
 
-				<div className="temp-notice">
-					<h2>More coming soon!</h2>
-				</div>
-			</ProjectsContainer>
+				<SubHeading>More coming soon!</SubHeading>
 
-			<Wave transform="none" width="calc(150% + 3px)" height="100px" />
-		</ProjectsSection>
+			</Container>
+
+			<Wave transform="none" width="calc(150% + 3px)" height="80px" />
+		</Section>
 	)
 }

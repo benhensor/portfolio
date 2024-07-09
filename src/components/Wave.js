@@ -42,7 +42,7 @@ const Svg = styled.svg`
 `
 
 const StrokePath = styled.path`
-  stroke: var(--wave-highlight-color);
+  stroke: var(--blue);
   stroke-width: 3px;
 `
 

@@ -9,8 +9,11 @@ const GlobalStyles = createGlobalStyle`
     --orange: #de9e36;
     --ltOrange: #f9fad0;
     --blue: #00c5c5;
+    --dkBlue: #005c5c;  
     --ltBlue: #d8fdfe;
-    --error: #ff0000;
+    --error: #bb1f1f;
+    --white: #fff;
+    --black: #000;
     --background-card: linear-gradient(180deg, #2f3636, #171e1e);
     --background-gradient: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
     --background-static: #141717;
@@ -36,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
     /* Text Colors */
     --text-color-lt: #eeeeee;
     --text-color-md: #cccccc;
-    --text-color-dk: #323232;
+    --text-color-dk: #525252;
     --text-color-soft: #8c8c8c;
     --copy-dkbg-color: #8d8d8d;
 
@@ -65,8 +68,8 @@ const GlobalStyles = createGlobalStyle`
 
     /* Global Margins */
 
-    --m-desktop: 0 2em;
-    --m-mobile: 0 1em;
+    --m-tablet: 0 3rem;
+    --m-mobile: 0 2rem;
 
     /* Animation Settings */
 
@@ -158,37 +161,57 @@ const GlobalStyles = createGlobalStyle`
     white-space: nowrap;
     border-width: 0;
   }
+
 `
 
-export const Container = styled.div`
-	scroll-snap-align: start;
-	scroll-snap-stop: always;
-	width: 100%;
-	max-width: 1000px;
-	height: 100vh;
-	margin: 0 auto;
+
+
+
+/* GLOBAL STYLED COMPONENTS */
+
+export const Section = styled.section`
+  position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@media screen and (max-width: 999px) {
-		padding: var(--m-desktop);
+  background: var(--background-gradient);
+`
+
+export const Container = styled.div`
+  position: relative;
+	max-width: 100rem;
+  width: 100%;
+	display: flex;
+	flex-direction: column;
+  justify-content: center;
+	align-items: center;
+  margin: 20rem 0 28rem 0;
+	@media only screen and (max-width: 999px) {
+		padding: 0 3rem;
 	}
-	@media screen and (max-width: 768px) {
-		padding: var(--m-mobile);
+	@media only screen and (max-width: 768px) {
+		padding: 0 2rem;
+    margin: 10rem 0 20rem 0;
+	}
+	@media only screen and (max-width: 480px) {
+    margin: 5 0 10rem 0;
 	}
 `
 
 export const BGWord = styled.span`
 	position: absolute;
-	top: 50%;
-	left: 35%;
+	top: 45%;
+	left: ${props => props.left || '50%'};
 	transform: translate(-50%, -50%);
-	font-size: clamp(4rem, 20vw, 15rem);
+  width: 100%;
+  word-wrap: nowrap;
+  text-align: center;
+	font-size: clamp(4rem, 14vw, 15rem);
 	font-weight: 700;
-	color: var(--text-color-dark);
+	color: var(--text-color-dk);
 	z-index: 0;
 	@media screen and (max-width: 768px) {
-		top: 55%;
+    top: 42.5%;
 		left: 50%;
 	}
 `

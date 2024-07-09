@@ -1,47 +1,12 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-export const AboutContainer = styled.section`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	background: var(--background-color);
-	@media screen and (max-width: 999px) {
-		padding: var(--m-desktop);
-	}
-	@media screen and (max-width: 768px) {
-		padding: var(--m-mobile);
-	}
-`
-
 export const AboutContent = styled(motion.div)`
-	max-width: 100rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
-	margin: 20rem 0 30rem 0;
 	@media screen and (max-width: 768px) {
 		flex-direction: column-reverse;
-		margin: 0 0 20rem 0;
-	}
-`
-
-export const BGWord = styled.span`
-	position: absolute;
-	top: 50%;
-	left: 35%;
-	transform: translate(-50%, -50%);
-	font-size: clamp(4rem, 20vw, 15rem);
-	font-weight: 700;
-	color: var(--text-color-dark);
-	z-index: 0;
-	@media screen and (max-width: 768px) {
-		top: 55%;
-		left: 50%;
 	}
 `
 
@@ -53,20 +18,20 @@ export const TextContainer = styled(motion.div)`
 	gap: 2rem;
 	h1 {
 		font-size: clamp(2.5rem, 5vw, 3.5rem);
-		color: var(--accent-color);
+		color: var(--orange);
 		span {
-			color: var(--accent-color);
+			color: var(--orange);
 		}
 	}
 	h2 {
 		font-size: clamp(1.5rem, 3vw, 2.5rem);
 		margin-bottom: 1rem;
-		color: var(--highlight-color);
+		color: var(--ltOrange);
 	}
 	p {
 		font-size: clamp(0.8rem, 3vw, 1.6rem);
 		margin-bottom: 1.6rem;
-		color: var(--text-color-medium);
+		color: var(--text-color-md);
 	}
 	div {}
 	button {
@@ -74,15 +39,15 @@ export const TextContainer = styled(motion.div)`
 		padding: 1rem 2rem;
 		font-size: 1.6rem;
 		font-weight: 700;
-		background: var(--accent-color);
-		color: var(--text-color-dark);
+		background: var(--orange);
+		color: var(--text-color-dk);
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
 		transition: all 0.1s ease;
 		&:hover {
-			background: var(--highlight-color);
-			color: var(--text-color-dark);
+			background: var(--ltOrange);
+			color: var(--text-color-dk);
 		}
 	}
 	@media screen and (max-width: 768px) {
@@ -93,7 +58,7 @@ export const TextContainer = styled(motion.div)`
 		padding: 0;
 		p {
 			margin-bottom: 1rem;
-			color: var(--text-color-medium);
+			color: var(--text-color-md);
 		}
 		button {
 			margin: 1rem 1.5rem 0 0;
@@ -108,7 +73,7 @@ export const ImageContainer = styled(motion.div)`
 	min-width: 35rem;
 	height: 35rem;
 	margin-left: 2rem;
-	border: 2px solid var(--accent-color);
+	border: 2px solid var(--orange);
 	border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
 	background: #000;
 	animation: morph 10s linear infinite alternate;
@@ -137,7 +102,7 @@ export const ImageContainer = styled(motion.div)`
 
 export const Image = styled.img`
 	width: 25rem;
-	height: auto;
+	height: 25rem;
 	object-position: center;
 	position: relative;
 	top: -2.7em;
@@ -146,10 +111,12 @@ export const Image = styled.img`
 		top: -2.5em;
 		left: 2.5em;
 		width: 15rem;
+		height: 15rem;
 	}
 	@media screen and (max-width: 546px) {
 		top: -2rem;
 		left: 2rem;
 		width: 10rem;
+		height: 10rem;
 	}
 `

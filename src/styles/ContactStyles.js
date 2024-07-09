@@ -24,7 +24,7 @@ export const ContactContainer = styled.div`
 
 export const ContactMessage = styled.div`
   font-size: var(--text-xl);
-  color: var(--text-color-medium);
+  color: var(--text-color-md);
   max-width: 60rem;
   margin: 10rem 0;
   p {
@@ -34,6 +34,7 @@ export const ContactMessage = styled.div`
   }
   @media only screen and (max-width: 480px) {
     margin: 5rem 0;
+    max-width: 50rem;
   }
 `
 
@@ -44,8 +45,19 @@ export const ContactHeader = styled.h1`
   color: var(--text-color-lt);
   margin-bottom: 1em;
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  span {
+  .me {
+    color: var(--text-color-lt);
+  }
+  .ow {
     color: var(--orange);
+  }
+  @media only screen and (max-width: 768px) {
+    .me {
+      color: var(--orange);
+    }
+    .ow {
+      display: none;
+    }
   }
 `
 
@@ -61,7 +73,7 @@ export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;
+  max-width: 50rem;
   color: var(--text-color-lt);
 `
 
@@ -96,39 +108,44 @@ export const ContactLabel = styled.label`
 `
 
 export const ContactInput = styled.input`
+  border: none;
   width: 100%;
+  background: #222;
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
-  border-radius: 0.5rem;
-  border: 1px solid var(--blue);
+  border-bottom: ${({ $borderBottom }) => $borderBottom};
   margin-bottom: 1em;
-  background: var(--background-static);
+  transition: all .12s;
   &::placeholder {
     color: var(--text-color-dk);
   }
   &:focus {
     outline: none;
+    border-bottom: 3px solid var(--blue);
   }
 `
 
 export const ContactTextarea = styled.textarea`
+  border: none;
   width: 100%;
+  background: #222;
+  border-bottom: 5px solid var(--dkBlue);
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
   border-radius: 0.5rem;
   resize: vertical;
   min-height: 10em;
-  margin-bottom: 3em;
-  border: 1px solid var(--blue);
-  margin-bottom: 1em;
-  background: var(--background-static);
+  margin-bottom: 2em;
+  outline: none;
+  transition: all 0.12s;
   &::placeholder {
     color: var(--text-color-dk);
   }
   &:focus {
     outline: none;
+    border-bottom: 3px solid var(--blue);
   }
 `
 

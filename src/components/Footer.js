@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import {
+  StyledFooter,
+  FooterContainer,
+  FooterContent,
+} from '../styles/FooterStyles'
 import logo from '../assets/img/logo2023.webp'
 
 export default function Footer() {
@@ -50,40 +54,3 @@ export default function Footer() {
     </StyledFooter>
   );
 }
-
-const StyledFooter = styled.footer`
-  color: #fff;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 200;
-`
-
-const FooterContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1000px;
-  width: 100%;
-  margin: 2rem 0;
-`
-
-const FooterContent = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  img {
-    cursor: pointer;
-    width: 3rem;
-    height: auto;
-  }
-  p {
-    font-size: var(--text-s);
-  }
-  @media only screen and (max-width: 480px) {
-    img {
-      width: 2.5rem;
-    }
-  }
-`

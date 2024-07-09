@@ -10,7 +10,7 @@ export const CatSection = styled.section`
 
 export const CatContent = styled.div`
 	width: 100%;
-	max-width: 1000px;
+	max-width: 100rem;
 	height: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -34,7 +34,6 @@ export const CatFace = styled.img`
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	min-width: 100rem;
 	max-width: 100rem;
 	z-index: 1;
 `

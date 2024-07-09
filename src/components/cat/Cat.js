@@ -18,6 +18,11 @@ export default function Cat() {
 
 	const [isVisible, setIsVisible] = useState(false)
 
+	const defaultEyePosition = {
+		leftEye: { x: 0, y: 0 },
+		rightEye: { x: 0, y: 0 },
+	}
+
 	useEffect(() => {
 		// Create an Intersection Observer instance
 		const observer = new IntersectionObserver(
@@ -30,6 +35,7 @@ export default function Cat() {
 					// If the cat face container is out of view, remove the mousemove listener
 					setIsVisible(false)
 					window.removeEventListener('mousemove', handleMouseMove)
+					resetEyesPosition()
 				}
 			},
 			{
@@ -97,7 +103,12 @@ export default function Cat() {
 		rightEye.style.transform = `translate(${rightEyeMoveX}px, ${rightEyeMoveY}px)`
 	}
 
-
+	const resetEyesPosition = () => {
+		const leftEye = document.querySelector('.cat-leftEye')
+		const rightEye = document.querySelector('.cat-rightEye')
+		leftEye.style.transform = `translate(${defaultEyePosition.leftEyeX}px, ${defaultEyePosition.leftEyeY}px)`
+		rightEye.style.transform = `translate(${defaultEyePosition.rightEyeX}px, ${defaultEyePosition.rightEyeY}px)`
+	}
 	return (
 			<CatSection ref={catRef}>
 				<CatContent>
