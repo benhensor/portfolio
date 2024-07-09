@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { useInView } from 'framer-motion'
+// import { useInView } from 'framer-motion'
 import MailIcon from '../assets/icons/mailPlane.svg'
 import { FcCheckmark, FcCancel } from "react-icons/fc"
 import Cat from './cat/Cat'
@@ -25,7 +25,7 @@ import {
 export default function Contact() {
 
   const contactRef = useRef(null)
-  const isInView = useInView(contactRef, { amount: 0.5 })
+  // const isInView = useInView(contactRef, { amount: 0.5 })
 
   const [formDetails, setFormDetails] = useState({
     name: '',
