@@ -150,7 +150,7 @@ const heroPhrases = [
 	{ phrase: 'Cat Fanatic!' },
 ]
 
-// Journey data
+// About Info
 const aboutInfo = {
 	heading: "Hi, I'm Ben",
 	subHeading: 'Welcome to my portfolio!',
@@ -170,6 +170,13 @@ const aboutInfo = {
 		},
 	],
 }
+
+// Contact Statement
+const contactStatement = [
+	'My goal is to work with great people and do great things!',
+	'I am passionate about Software Development and tech in general. I am currently looking for Junior Developer roles within the industry, with a focus on Front End Development.',
+	'If you have any questions or anything at all then please send me a message and I will get back to you as soon as possible. Thanks for stopping by!',
+]
 
 // Projects data
 const projects = [
@@ -357,5 +364,6 @@ export {
 	tech,
 	heroPhrases,
 	aboutInfo,
+	contactStatement,
 	projects,
 }

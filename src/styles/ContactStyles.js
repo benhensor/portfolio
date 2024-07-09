@@ -22,7 +22,7 @@ export const ContactContainer = styled.div`
   }
 `
 
-export const ContactMessage = styled.div`
+export const ContactStatement = styled.div`
   font-size: var(--text-xl);
   color: var(--text-color-md);
   max-width: 60rem;
