@@ -47,10 +47,14 @@ export default function Contact() {
 	}, [isInView, controls])
 
 	const statementVariants = {
-		hidden: { opacity: 0, translateY: 150 },
+		hidden: { opacity: 0, y: 50 },
 		visible: {
 			opacity: 1,
-			translateY: 0,
+			y: 0,
+			transition: {
+				ease: "easeOut",
+				duration: 0.5,
+			},
 		},
 	}
 
@@ -136,9 +140,18 @@ export default function Contact() {
               initial="hidden"
               animate={controls}
               variants={statementVariants}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.3 }}
             >
-              {sentence}
+              <AnimatedText 
+								text={sentence}
+								el='span'
+								style={{
+									fontSize: 'clamp(1.6rem, 2vw, 2rem)',
+									textAlign: 'left',
+									marginBottom: '3rem',
+									maxWidth: '60rem',
+								}}
+							/>
             </motion.p>
           ))}
 				</ContactStatement>

@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react'
-import styled from 'styled-components'
 import { motion, useInView, useAnimation } from 'framer-motion'
 
 const defaultAnimations = {
@@ -11,13 +10,15 @@ const defaultAnimations = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.12,
     },
   },
 };
 
 export default function BackgroundWord({
   text,
+  el: Wrapper = 'p',
+  style,
   once,
   repeatDelay,
   animation = defaultAnimations,
@@ -49,32 +50,32 @@ export default function BackgroundWord({
   }, [isInView, controls, repeatDelay]);
 
   return (
-    <Wrapper>
+    <Wrapper style={style}>
       <span className="sr-only">{textArray.join(" ")}</span>
       <motion.span
         ref={ref}
         initial="hidden"
         animate={controls}
         variants={{
-          visible: { transition: { staggerChildren: 0.035 } },
+          visible: { transition: { staggerChildren: 0.015 } },
           hidden: {},
         }}
         aria-hidden
       >
         {textArray.map((line, lineIndex) => (
-          <span className="block" key={`${line}-${lineIndex}`}>
+          <span style={{ display: 'block' }} key={`${line}-${lineIndex}`}>
             {line.split(" ").map((word, wordIndex) => (
-              <span className="inline-block" key={`${word}-${wordIndex}`}>
+              <span style={{ display: 'inline-block' }}  key={`${word}-${wordIndex}`}>
                 {word.split("").map((char, charIndex) => (
                   <motion.span
                     key={`${char}-${charIndex}`}
-                    className="inline-block"
+                    style={{ display: 'inline-block' }} 
                     variants={animation}
                   >
                     {char}
                   </motion.span>
                 ))}
-                <span className="inline-block">&nbsp;</span>
+                <span style={{ display: 'inline-block' }} >&nbsp;</span>
               </span>
             ))}
           </span>
@@ -83,22 +84,3 @@ export default function BackgroundWord({
     </Wrapper>
   )
 }
-
-const Wrapper = styled(motion.p)`
-  font-size: clamp(1.6rem, 2vw, 2rem);
-  text-align: left;
-  margin-bottom: 3rem;
-  max-width: 60rem;
-  @media only screen and (max-width: 480px) {
-    margin: 5rem 0;
-    max-width: 50rem;
-  }
-
-  .block {
-    display: block;
-  }
-
-  .inline-block {
-    display: inline-block;
-  }
-`

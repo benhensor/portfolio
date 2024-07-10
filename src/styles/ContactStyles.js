@@ -110,7 +110,7 @@ export const ContactLabel = styled.label`
 export const ContactInput = styled.input`
   border: none;
   width: 100%;
-  background: #222;
+  background: #313131;
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
@@ -118,7 +118,7 @@ export const ContactInput = styled.input`
   margin-bottom: 1em;
   transition: all .12s;
   &::placeholder {
-    color: var(--text-color-dk);
+    color: var(--text-color-mdDk);
   }
   &:focus {
     outline: none;
@@ -129,7 +129,7 @@ export const ContactInput = styled.input`
 export const ContactTextarea = styled.textarea`
   border: none;
   width: 100%;
-  background: #222;
+  background: #313131;
   border-bottom: 3px solid var(--dkBlue);
   padding: 0.5em;
   font-size: 1em;
@@ -141,7 +141,7 @@ export const ContactTextarea = styled.textarea`
   outline: none;
   transition: all 0.12s;
   &::placeholder {
-    color: var(--text-color-dk);
+    color: var(--text-color-mdDk);
   }
   &:focus {
     outline: none;

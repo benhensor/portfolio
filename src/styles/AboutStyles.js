@@ -40,14 +40,13 @@ export const TextContainer = styled(motion.div)`
 		font-size: 1.6rem;
 		font-weight: 700;
 		background: var(--orange);
-		color: var(--text-color-dk);
+		color: var(--black);
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
 		transition: all 0.1s ease;
 		&:hover {
 			background: var(--ltOrange);
-			color: var(--text-color-dk);
 		}
 	}
 	@media screen and (max-width: 768px) {

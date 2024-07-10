@@ -39,7 +39,8 @@ const GlobalStyles = createGlobalStyle`
     /* Text Colors */
     --text-color-lt: #eeeeee;
     --text-color-md: #cccccc;
-    --text-color-dk: #525252;
+    --text-color-mdDk: #5f5f5f;
+    --text-color-dk: #242424;
     --text-color-soft: #8c8c8c;
     --copy-dkbg-color: #8d8d8d;
 
