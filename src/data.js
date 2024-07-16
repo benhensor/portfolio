@@ -223,7 +223,7 @@ const projects = [
 			{ name: 'MongoDB', icon: mongodb },
 			{ name: 'Netlify', icon: netlify },
 		],
-		live: 'https://seasonit.netlify.app/',
+		live: 'https://seasonit-v2.vercel.app/',
 		code: 'https://github.com/benhensor/season-it',
 	},
 	{
