@@ -3,21 +3,16 @@ import { motion, useInView, useAnimation } from 'framer-motion'
 import { aboutInfo } from '../data'
 import profile from '../assets/img/profile.webp'
 import CV from '../assets/docs/BenHensor_CV_Mar_2024.pdf'
-import { 
-	Section,
-	Container,
-	BGWord,
-} from '../styles/GlobalStyles'
-import { 
+import { Section, Container, BGWord } from '../styles/GlobalStyles'
+import {
 	AboutContent,
 	TextContainer,
 	ImageContainer,
 	Image,
- } from '../styles/AboutStyles'
- import Wave from './Wave'
+} from '../styles/AboutStyles'
+import Wave from './Wave'
 
 export default function About() {
-
 	const contentRef = useRef(null)
 	const isInView = useInView(contentRef, { amount: 0.5 })
 	const controls = useAnimation()
@@ -68,7 +63,7 @@ export default function About() {
 				opacity: 1,
 				y: 0,
 				transition: {
-					ease: "easeOut",
+					ease: 'easeOut',
 					duration: 0.5,
 				},
 			},
@@ -79,7 +74,7 @@ export default function About() {
 				opacity: 1,
 				y: 0,
 				transition: {
-					ease: "easeOut",
+					ease: 'easeOut',
 					duration: 0.5,
 				},
 			},
@@ -136,7 +131,7 @@ export default function About() {
 						opacity: 1,
 						y: 0,
 						transition: {
-							ease: "easeOut",
+							ease: 'easeOut',
 							duration: 0.5,
 						},
 					},
@@ -147,7 +142,7 @@ export default function About() {
 						opacity: 1,
 						y: 0,
 						transition: {
-							ease: "easeOut",
+							ease: 'easeOut',
 							duration: 0.5,
 						},
 					},
@@ -161,15 +156,17 @@ export default function About() {
 	}, [])
 
 	useEffect(() => {
-    if (isInView) {
-      controls.start('visible')
-    } else {
-      controls.start('hidden')
-    }
-  }, [isInView, controls])
+		if (isInView) {
+			controls.start('visible')
+		} else {
+			controls.start('hidden')
+		}
+	}, [isInView, controls])
 
 	const scrollToContact = () => {
-		document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
+		document
+			.getElementById('contact')
+			.scrollIntoView({ behavior: 'smooth' })
 	}
 
 	const downloadPDF = () => {
@@ -182,20 +179,15 @@ export default function About() {
 	const { heading, subHeading, sentences } = aboutInfo
 
 	return (
-		<Section id='about'>
+		<Section id="about">
+			<BGWord $left={'40%'}>ABOUT</BGWord>
 			<Container>
-				<BGWord
-					$left={'35%'}
-				>
-					ABOUT
-				</BGWord>
 				<AboutContent
 					ref={contentRef}
 					initial="hidden"
 					animate={controls}
 					variants={variants.page}
 				>
-					
 					<TextContainer
 						initial="hidden"
 						animate={controls}
@@ -207,7 +199,7 @@ export default function About() {
 						<motion.h2 variants={variants.item}>
 							{subHeading}
 						</motion.h2>
-						<motion.div >
+						<motion.div>
 							{sentences.map((sentence) => (
 								<motion.p
 									key={sentence.key}
@@ -218,7 +210,7 @@ export default function About() {
 							))}
 							<motion.button
 								type="button"
-								aria-label='Contact me'
+								aria-label="Contact me"
 								onClick={scrollToContact}
 								variants={variants.item}
 							>
@@ -226,25 +218,24 @@ export default function About() {
 							</motion.button>
 							<motion.button
 								type="button"
-								aria-label='Download CV as PDF'
+								aria-label="Download CV as PDF"
 								onClick={downloadPDF}
 								variants={variants.item}
 							>
 								CV
 							</motion.button>
 						</motion.div>
-				
 					</TextContainer>
 					<ImageContainer variants={variants.image}>
 						<Image src={profile} alt="" />
 					</ImageContainer>
 				</AboutContent>
 			</Container>
-      <Wave 
-        transform="none"
-        width="calc(150% + 3px)"
-        height="80px"
-      />
+			<Wave
+				section="about"
+				transform="none"
+				width="calc(150% + 3px)"
+			/>
 		</Section>
 	)
 }

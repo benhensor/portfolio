@@ -163,9 +163,33 @@ const GlobalStyles = createGlobalStyle`
     border-width: 0;
   }
 
+
+
+  /* SECTION GRADIENTS */
+  #about {
+    background: #141717;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #333333 0%, #141717 50%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #333333 0%, #141717 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+
+  #tech {
+    background: #de6262; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #de6262 0%, #ffb88c 70%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #de6262 0%, #ffb88c 70%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  #projects {
+    background: #134E5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #71B280 0%, #134E5E 70%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #71B280 0%, #134E5E 70%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  #contact {
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #111315 0%, #232526 100%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #111315 0%, #232526 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
 `
-
-
 
 
 /* GLOBAL STYLED COMPONENTS */
@@ -176,33 +200,33 @@ export const Section = styled.section`
 	justify-content: center;
 	align-items: center;
   background: var(--background-gradient);
+  overflow: hidden;
 `
 
 export const Container = styled.div`
   position: relative;
-	max-width: 100rem;
+  max-width: 100rem;
   width: 100%;
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-	align-items: center;
-  margin: 20rem 0 28rem 0;
-	@media only screen and (max-width: 999px) {
-		padding: 0 3rem;
-	}
-	@media only screen and (max-width: 768px) {
-		padding: 0 2rem;
-    margin: 10rem 0 20rem 0;
-	}
-	@media only screen and (max-width: 480px) {
-    margin: 5 0 10rem 0;
-	}
+  align-items: center;
+  margin: 20rem 0 25rem 0;
+  @media only screen and (max-width: 999px) {
+    padding: 0 3rem;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 0 2rem;
+  }
+  @media only screen and (max-width: 480px) {
+    margin: 10rem 0;
+  }
 `
 
 export const BGWord = styled.span`
 	position: absolute;
-	top: 45%;
-	left: ${props => props.left || '50%'};
+	top: calc(50% - 5rem);
+	left: ${props => props.$left || '50%'};
 	transform: translate(-50%, -50%);
   width: 100%;
   word-wrap: nowrap;
@@ -210,9 +234,10 @@ export const BGWord = styled.span`
 	font-size: clamp(4rem, 14vw, 15rem);
 	font-weight: 700;
 	color: var(--text-color-dk);
+  mix-blend-mode: screen;
 	z-index: 0;
 	@media screen and (max-width: 768px) {
-    top: 42.5%;
+    top: calc(50% - 5rem);
 		left: 50%;
 	}
 `

@@ -23,7 +23,7 @@ export default function Hero() {
 	}, [])
 
 	return (
-		<HeroSection id='home' ref={heroRef} $scrolled={scrolled}>
+		<HeroSection id="home" ref={heroRef} $scrolled={scrolled}>
 			<HeroContent>
 				<HeroAnimation />
 				<HeroTitleContainer>
@@ -32,7 +32,7 @@ export default function Hero() {
 					<HeroArrow />
 				</HeroTitleContainer>
 			</HeroContent>
-			<Wave transform="none" width="calc(175% + 3px)" height="100px" />
+			<Wave section={'hero'} transform="none" width="calc(180% + 3px)" />
 		</HeroSection>
 	)
 }
@@ -45,6 +45,7 @@ const HeroSection = styled.div`
 	background-color: #000;
 	transition: all 0.5s ease-in-out;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	z-index: 10;

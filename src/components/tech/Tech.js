@@ -127,7 +127,6 @@ export default function Tech() {
 		<Section ref={contentRef} id="tech">
 			<BGWord>TECH STACK</BGWord>
 			<Container>
-				
 				<TechContainer
 					ref={techRef}
 					initial="hidden"
@@ -152,9 +151,9 @@ export default function Tech() {
 				</TechContainer>
 			</Container>
 			<Wave 
+				section="tech"
 				transform="rotateY(180deg)"
 				width="calc(205% + 3px)"
-				height="80px"
 			/>
 		</Section>
 	)

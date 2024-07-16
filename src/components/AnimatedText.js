@@ -57,7 +57,7 @@ export default function BackgroundWord({
         initial="hidden"
         animate={controls}
         variants={{
-          visible: { transition: { staggerChildren: 0.015 } },
+          visible: { transition: 0.5 },
           hidden: {},
         }}
         aria-hidden

@@ -5,8 +5,14 @@ export const AboutContent = styled(motion.div)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	bottom: 5rem;
 	@media screen and (max-width: 768px) {
+		bottom: 15rem;
 		flex-direction: column-reverse;
+	}
+	@media screen and (max-width: 450px) {
+		bottom: 5rem;
 	}
 `
 
@@ -19,9 +25,6 @@ export const TextContainer = styled(motion.div)`
 	h1 {
 		font-size: clamp(2.5rem, 5vw, 3.5rem);
 		color: var(--orange);
-		span {
-			color: var(--orange);
-		}
 	}
 	h2 {
 		font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -32,6 +35,7 @@ export const TextContainer = styled(motion.div)`
 		font-size: clamp(0.8rem, 3vw, 1.6rem);
 		margin-bottom: 1.6rem;
 		color: var(--text-color-md);
+		z-index: 2;
 	}
 	div {}
 	button {

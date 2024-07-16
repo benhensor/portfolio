@@ -1,14 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { useInView, motion, useAnimation } from 'framer-motion'
+import { useInView, useAnimation } from 'framer-motion'
 import MailIcon from '../assets/icons/mailPlane.svg'
 import { FcCheckmark, FcCancel } from 'react-icons/fc'
-import { contactStatement } from '../data'
-import Cat from './cat/Cat'
 import Wave from './Wave'
-import AnimatedText from './AnimatedText'
 import { Section, Container } from '../styles/GlobalStyles'
 import {
-	ContactStatement,
 	ContactHeader,
 	ContactIcon,
 	ContactForm,
@@ -45,18 +41,6 @@ export default function Contact() {
 			controls.start('hidden')
 		}
 	}, [isInView, controls])
-
-	const statementVariants = {
-		hidden: { opacity: 0, y: 50 },
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				ease: "easeOut",
-				duration: 0.5,
-			},
-		},
-	}
 
 	const updateForm = (e) => {
 		const { name, value } = e.target
@@ -133,29 +117,7 @@ export default function Contact() {
 	return (
 		<Section id="contact">
 			<Container ref={contactRef}>
-				<ContactStatement>
-					{contactStatement.map((sentence, i) => (
-            <motion.p
-              key={i}
-              initial="hidden"
-              animate={controls}
-              variants={statementVariants}
-              transition={{ duration: 0.5, delay: i * 0.3 }}
-            >
-              <AnimatedText 
-								text={sentence}
-								el='span'
-								style={{
-									fontSize: 'clamp(1.6rem, 2vw, 2rem)',
-									textAlign: 'left',
-									marginBottom: '3rem',
-									maxWidth: '60rem',
-								}}
-							/>
-            </motion.p>
-          ))}
-				</ContactStatement>
-				<Cat />
+			
 				<ContactHeader>
 					<ContactIcon src={MailIcon} alt="Mail Icon" />
 					Contact <span className="me">&nbsp;Me</span>
@@ -324,6 +286,7 @@ export default function Contact() {
 				)}
 			</Container>
 			<Wave
+				section="contact"
 				transform="rotateY(180deg)"
 				width="calc(225% + 3px)"
 				height="70px"

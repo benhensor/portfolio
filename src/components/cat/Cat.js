@@ -78,19 +78,19 @@ export default function Cat() {
 
 		// Calculate the distance between the mouse and the eye centers
 		const leftEyeDeltaX = mouseX - leftEyeCenterX - 1000
-		const leftEyeDeltaY = mouseY - leftEyeCenterY * 2
+		const leftEyeDeltaY = mouseY - leftEyeCenterY * 1.75
 		const rightEyeDeltaX = mouseX - rightEyeCenterX - 100
-		const rightEyeDeltaY = mouseY - rightEyeCenterY * 2
+		const rightEyeDeltaY = mouseY - rightEyeCenterY * 1.75
 
-		const maxEyeMove = 30 // Adjust this value to control the eye movement range
+		const maxEyeMove = 35 // Adjust this value to control the eye movement range
 
 		// Calculate the eye movement within the specific range
-		const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * maxEyeMove
+		const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * (maxEyeMove * 1.3)
 		const leftEyeMoveY =
-			(leftEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.5)
-		const rightEyeMoveX = (rightEyeDeltaX / window.innerWidth) * maxEyeMove
+			(leftEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.3)
+		const rightEyeMoveX = (rightEyeDeltaX / window.innerWidth) * (maxEyeMove * 1.3)
 		const rightEyeMoveY =
-			(rightEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.5)
+			(rightEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.3)
 
 		// Update the CSS style of the eye elements to apply the movement
 		leftEye.style.transform = `translate(${leftEyeMoveX}px, ${leftEyeMoveY}px)`

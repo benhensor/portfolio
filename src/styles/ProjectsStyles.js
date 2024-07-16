@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 
 export const Heading = styled.h1`
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin-bottom: 2rem;
 `
 
 export const SubHeading = styled.h2`

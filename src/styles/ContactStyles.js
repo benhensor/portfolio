@@ -1,32 +1,11 @@
 import styled from "styled-components";
 
-export const ContactSection = styled.section`
-  position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`
-
-export const ContactContainer = styled.div`
-  width: 100%;
-  max-width: 1000px;
-  height: 100%;
-  margin: 0 auto 20rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  @media only screen and (max-width: 999px) {
-    padding: 0 2rem;
-  }
-`
-
 export const ContactStatement = styled.div`
   font-size: var(--text-xl);
   color: var(--text-color-md);
   max-width: 60rem;
-  margin: 10rem 0;
+  position: relative;
+  bottom: 5rem;
   p {
     font-size: clamp(1.6rem, 2vw, 2rem);
     text-align: left;
@@ -43,7 +22,6 @@ export const ContactHeader = styled.h1`
   justify-content: center;
   align-items: center;
   color: var(--text-color-lt);
-  margin-bottom: 1em;
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   .me {
     color: var(--text-color-lt);
@@ -70,6 +48,7 @@ export const ContactIcon = styled.img`
 `
 
 export const ContactForm = styled.form`
+  margin: 10rem 0;
   display: flex;
   flex-direction: column;
   width: 100%;

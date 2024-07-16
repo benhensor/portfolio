@@ -5,6 +5,7 @@ export const StyledFooter = styled.footer`
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   position: relative;
   z-index: 200;
 `
@@ -12,10 +13,10 @@ export const StyledFooter = styled.footer`
 export const FooterContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1000px;
   width: 100%;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
 `
 
 export const FooterContent = styled.div`
