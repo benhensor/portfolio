@@ -289,7 +289,7 @@ const projects = [
 			{ name: 'React', icon: react },
 			{ name: 'Vercel', icon: vercel },
 		],
-		live: 'https://weather-a0yriosp6-ben-s-projects-3a069c6e.vercel.app/',
+		live: 'https://weather-app-bh.vercel.app/',
 		code: 'https://github.com/benhensor/weather-app.git',
 	},
 	{
