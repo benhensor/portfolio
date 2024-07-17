@@ -289,7 +289,6 @@ export default function Contact() {
 				section="contact"
 				transform="rotateY(180deg)"
 				width="calc(225% + 3px)"
-				height="70px"
 			/>
 		</Section>
 	)
