@@ -182,7 +182,7 @@ const contactStatement = [
 const projects = [
 	{
 		key: 0,
-		title: 'Paprback',
+		title: 'Bookaroo',
 		logo: null,
 		image: paprback1,
 		description:
@@ -191,10 +191,10 @@ const projects = [
 			{ name: 'React', icon: react },
 			{ name: 'Node', icon: node },
 			{ name: 'PostgreSQL', icon: postgresql },
-			{ name: 'Netlify', icon: netlify },
+			{ name: 'Vercel', icon: vercel },
 		],
-		live: 'https://bcpaprback.netlify.app/',
-		code: 'https://github.com/benhensor/soc_byteclub_paprback',
+		live: 'https://bookaroo-frontend.vercel.app/',
+		code: 'https://github.com/benhensor/bookaroo_frontend',
 	},
 	{
 		key: 1,
@@ -207,6 +207,7 @@ const projects = [
 			{ name: 'React', icon: react },
 			{ name: 'Node', icon: node },
 			{ name: 'Netlify', icon: netlify },
+			{ name: 'Heroku', icon: heroku },
 		],
 		live: 'https://benhensorsound.netlify.app/',
 		code: 'https://github.com/benhensor/benhensorsound',
