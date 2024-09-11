@@ -6,7 +6,7 @@ export const TechContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  overflow: hidden;
+  height: 40rem;
   position: relative;
   bottom: 5rem;
   @media only screen and (max-width: 450px) {

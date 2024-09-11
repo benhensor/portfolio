@@ -4,13 +4,13 @@ import { FaGithub } from 'react-icons/fa'
 
 export default function Project({ project }) {
   return (
-    <ProjectCard key={project.key}>
-      <ImageContainer className="project-image">
+    <ProjectCard key={project.key} $image={project.image}>
+      {/* <ImageContainer className="project-image">
         <img
           src={project.image}
           alt={project.title}
         />
-      </ImageContainer>
+      </ImageContainer> */}
       <ProjectContent>
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
@@ -38,6 +38,9 @@ export default function Project({ project }) {
 const ProjectCard = styled.div`
   flex: 1;
   position: relative;
+  background: ${props => `url(${props.$image})`};
+  background-size: 100%;
+  background-position: 50% 50%;
 	display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +52,11 @@ const ProjectCard = styled.div`
   overflow: hidden;
 	transition: all 0.3s ease-out;
 	z-index: 1;
+  &:hover {
+    scale: 1.05;
+    background-size: 110%;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  }
 `
 
 const ImageContainer = styled.div`
@@ -77,7 +85,7 @@ const ProjectContent = styled.div`
   transition: all .3s ease-out;
   z-index: 2;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
     &::after {
       content: '';
       position: absolute;
@@ -100,14 +108,15 @@ const Title = styled.h2`
   font-family: var(--font-poppins);
 	font-weight: bold;
 	text-align: center;
+  text-transform: uppercase;
   color: var(--text-color-light);
-	font-size: var(--text-xl);
-  transition: all 0.25s ease-out;
+	font-size: var(--text-xxxl);
   transform: translateY(0);
   z-index: 3;
+  transition: all 0.25s ease-out;
   ${ProjectCard}:hover & {
     transform: translateY(-80px);
-    backdrop-filter: blur(0) saturate(1);
+    backdrop-filter: blur(0);
   }
 `
 
