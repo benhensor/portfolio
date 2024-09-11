@@ -5,12 +5,6 @@ import { FaGithub } from 'react-icons/fa'
 export default function Project({ project }) {
   return (
     <ProjectCard key={project.key} $image={project.image}>
-      {/* <ImageContainer className="project-image">
-        <img
-          src={project.image}
-          alt={project.title}
-        />
-      </ImageContainer> */}
       <ProjectContent>
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
@@ -56,21 +50,6 @@ const ProjectCard = styled.div`
     scale: 1.05;
     background-size: 110%;
     box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.1);
-  }
-`
-
-const ImageContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 `
 
