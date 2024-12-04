@@ -50,9 +50,6 @@ export default function Contact() {
 		})
 	}
 
-	// const netlifyUrl = '/.netlify/functions/contact'
-	const phpMailer = 'https://benhensor.co.uk/api/send-mail.php'
-
 	const submitEmail = async (e) => {
 		e.preventDefault()
 		try {
@@ -63,7 +60,7 @@ export default function Contact() {
 			}
 			setFormErrors({})
 			setButtonText('SENDING...')
-			const response = await fetch(phpMailer, {
+			const response = await fetch('https://benhensor.co.uk/api/send-mail.php', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json;charset=utf-8',
