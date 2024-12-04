@@ -19,6 +19,6 @@ Header set X-XSS-Protection "1; mode=block"
 Header always set Content-Security-Policy "upgrade-insecure-requests;"
 
 # Enable CORS for specific domains (replace example.com with your domain)
-Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Origin "https://benhensor.co.uk"
 Header set Access-Control-Allow-Methods "POST, GET, OPTIONS"
 Header set Access-Control-Allow-Headers "Content-Type"

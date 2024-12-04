@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // handle cors
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: https://benhensor.co.uk");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 
