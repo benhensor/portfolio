@@ -64,7 +64,7 @@ try {
   http_response_code(500);
   echo json_encode([
     'success' => false,
-    'message' => 'Submission failed. Please try again.'
+    'message' => 'Server error: ' . $e->getMessage(),
   ]);
 }
 ?>
