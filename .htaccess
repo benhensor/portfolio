@@ -1,0 +1,24 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# If request is for a real file or directory, don't rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# If the request is not for an actual file/directory, redirect to index.html
+RewriteRule ^ index.html [QSA,L]
+
+# Ensure https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
+
+# Enable CORS for specific domains (replace example.com with your domain)
+Header set Access-Control-Allow-Origin "https://benhensor.co.uk"
+Header set Access-Control-Allow-Methods "POST, GET, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type"
