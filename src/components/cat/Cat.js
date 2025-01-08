@@ -77,20 +77,20 @@ export default function Cat() {
 			rightEyeBoundingBox.top + rightEyeBoundingBox.height * 2
 
 		// Calculate the distance between the mouse and the eye centers
-		const leftEyeDeltaX = mouseX - leftEyeCenterX - 1000
-		const leftEyeDeltaY = mouseY - leftEyeCenterY * 1.75
+		const leftEyeDeltaX = mouseX - leftEyeCenterX - 500
+		const leftEyeDeltaY = mouseY - leftEyeCenterY * 2
 		const rightEyeDeltaX = mouseX - rightEyeCenterX - 100
-		const rightEyeDeltaY = mouseY - rightEyeCenterY * 1.75
+		const rightEyeDeltaY = mouseY - rightEyeCenterY * 2
 
 		const maxEyeMove = 35 // Adjust this value to control the eye movement range
 
 		// Calculate the eye movement within the specific range
-		const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * (maxEyeMove * 1.3)
+		const leftEyeMoveX = (leftEyeDeltaX / window.innerWidth) * (maxEyeMove * 2)
 		const leftEyeMoveY =
-			(leftEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.3)
-		const rightEyeMoveX = (rightEyeDeltaX / window.innerWidth) * (maxEyeMove * 1.3)
+			(leftEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.5)
+		const rightEyeMoveX = (rightEyeDeltaX / window.innerWidth) * (maxEyeMove * 2)
 		const rightEyeMoveY =
-			(rightEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.3)
+			(rightEyeDeltaY / window.innerHeight) * (maxEyeMove * 1.5)
 
 		// Update the CSS style of the eye elements to apply the movement
 		leftEye.style.transform = `translate(${leftEyeMoveX}px, ${leftEyeMoveY}px)`

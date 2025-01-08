@@ -115,8 +115,8 @@ export default function Tech() {
 
 	const sections = [
 		{ key: 1, title: 'Languages', skillSet: languages },
-		{ key: 2, title: 'Frontend', skillSet: frontend },
-		{ key: 3, title: 'Backend', skillSet: backend },
+		{ key: 2, title: 'Front end', skillSet: frontend },
+		{ key: 3, title: 'Back end', skillSet: backend },
 		{ key: 4, title: 'Testing', skillSet: testing },
 		{ key: 5, title: 'DevOps', skillSet: devops },
 		{ key: 6, title: 'Design', skillSet: design },

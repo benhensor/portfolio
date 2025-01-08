@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
 export const ContactStatement = styled.div`
-  font-size: var(--text-xl);
   color: var(--text-color-md);
   max-width: 60rem;
   position: relative;
   bottom: 5rem;
   p {
-    font-size: clamp(1.6rem, 2vw, 2rem);
+    font-size: clamp(var(--text-s), 5vw, var(--text-l));
     text-align: left;
     margin-bottom: 3rem;
   }
   @media only screen and (max-width: 480px) {
     margin: 5rem 0;
-    max-width: 50rem;
+    max-width: 25rem;
   }
 `
 
@@ -27,7 +26,7 @@ export const ContactHeader = styled.h1`
     color: var(--text-color-lt);
   }
   .ow {
-    color: var(--orange);
+    color: #ff6039;
   }
   @media only screen and (max-width: 768px) {
     .me {
@@ -42,7 +41,8 @@ export const ContactHeader = styled.h1`
 export const ContactIcon = styled.img`
   position: relative;
   bottom: clamp(.215rem, 1vw, .75rem);
-  width: clamp(3rem, 5vw, 5rem);
+  width: 4rem;
+  height: 4rem;
   margin-right: .5rem;
   rotate: 45deg;
 `
@@ -67,15 +67,15 @@ export const ValidIcon = styled.div`
   position: absolute;
   top: 35%;
   transform: translateY(-50%);
-  right: 10px;
+  right: 1rem;
   font-size: 2rem;
 `
 
 export const InvalidIcon = styled.div`
   position: absolute;
-  top: 35%;
+  top: 38%;
   transform: translateY(-50%);
-  right: 10px;
+  right: 1rem;
   font-size: 2rem;
 `
 
@@ -89,7 +89,7 @@ export const ContactLabel = styled.label`
 export const ContactInput = styled.input`
   border: none;
   width: 100%;
-  background: #313131;
+  background: #2A2A2A;
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
@@ -97,7 +97,7 @@ export const ContactInput = styled.input`
   margin-bottom: 1em;
   transition: all .12s;
   &::placeholder {
-    color: var(--text-color-mdDk);
+    color: #B8B8B8;
   }
   &:focus {
     outline: none;
@@ -108,19 +108,18 @@ export const ContactInput = styled.input`
 export const ContactTextarea = styled.textarea`
   border: none;
   width: 100%;
-  background: #313131;
+  background: #2A2A2A;
   border-bottom: 3px solid var(--dkBlue);
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
-  border-radius: 0.5rem;
   resize: vertical;
   min-height: 10em;
   margin-bottom: 2em;
   outline: none;
   transition: all 0.12s;
   &::placeholder {
-    color: var(--text-color-mdDk);
+    color: #B8B8B8;
   }
   &:focus {
     outline: none;
@@ -131,16 +130,16 @@ export const ContactTextarea = styled.textarea`
 export const ContactButton = styled.button`
   padding: 0.5em;
   font-size: 1em;
-  border-radius: 0.5rem;
-  background: var(--orange);
+  border-radius: 25px;
+  background: #FFB347;
   color: var(--text-color-dk);
   font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.12s;
   &:hover {
-    background: var(--ltOrange);
-    color: var(--text-color-dk);
+    background: #fcce8c;
+    color: #1A1A1A;
   }
 `
 
@@ -151,9 +150,13 @@ export const ContactStatus = styled.p`
 `
 
 export const ErrorMessage = styled.p`
+  position: absolute;
+  right: 30px;  // Position it to the left of the icon
+  top: 32%;
+  transform: translateY(-50%);
   color: var(--error);
-  font-size: 0.8rem;
-  margin-top: -0.8em;
-  margin-bottom: 0.8em;
-  margin-left: 1rem;
+  font-size: var(--text-r);
+  margin: 0;
+  background-color: #2A2A2A;  // Same as input background
+  padding: 0 0.5rem;
 `

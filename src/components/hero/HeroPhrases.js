@@ -54,7 +54,7 @@ const Phrase = styled(motion.h2)`
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
-	font-size: 3em;
+	font-size: clamp(.7em, 3vw, 3em);
 	text-align: center;
 	letter-spacing: 1rem;
 	line-height: 1;
@@ -62,7 +62,7 @@ const Phrase = styled(motion.h2)`
 	text-transform: uppercase;
 	word-wrap: normal;
 	opacity: 0;
-	@media screen and (max-width: 999px) {
+	/* @media screen and (max-width: 999px) {
 		font-size: 2.5em;
 	}
 	@media screen and (max-width: 768px) {
@@ -70,5 +70,5 @@ const Phrase = styled(motion.h2)`
 	}
 	@media screen and (max-width: 546px) {
 		font-size: 0.7em;
-	}
+	} */
 `

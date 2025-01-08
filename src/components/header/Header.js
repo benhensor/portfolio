@@ -97,6 +97,11 @@ export default function Header() {
 								onUpdateActiveLink={onUpdateActiveLink}
 							/>
 							<NavLink
+								to="journey"
+								activeLink={activeLink}
+								onUpdateActiveLink={onUpdateActiveLink}
+							/>
+							<NavLink
 								to="projects"
 								activeLink={activeLink}
 								onUpdateActiveLink={onUpdateActiveLink}
@@ -126,6 +131,11 @@ export default function Header() {
 				/>
 				<NavLink
 					to="tech"
+					activeLink={activeLink}
+					onUpdateActiveLink={onUpdateActiveLink}
+				/>
+				<NavLink
+					to="journey"
 					activeLink={activeLink}
 					onUpdateActiveLink={onUpdateActiveLink}
 				/>

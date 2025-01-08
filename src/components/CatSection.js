@@ -51,7 +51,7 @@ export default function CatSection() {
 								text={sentence}
 								el="span"
 								style={{
-									fontSize: 'clamp(1.6rem, 2vw, 2rem)',
+									fontSize: 'clamp(var(--text-s), 2vw, var(--text-l))',
 									textAlign: 'left',
 									marginBottom: '3rem',
 									maxWidth: '60rem',

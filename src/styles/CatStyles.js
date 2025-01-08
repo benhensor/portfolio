@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const CatSection = styled.section`
 	width: 100%;
 	height: auto;
-	@media only screen and (max-width: 768px) {
+	@media only screen and (max-width: 999px) {
 		display: none;
 	}
 `
@@ -29,6 +29,8 @@ export const CatHead = styled.div`
 `
 
 export const CatFace = styled.img`
+	width: 100rem;
+	height: auto;
 	z-index: 2;
 `
 

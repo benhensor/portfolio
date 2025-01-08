@@ -20,6 +20,9 @@ export default function NavLink({ to, activeLink, onUpdateActiveLink, isMobile }
         case 'projects':
             displayName = 'Projects';
             break;
+        case 'journey':
+            displayName = 'Journey';
+            break;
         case 'contact':
             displayName = isMobile ? 'Contact' : <StyledSend $activeLink={activeLink === 'contact'} style={{ rotate: '-45deg' }}/>;
             break;

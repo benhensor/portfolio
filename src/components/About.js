@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { aboutInfo } from '../data'
 import profile from '../assets/img/profile.webp'
-import CV from '../assets/docs/BenHensor_CV_Mar_2024.pdf'
 import { Section, Container, BGWord } from '../styles/GlobalStyles'
 import {
 	AboutContent,
@@ -171,8 +170,7 @@ export default function About() {
 
 	const downloadPDF = () => {
 		const link = document.createElement('a')
-		link.href = CV
-		link.download = 'BenHensorCV.pdf'
+		link.href = '/api/serve-cv.php'
 		link.click()
 	}
 

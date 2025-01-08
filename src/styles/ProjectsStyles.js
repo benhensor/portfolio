@@ -8,7 +8,7 @@ export const Heading = styled.h1`
 export const SubHeading = styled.h2`
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   margin: 5rem 0;
-  color: var(--text-color-md);
+  color: var(--text-color-lt);
 `
 
 export const ProjectGrid = styled.div`

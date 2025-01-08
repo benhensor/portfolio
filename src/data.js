@@ -2,6 +2,7 @@
 import auth0 from './assets/icons/tech/tools/auth0.svg'
 import babel from './assets/icons/tech/tools/babel.svg'
 import bootstrap from './assets/icons/tech/frontend/bootstrap5.svg'
+import cSharp from './assets/icons/tech/languages/csharp.svg'
 import css from './assets/icons/tech/frontend/css3.svg'
 import cypress from './assets/icons/tech/testing/cypress.svg'
 import elementUI from './assets/icons/tech/frontend/elementui.svg'
@@ -13,13 +14,17 @@ import git from './assets/icons/tech/devops/git.svg'
 import github from './assets/icons/tech/devops/github.svg'
 import heroku from './assets/icons/tech/devops/heroku.svg'
 import html from './assets/icons/tech/frontend/html5.svg'
+import java from './assets/icons/tech/languages/java.svg'
 import jest from './assets/icons/tech/testing/jest.svg'
 import javascript from './assets/icons/tech/languages/js.svg'
+import jQuery from './assets/icons/tech/frontend/jquery.svg'
+import json from './assets/icons/tech/tools/json.svg'
 import mocha from './assets/icons/tech/testing/mochajs.svg'
 import mongodb from './assets/icons/tech/backend/mongodb.svg'
 import netlify from './assets/icons/tech/devops/netlify.svg'
 import node from './assets/icons/tech/backend/nodejs.svg'
 import npm from './assets/icons/tech/tools/npm.svg'
+import php from './assets/icons/tech/languages/php.svg'
 import playwright from './assets/icons/tech/testing/playwright.svg'
 import postgresql from './assets/icons/tech/backend/postgresql.svg'
 import postman from './assets/icons/tech/tools/postman.svg'
@@ -29,11 +34,14 @@ import python from './assets/icons/tech/languages/python.svg'
 import react from './assets/icons/tech/frontend/reactjs.svg'
 import reactrouter from './assets/icons/tech/tools/reactrouter.svg'
 import redux from './assets/icons/tech/frontend/redux.svg'
+import render from './assets/icons/tech/devops/render.svg'
 import sass from './assets/icons/tech/frontend/sass.svg'
 import semanticUi from './assets/icons/tech/frontend/semanticui.svg'
+import supabase from './assets/icons/tech/devops/supabase.svg'
 import tailwind from './assets/icons/tech/frontend/tailwindcss.svg'
 import typescript from './assets/icons/tech/languages/typescript.svg'
 import vercel from './assets/icons/tech/devops/vercel.svg'
+import viteJs from './assets/icons/tech/frontend/vitejs.svg'
 import vsCode from './assets/icons/tech/tools/vscode.svg'
 
 // Project Images
@@ -69,6 +77,8 @@ const devops = [
 	{ name: 'GitHub', icon: github },
 	{ name: 'Heroku', icon: heroku },
 	{ name: 'Netlify', icon: netlify },
+	{ name: 'Render', icon: render },
+	{ name: 'Supabase', icon: supabase },
 	{ name: 'Vercel', icon: vercel },
 ]
 
@@ -77,14 +87,19 @@ const frontend = [
 	{ name: 'CSS 3', icon: css },
 	{ name: 'Framer-Motion', icon: framermotion },
 	{ name: 'HTML 5', icon: html },
+	{ name: 'jQuery', icon: jQuery },
 	{ name: 'React', icon: react },
 	{ name: 'Redux', icon: redux },
 	{ name: 'Sass', icon: sass },
 	{ name: 'Tailwind', icon: tailwind },
+	{ name: 'Vite.js', icon: viteJs },
 ]
 
 const languages = [
+	{ name: 'C#', icon: cSharp },
+	{ name: 'Java', icon: java },
 	{ name: 'JavaScript', icon: javascript },
+	{ name: 'PHP', icon: php },
 	{ name: 'Python', icon: python },
 	{ name: 'TypeScript', icon: typescript },
 ]
@@ -99,6 +114,7 @@ const testing = [
 const tools = [
 	{ name: 'Auth0', icon: auth0 },
 	{ name: 'Babel', icon: babel },
+	{ name: 'JSON', icon: json },
 	{ name: 'Postman', icon: postman },
 	{ name: 'React Router', icon: reactrouter },
 	{ name: 'VS Code', icon: vsCode },
@@ -142,7 +158,7 @@ const tech = [
 
 // Hero Phrases
 const heroPhrases = [
-	{ phrase: 'Frontend Developer' },
+	{ phrase: 'Full Stack Developer' },
 	{ phrase: 'Web Designer' },
 	{ phrase: 'React Wizard' },
 	{ phrase: 'CSS Guru' },
@@ -155,10 +171,10 @@ const aboutInfo = {
 	heading: "Hi, I'm Ben",
 	subHeading: 'Welcome to my portfolio!',
 	sentences: [
-		{ key: 1, text: "I'm a Frontend Developer based in Bristol, UK." },
+		{ key: 1, text: "I'm a Junior Developer based in Bristol, UK." },
 		{
 			key: 2,
-			text: 'Following a successful career as a Sound Designer, I decided to pursue a fresh challenge and get into Web Development!',
+			text: 'Following a successful career as a Sound Designer, I decided to pursue a fresh challenge and get into Web Development.',
 		},
 		{
 			key: 3,
@@ -169,6 +185,75 @@ const aboutInfo = {
 			text: 'I am actively seeking new opportunities so please get in touch!',
 		},
 	],
+}
+
+const journey = {
+	events: [
+		{
+			key: 1,
+			type: 'education',
+			date: 'April 2024 - Present',
+			title: 'Full Stack Engineering',
+			provider: 'IT Career Switch',
+			description: 'Full-time training through Codecademy with IT Career Switch. Gained accreditations in Java, PHP, C# and more.',
+		},
+		{
+			key: 2,
+			type: 'work',
+			date: 'Aug-Nov 2023',
+			title: 'Jnr Full Stack Developer',
+			provider: 'BlckBx',
+			description: 'Work placement with BlckBx, a start-up providing personal assistant services to working families.',
+		},
+		{
+			key: 3,
+			type: 'education',
+			date: 'Mar-Jun 2023',
+			title: 'Coding Bootcamp',
+			provider: 'School of Code',
+			description: 'Intensive 16-week coding bootcamp. Gained experience in HTML, CSS, JavaScript and React, end-to-end software development and agile methodologies.',
+		},
+		{
+			key: 4,
+			type: 'work',
+			date: '2015-2022',
+			title: 'Sound Designer - Film & Television',
+			provider: 'Self Employed',
+			description: 'Award winning Sound Designer working across film, television and commercials.',
+		},
+		{
+			key: 5,
+			type: 'education',
+			date: '2013-2015',
+			title: 'MA Sound Design for Film & Television',
+			provider: 'The National Film & Television School',
+			description: 'Master of Arts vocational training in sound design for film and television. Graduated with distinction.',
+		},
+		{
+			key: 6,
+			type: 'education',
+			date: '2010-2012',
+			title: 'HND Audio Production • Merit',
+			provider: 'U.W.E',
+			description: 'Higher National Diploma in audio programming techniques, advanced synthesis and generative audio.',
+		},
+		{
+			key: 7,
+			type: 'work',
+			date: '2007-2010',
+			title: 'Composer & Sound Designer',
+			provider: 'Soap Soup Theatre Company',
+			description: 'Creating music and sound-design for original stage shows and theatre productions.',
+		},
+		{
+			key: 8,
+			type: 'education',
+			date: '2004-2007',
+			title: 'BA Creative Music Technology • 2:1',
+			provider: 'BathSpa University',
+			description: 'Undergraduate Batchelor of Arts in Creative Music Technology.',
+		},
+	]
 }
 
 // Contact Statement
@@ -192,6 +277,8 @@ const projects = [
 			{ name: 'Node', icon: node },
 			{ name: 'PostgreSQL', icon: postgresql },
 			{ name: 'Vercel', icon: vercel },
+			{ name: 'Supabase', icon: supabase },
+			{ name: 'Render', icon: render },
 		],
 		live: 'https://bookaroo-frontend.vercel.app/',
 		code: 'https://github.com/benhensor/bookaroo_frontend',
@@ -365,6 +452,7 @@ export {
 	tech,
 	heroPhrases,
 	aboutInfo,
+	journey,
 	contactStatement,
 	projects,
 }

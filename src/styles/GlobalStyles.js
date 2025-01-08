@@ -16,12 +16,23 @@ const GlobalStyles = createGlobalStyle`
     --black: #000;
     --background-card: linear-gradient(180deg, #2f3636, #171e1e);
     --background-gradient: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
+    --timeline-gradient: linear-gradient(#FFB88C, #ff0062, #0048ff, #71B280);
     --background-static: #141717;
 
     /* Button Colors */
     --button-inactive: #006767;
     --button-hover: #de9e36;
     --button-active: #00c5c5;
+
+    /* Timeline Event Colors */
+    --1st-event: #FFAD89;
+    --2nd-event: #FF677A;
+    --3rd-event: #FF2C6C;
+    --4th-event: #CC0E81;
+    --5th-event: #7A26B4;
+    --6th-event: #283DE6;
+    --7th-event: #1A60E2;
+    --8th-event: #3D81BA;
 
     /* Animated Gradient Colors */
     --color-bg1: rgb(108, 0, 162);
@@ -163,6 +174,9 @@ const GlobalStyles = createGlobalStyle`
     border-width: 0;
   }
 
+  #journey-container {
+    margin: 5rem 0 15rem 0;
+  }
 
 
   /* SECTION GRADIENTS */
@@ -178,6 +192,12 @@ const GlobalStyles = createGlobalStyle`
     background: linear-gradient(to bottom, #de6262 0%, #ffb88c 70%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
+  #journey {
+    background: #141717;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #333333 0%, #141717 50%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #333333 0%, #141717 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
   #projects {
     background: #134E5E;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #71B280 0%, #134E5E 70%);  /* Chrome 10-25, Safari 5.1-6 */
@@ -185,9 +205,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   #contact {
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #111315 0%, #232526 100%);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #111315 0%, #232526 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #FFB347;
+    background: -webkit-linear-gradient(to bottom, #FFB347 0%, #FF5E62 100%);
+    background: linear-gradient(to bottom, #FFB347 0%, #FF5E62 100%);
   }
 `
 

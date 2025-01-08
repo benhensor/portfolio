@@ -13,13 +13,16 @@ export default function Wave({ section, transform, width }) {
 			fillColor = '#de6262';
 			break;
 		case 'tech':
+			fillColor = '#141717';
+			break;
+		case 'journey':
 			fillColor = '#71B280';
 			break;
 		case 'projects':
 			fillColor = '#141717';
 			break;
 		case 'cat':
-			fillColor = '#111315';
+			fillColor = '#FFB347';
 			break;
 		case 'contact':
 			fillColor = '#141717';
@@ -68,7 +71,7 @@ const Svg = styled.svg`
   display: block;
 	height: 10rem;
 	@media only screen and (max-width: 480px) {
-		height: 5rem;
+		height: 5.2rem;
 	}
 `
 

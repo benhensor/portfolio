@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import CircleOne from '../icons/CircleOne'
 import CircleTwo from '../icons/CircleTwo'
 import CircleThree from '../icons/CircleThree'
 import CircleFour from '../icons/CircleFour'
 
 export default function HeroAnimation() {
-  const circles = [<CircleOne/>, <CircleTwo/>, <CircleThree/>, <CircleFour/>]
+  const circles = [<CircleTwo/>, <CircleThree/>, <CircleFour/>]
   return (
     <HeroAnimationContainer>
         {circles.map((circle, index) => (
@@ -47,7 +46,6 @@ const Circle = styled.div`
       circle1: { time: '20s', initialScale: 2.00, maxScale: 1.90, fullRotation: 360, blurFilter: 'blur(20px)' },
       circle2: { time: '24s', initialScale: 2.75, maxScale: 2.85, fullRotation: -360, blurFilter: 'blur(10px)' },
       circle3: { time: '28s', initialScale: 2.25, maxScale: 2.45, fullRotation: 360, blurFilter: 'blur(10px)' },
-      circle4: { time: '32s', initialScale: 3.00, maxScale: 2.90, fullRotation: -360, blurFilter: 'blur(20px)' },
     };
     const { time, initialScale, maxScale, fullRotation, blurFilter } = rotations[$id] || {};
     return `
