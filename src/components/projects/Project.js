@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FaGithub } from 'react-icons/fa'
+import { Stack } from 'react-bootstrap-icons'
 
 export default function Project({ project }) {
   return (
@@ -8,6 +9,14 @@ export default function Project({ project }) {
       <ProjectContent>
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
+        <Stack>
+          {project.techStack.map((tech, index) => (
+            <div>
+              <span key={index}>{tech.name}</span>
+              <img src={tech.icon} alt={tech.name}/>
+            </div>        
+          ))}
+        </Stack>
         <Icons>
           <a
             href={project.code}
@@ -61,10 +70,10 @@ const ProjectContent = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  transition: all .3s ease-out;
+  transition: all .12s ease-out;
   z-index: 2;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     &::after {
       content: '';
       position: absolute;
@@ -92,9 +101,9 @@ const Title = styled.h2`
 	font-size: var(--text-xxxl);
   transform: translateY(0);
   z-index: 3;
-  transition: all 0.25s ease-out;
+  transition: all 0.24s ease-out;
   ${ProjectCard}:hover & {
-    transform: translateY(-80px);
+    transform: translateY(-200%);
     backdrop-filter: blur(0);
   }
 `
@@ -156,7 +165,7 @@ const Icons = styled.div`
     text-decoration: none;
     color: #ffffff;
     padding: 0.5rem;
-    transition: all 0.1s ease-out;
+    transition: all 0.06s ease-out;
     &:hover {
 	    color: var(--button-hover);
     }

@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $data = json_decode(file_get_contents('php://input'), true);
 
 // validation
-if (!isset($data['name']) || !isset($data['email']) || !isset($data['phone']) || !isset($data['message'])) {
+if (!isset($data['name']) || !isset($data['email']) || !isset($data['message'])) {
   http_response_code(400);
   echo json_encode(['error' => 'Missing required fields']);
   exit();
@@ -50,7 +50,6 @@ try {
     <h2>New Contact Form Submission</h2>
     <p><strong>Name:</strong> " . htmlspecialchars($data['name']) . "</p>
     <p><strong>Email:</strong> " . htmlspecialchars($data['email']) . "</p>
-    <p><strong>Phone:</strong> " . htmlspecialchars($data['phone']) . "</p>
     <p><strong>Message:</strong></p>
     <p>" . nl2br(htmlspecialchars($data['message'])) . "</p>
   ";

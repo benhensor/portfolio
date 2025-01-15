@@ -27,7 +27,6 @@ export default function Contact() {
     const [formDetails, setFormDetails] = useState({
         name: '',
         email: '',
-        phone: '',
         message: '',
     })
     const [buttonText, setButtonText] = useState('SEND')
@@ -53,10 +52,6 @@ export default function Contact() {
                 if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
                     return 'Invalid email address'
                 }
-                return undefined
-            case 'phone':
-                if (!value) return 'Required'
-                if (!/^\d{9,16}/g.test(value)) return 'Invalid phone number'
                 return undefined
             default:
                 return undefined
@@ -95,12 +90,6 @@ export default function Contact() {
             errors.email = 'Invalid email address'
         }
 
-        if (!values.phone) {
-            errors.phone = 'Required'
-        } else if (!/^\d{9,16}/g.test(values.phone)) {
-            errors.phone = 'Invalid phone number'
-        }
-
         return errors
     }
 
@@ -132,7 +121,6 @@ export default function Contact() {
             setFormDetails({
                 name: '',
                 email: '',
-                phone: '',
                 message: '',
             })
             setStatus(result)
@@ -235,46 +223,6 @@ export default function Contact() {
 															aria-live="assertive"
 													>
 															{formErrors.email}
-													</ErrorMessage>
-											)}
-                    </InputWrapper>
-
-                    <ContactLabel className="sr-only" htmlFor="phone">
-                        Phone
-                    </ContactLabel>
-                    <InputWrapper>
-                        <ContactInput
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formDetails.phone}
-                            onChange={updateForm}
-                            placeholder="Phone"
-                            aria-describedby="phone-error"
-                            $borderBottom={
-                                formErrors.phone
-                                    ? '3px solid var(--error)'
-                                    : '3px solid var(--dkBlue)'
-                            }
-                        />
-                        {formErrors.phone ? (
-                            <InvalidIcon aria-hidden="true">
-                                <FcCancel />
-                            </InvalidIcon>
-                        ) : (
-                            isValid('phone') && (
-                                <ValidIcon aria-hidden="true">
-                                    <FcCheckmark />
-                                </ValidIcon>
-                            )
-                        )}
-											{formErrors.phone && (
-													<ErrorMessage
-															id="phone-error"
-															role="alert"
-															aria-live="assertive"
-													>
-															{formErrors.phone}
 													</ErrorMessage>
 											)}
                     </InputWrapper>

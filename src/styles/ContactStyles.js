@@ -30,7 +30,7 @@ export const ContactHeader = styled.h1`
   }
   @media only screen and (max-width: 768px) {
     .me {
-      color: var(--orange);
+      color: #ff6039;
     }
     .ow {
       display: none;
@@ -52,8 +52,11 @@ export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 50rem;
+  max-width: 35rem;
   color: var(--text-color-lt);
+  @media only screen and (max-width: 450px) {
+    max-width: 25rem;
+  }
 `
 
 export const InputWrapper = styled.div`
