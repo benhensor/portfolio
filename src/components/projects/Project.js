@@ -11,8 +11,8 @@ export default function Project({ project }) {
         <Description>{project.description}</Description>
         <Stack>
           {project.techStack.map((tech, index) => (
-            <div>
-              <span key={index}>{tech.name}</span>
+            <div key={index}>
+              <span>{tech.name}</span>
               <img src={tech.icon} alt={tech.name}/>
             </div>        
           ))}

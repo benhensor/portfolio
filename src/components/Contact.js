@@ -158,6 +158,7 @@ export default function Contact() {
                             placeholder="Name"
                             aria-describedby="name-error"
                             required
+                            autoComplete="name"
                             $borderBottom={
                                 formErrors.name
                                     ? '3px solid var(--error)'
@@ -199,6 +200,7 @@ export default function Contact() {
                             placeholder="Email"
                             aria-describedby="email-error"
                             required
+                            autoComplete="email"
                             $borderBottom={
                                 formErrors.email
                                     ? '3px solid var(--error)'
