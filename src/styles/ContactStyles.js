@@ -154,7 +154,7 @@ export const ContactStatus = styled.p`
   margin-top: 1em;
   min-height: 2.7em;
   font-size: 1.6rem;
-  color: ${({ $success }) => ($success ? 'green' : 'red')};
+  color: ${({ $success }) => ($success ? '#76f4aa' : '#b60000')}; 
   padding: 0.5em;
   text-align: center;
 `
@@ -167,6 +167,6 @@ export const ErrorMessage = styled.p`
   color: var(--error);
   font-size: var(--text-r);
   margin: 0;
-  background-color: #2A2A2A;  // Same as input background
+  background-color: var(--contact-input-bg);  // Same as input background
   padding: 0 0.5rem;
 `

@@ -31,6 +31,7 @@ export default function Contact() {
 	})
 	const [buttonText, setButtonText] = useState('SEND')
 	const [formErrors, setFormErrors] = useState({})
+	const [visible, setVisible] = useState(false)
 	const [status, setStatus] = useState({ success: null, message: '' })
 
 	useEffect(() => {
@@ -40,6 +41,17 @@ export default function Contact() {
 			controls.start('hidden')
 		}
 	}, [isInView, controls])
+
+	useEffect(() => {
+		if (status.success !== null) {
+			setVisible(true)
+			const timer = setTimeout(() => {
+				setVisible(false)
+				setStatus({ success: null, message: '' })
+			}, 1200)
+			return () => clearTimeout(timer)
+		}
+	}, [status.success])
 
 	const validateField = (name, value) => {
 		switch (name) {
@@ -269,7 +281,7 @@ export default function Contact() {
               aria-live="polite"
               $success={status.success}
           >
-              {status.message}
+              {visible && status.message}
           </ContactStatus>
 				</ContactForm>
 			</Container>
