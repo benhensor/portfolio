@@ -12,7 +12,6 @@ import {
     ContactInput,
     ContactTextarea,
     ContactButton,
-    ContactStatus,
     InputWrapper,
     ValidIcon,
     InvalidIcon,
