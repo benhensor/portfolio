@@ -258,13 +258,12 @@ export default function Contact() {
                     </ContactButton>
                 </ContactForm>
                 {status.message && (
-                    <ContactStatus
-                        role="alert"
-                        aria-live="polite"
-                        $success={status.success}
-                    >
-                        {status.message}
-                    </ContactStatus>
+                    setTimeout(() => {
+                        setButtonText('SENT')
+                        setTimeout(() => {
+                            setButtonText('SEND')
+                        }, 1200);
+                    }, 1200)
                 )}
             </Container>
             <Wave
