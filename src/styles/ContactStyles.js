@@ -41,8 +41,8 @@ export const ContactHeader = styled.h1`
 export const ContactIcon = styled.img`
   position: relative;
   bottom: clamp(.215rem, 1vw, .75rem);
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   margin-right: .5rem;
   rotate: 45deg;
 `
@@ -92,15 +92,17 @@ export const ContactLabel = styled.label`
 export const ContactInput = styled.input`
   border: none;
   width: 100%;
-  background: #2A2A2A;
+  background: var(--contact-input-bg);
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
   border-bottom: ${({ $borderBottom }) => $borderBottom};
+  border-radius: .7rem;
   margin-bottom: 1em;
   transition: all .12s;
   &::placeholder {
-    color: #B8B8B8;
+    font-family: 'Centra', sans-serif;
+    color: var(--contact-placeholder);
   }
   &:focus {
     outline: none;
@@ -111,8 +113,9 @@ export const ContactInput = styled.input`
 export const ContactTextarea = styled.textarea`
   border: none;
   width: 100%;
-  background: #2A2A2A;
-  border-bottom: 3px solid var(--dkBlue);
+  background: var(--contact-input-bg);
+  border-bottom: ${({ $borderBottom }) => $borderBottom};
+  border-radius: .7rem;
   padding: 0.5em;
   font-size: 1em;
   color: var(--text-color-lt);
@@ -122,7 +125,8 @@ export const ContactTextarea = styled.textarea`
   outline: none;
   transition: all 0.12s;
   &::placeholder {
-    color: #B8B8B8;
+    font-family: 'Centra', sans-serif;
+    color: var(--contact-placeholder);
   }
   &:focus {
     outline: none;
@@ -134,22 +138,25 @@ export const ContactButton = styled.button`
   padding: 0.5em;
   font-size: 1em;
   border-radius: 25px;
-  background: #FFB347;
+  background: var(--button-contact);
   color: var(--text-color-dk);
   font-weight: 700;
   border: none;
   cursor: pointer;
   transition: all 0.12s;
   &:hover {
-    background: #fcce8c;
+    background: var(--button-contact-hover);
     color: #1A1A1A;
   }
 `
 
 export const ContactStatus = styled.p`
-  font-size: 1.2em;
-  color: ${({ $success }) => ($success ? 'green' : 'red')};
   margin-top: 1em;
+  min-height: 2.7em;
+  font-size: 1.6rem;
+  color: ${({ $success }) => ($success ? 'green' : 'red')};
+  padding: 0.5em;
+  text-align: center;
 `
 
 export const ErrorMessage = styled.p`

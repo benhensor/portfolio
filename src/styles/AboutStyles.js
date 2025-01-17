@@ -35,6 +35,7 @@ export const TextContainer = styled(motion.div)`
 		font-size: clamp(0.8rem, 3vw, 1.6rem);
 		margin-bottom: 1.6rem;
 		color: var(--text-color-md);
+		line-height: 1.6;
 		z-index: 2;
 	}
 	div {}

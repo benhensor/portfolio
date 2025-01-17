@@ -14,6 +14,8 @@ const GlobalStyles = createGlobalStyle`
     --error: #bb1f1f;
     --white: #fff;
     --black: #000;
+    --contact-input-bg: #2A2A2A95;
+    --contact-placeholder: #cccccc;
     --background-card: linear-gradient(180deg, #2f3636, #171e1e);
     --background-gradient: linear-gradient(180deg, #141717 0%, #1d1f20 100%);
     --timeline-gradient: linear-gradient(#FFB88C, #ff0062, #0048ff, #71B280);
@@ -23,6 +25,8 @@ const GlobalStyles = createGlobalStyle`
     --button-inactive: #006767;
     --button-hover: #de9e36;
     --button-active: #00c5c5;
+    --button-contact: #FFB347;
+    --button-contact-hover: #fcce8c;
 
     /* Timeline Event Colors */
     --1st-event: #FFAD89;
@@ -82,6 +86,11 @@ const GlobalStyles = createGlobalStyle`
 
     --m-tablet: 0 3rem;
     --m-mobile: 0 2rem;
+
+    /* Global Padding */
+
+    --p-tablet: 0 2rem;
+    --p-mobile: 0 .8rem;
 
     /* Animation Settings */
 
@@ -239,6 +248,7 @@ export const Container = styled.div`
   }
   @media only screen and (max-width: 480px) {
     margin: 10rem 0;
+    padding: var(--p-mobile);
   }
 `
 

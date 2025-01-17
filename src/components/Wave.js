@@ -34,6 +34,7 @@ export default function Wave({ section, transform, width }) {
 	return (
 		<Container
 			style={{ transform: transform }}
+			$borderBottom={fillColor}
 		>
 			<Svg
 				data-name="Layer 1"
@@ -64,6 +65,7 @@ const Container = styled.div`
   width: 100%;
   overflow: hidden;
   line-height: 0;
+	border-bottom: 3px solid ${props => props.$borderBottom};
 `
 
 const Svg = styled.svg`

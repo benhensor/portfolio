@@ -32,7 +32,10 @@ export const Navbar = styled.nav`
 		padding: var(--m-tablet);
 	}
 	@media screen and (max-width: 768px) {
-		padding: var(--m-mobile);
+		padding: var(--p-tablet);
+	}
+	@media screen and (max-width: 450px) {
+		padding: var(--p-mobile);
 	}
 `
 

@@ -162,7 +162,12 @@ const heroPhrases = [
 	{ phrase: 'Web Designer' },
 	{ phrase: 'React Wizard' },
 	{ phrase: 'CSS Guru' },
+	{ phrase: 'PHP Perfectionist' },
 	{ phrase: 'HTML Hero' },
+	{ phrase: 'JavaScript Junkie' },
+	{ phrase: 'Node Ninja' },
+	{ phrase: 'Express Expert' },
+	{ phrase: 'Python Pro' },
 	{ phrase: 'Cat Fanatic!' },
 ]
 
@@ -171,10 +176,10 @@ const aboutInfo = {
 	heading: "Hi, I'm Ben",
 	subHeading: 'Welcome to my portfolio!',
 	sentences: [
-		{ key: 1, text: "I'm a Junior Developer based in Bristol, UK." },
+		{ key: 1, text: "I'm a Full Stack Developer based in Bristol, UK." },
 		{
 			key: 2,
-			text: 'Following a successful career as a Sound Designer, I decided to pursue a fresh challenge and get into Web Development.',
+			text: 'Following a successful career as a Sound Designer, I decided to pursue a fresh challenge and get into Software Development.',
 		},
 		{
 			key: 3,
@@ -260,7 +265,8 @@ const journey = {
 const contactStatement = [
 	'My goal is to work with great people and do great things!',
 	'I am passionate about Software Development and tech in general. I am currently looking for Junior Developer roles within the industry, with a focus on Front End Development.',
-	'If you have any questions or anything at all then please send me a message and I will get back to you as soon as possible. Thanks for stopping by!',
+	'If you like what you see here and want to discuss any opportunities or collaborate then please get in touch.',
+	'Thanks for stopping by!',
 ]
 
 // Projects data

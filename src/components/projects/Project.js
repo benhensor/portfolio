@@ -53,12 +53,16 @@ const ProjectCard = styled.div`
   border-radius: 0.8rem;
 	box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
   overflow: hidden;
-	transition: all 0.3s ease-out;
+	transition: all 0.24s ease-out;
 	z-index: 1;
   &:hover {
-    scale: 1.05;
     background-size: 110%;
     box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  }
+  @media only screen and (min-width: 450px) {
+    &:hover {
+      scale: 1.05;
+    }
   }
 `
 
