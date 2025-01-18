@@ -20,6 +20,7 @@ export const Timeline = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	margin: 2rem 0 4rem 0;
 	.vertical-line {
 		position: absolute;
 		top: 0;
@@ -31,6 +32,29 @@ export const Timeline = styled.div`
 		background: var(--timeline-gradient);
 		z-index: 0;
 	}
+
+	.row-cv-btn {
+		margin: 2rem 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    .col-left {
+			flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+		
+		.col-center {
+			width: 6rem;
+		}
+
+		.col-right {
+			flex: 1;
+			display: flex;
+			justify-content: flex-end;
+		}
+  }
 `
 
 export const Event = styled.div`
@@ -143,7 +167,7 @@ export const Event = styled.div`
 				props.className === 'left' ? 'rotate(180deg)' : 'rotate(0)'};
 		}
 
-		@media only screen and (max-width: 929px) {
+		@media only screen and (max-width: 847px) {
 			.event-icon-container {
 				width: 3rem;
 				height: 3rem;
@@ -208,6 +232,9 @@ export const Event = styled.div`
 			props.className === 'left' ? 'flex-start' : 'flex-end'};
 		width: fit-content;
 		border-radius: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: .4rem;
 	}
 
 	.event-title {
@@ -218,6 +245,7 @@ export const Event = styled.div`
 
 	.event-provider {
 		font-size: var(--text-r);
+		line-height: 1.5;
 	}
 
 	.event-description {
@@ -233,7 +261,7 @@ export const Event = styled.div`
 		margin-bottom: -6rem;
 	}
 	@media only screen and (max-width: 450px) {
-		margin-bottom: -8rem;
+		margin-bottom: -7rem;
 
 		.event-title {
 			font-size: var(--text-s);
@@ -246,7 +274,6 @@ export const Event = styled.div`
 `
 
 export const Button = styled.button`
-	margin: 2rem 2rem 0 0;
 	padding: 1rem 2rem;
 	font-size: 1.6rem;
 	font-weight: 700;
@@ -256,7 +283,7 @@ export const Button = styled.button`
 	border-radius: 5px;
 	z-index: 3;
 	cursor: pointer;
-	transition: all 0.1s ease;
+	transition: all 0.12s ease;
 	&:hover {
 		background: var(--ltOrange);
 	}

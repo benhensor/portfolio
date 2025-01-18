@@ -54,7 +54,7 @@ const Phrase = styled(motion.h2)`
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
-	font-size: clamp(.6em, 3vw, 3em);
+	font-size: clamp(.5rem, 3vw, 3rem);
 	text-align: center;
 	letter-spacing: .9rem;
 	line-height: 1;

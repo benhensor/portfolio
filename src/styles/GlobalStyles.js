@@ -190,30 +190,35 @@ const GlobalStyles = createGlobalStyle`
 
   /* SECTION GRADIENTS */
   #about {
+    border-bottom: 1px solid #de6262;
     background: #141717;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #333333 0%, #141717 50%);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #333333 0%, #141717 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  }
 
   #tech {
+    border-bottom: 1px solid #141717;
     background: #de6262; /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #de6262 0%, #ffb88c 70%); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #de6262 0%, #ffb88c 70%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   #journey {
+    border-bottom: 1px solid #71B280;
     background: #141717;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #333333 0%, #141717 50%);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #333333 0%, #141717 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   #projects {
+    border-bottom: 1px solid #141717;
     background: #134E5E;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #71B280 0%, #134E5E 70%);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #71B280 0%, #134E5E 70%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   #contact {
+    border-bottom: 1px solid #141717;
     background: #FFB347;
     background: -webkit-linear-gradient(to bottom, #FFB347 0%, #FF5E62 100%);
     background: linear-gradient(to bottom, #FFB347 0%, #FF5E62 100%);

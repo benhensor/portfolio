@@ -99,8 +99,8 @@ export const ImageContainer = styled(motion.div)`
 	@media screen and (max-width: 546px) {
 		min-width: 15rem;
 		height: 15rem;
-		top: 15rem;
-		left: 8rem;
+		top: 14.5rem;
+		left: 11rem;
 	}
 `
 

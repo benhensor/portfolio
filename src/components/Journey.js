@@ -38,7 +38,7 @@ export default function Journey() {
     return [str]
   }
 
-	const eventTitle = (title) => {
+	const formatLineBreak = (title) => {
 		const titleParts = insertBreak(title)
 		return (
 			<>
@@ -97,10 +97,10 @@ export default function Journey() {
 								<div className="event-content-container">
 									<div className="event-content">
 										<p className="event-title">
-											{eventTitle(event.title)}
+											{formatLineBreak(event.title)}
 										</p>
 										<p className="event-provider">
-											{event.provider}
+											{formatLineBreak(event.provider)}
 										</p>
 										<p className="event-description">
 											{event.description}
@@ -111,14 +111,18 @@ export default function Journey() {
 							</div>
 						</Event>
 					))}
-					<div className="row">
-						<Button
-							type="button"
-							aria-label="Download CV as PDF"
-							onClick={downloadPDF}
-						>
-							Download CV
-						</Button>
+					<div className="row-cv-btn">
+						<div className="col-left">
+							<Button
+								type="button"
+								aria-label="Download CV as PDF"
+								onClick={downloadPDF}
+							>
+								Download CV
+							</Button>
+						</div>
+						<div className="col-center"></div>
+						<div className="col-right"></div>
 					</div>
 				</Timeline>
 			</Container>
