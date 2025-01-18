@@ -54,21 +54,21 @@ const Phrase = styled(motion.h2)`
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
-	font-size: clamp(.5rem, 3vw, 3rem);
+	font-size: 3rem;
 	text-align: center;
-	letter-spacing: .9rem;
+	letter-spacing: .7rem;
 	line-height: 1;
 	display: block;
 	text-transform: uppercase;
 	word-wrap: normal;
 	opacity: 0;
-	/* @media screen and (max-width: 999px) {
-		font-size: 2.5em;
+	@media screen and (max-width: 999px) {
+		font-size: 2.5rem;
 	}
 	@media screen and (max-width: 768px) {
-		font-size: 1.5em;
+		font-size: 1.5rem;
 	}
 	@media screen and (max-width: 546px) {
-		font-size: 0.7em;
-	} */
+		font-size: 1.2rem;
+	}
 `
