@@ -4,36 +4,28 @@ import styled from "styled-components";
 export default function Wave({ section, transform, width }) {
 
 	let fillColor;
-	let borderColor;
 
 	switch (section) {
 		case 'hero':
 			fillColor = '#141717';
-			borderColor = '#141717';
 			break;
 		case 'about':
 			fillColor = '#de6262';
-			borderColor = '#de6262';
 			break;
 		case 'tech':
 			fillColor = '#141717';
-			borderColor = '#141717';
 			break;
 		case 'journey':
 			fillColor = '#71B280';
-			borderColor = '#71B280';
 			break;
 		case 'projects':
 			fillColor = '#141717';
-			borderColor = '#141717';
 			break;
 		case 'cat':
 			fillColor = '#FFB347';
-			borderColor = '#FFB347';
 			break;
 		case 'contact':
 			fillColor = '#141717';
-			borderColor = '#141717';
 			break;
 		default:
 			fillColor = '#141717';
@@ -42,7 +34,6 @@ export default function Wave({ section, transform, width }) {
 	return (
 		<Container
 			style={{ transform: transform }}
-			$borderBottom={borderColor}
 		>
 			<Svg
 				data-name="Layer 1"
@@ -68,12 +59,10 @@ export default function Wave({ section, transform, width }) {
 
 const Container = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: -.2rem;
   left: 0;
   width: 100%;
   overflow: hidden;
-  line-height: 0;
-	border-bottom: 1px solid ${props => props.$borderBottom};
 `
 
 const Svg = styled.svg`
@@ -81,7 +70,7 @@ const Svg = styled.svg`
   display: block;
 	height: 10rem;
 	@media only screen and (max-width: 480px) {
-		height: 5.2rem;
+		height: 5rem;
 	}
 `
 
