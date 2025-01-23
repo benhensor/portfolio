@@ -105,7 +105,7 @@ export const ProjectDetails = styled.div`
 `
 
 export const Title = styled.h2`
-  background-color: #252e3299;
+  background-color: #252e3250;
   backdrop-filter: blur(5px) saturate(3);
   border-radius: 25px;
   white-space: nowrap;
@@ -143,7 +143,6 @@ export const Description = styled.p`
 
 export const Stack = styled.div`
   display: flex;
-  gap: .8rem;
   margin: 0 auto;
   opacity: 0;
   margin-top: 15rem;
@@ -154,12 +153,8 @@ export const Stack = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: .2rem;
-    width: 7rem;
+    width: 6rem;
     height: 7rem;
-    padding: 1rem;
-    background-color: #090a0b80;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
   }
 
@@ -168,7 +163,7 @@ export const Stack = styled.div`
     font-size: var(--text-xs);
     white-space: nowrap;
     text-align: center;
-    margin-bottom: .2rem;
+    margin-top: .2rem;
   }
 
   img {
@@ -183,11 +178,11 @@ export const Stack = styled.div`
 
 export const Icons = styled.div`
   display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	overflow: hidden;
 	border-radius: 0.8rem;
-	gap: 4rem;
+	gap: 1rem;
   opacity: 0;
   margin-top: 15rem;
   transition: all 0.24s ease-out;
