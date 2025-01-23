@@ -111,6 +111,7 @@ const TechCard = styled(motion.div)`
 	@media screen and (max-width: 768px) {
 		width: 7rem;
 		height: 7rem;
+		gap: 0;
 		padding: 0.5rem;
 		img {
 			width: 2em;

@@ -69,7 +69,7 @@ export const ProjectContent = styled.div`
   transition: all .12s ease-out;
   z-index: 2;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
     &::after {
       content: '';
       position: absolute;
@@ -83,75 +83,114 @@ export const ProjectContent = styled.div`
   }
 `
 
-export const Title = styled.h2`
+export const ProjectDetails = styled.div`
   position: absolute;
-  backdrop-filter: blur(5px) saturate(1.5);
-  border-radius: 0.8rem;
-  width: fit-content;
-  padding: 0.2rem 0.3rem;
+  top: calc(50% - 26px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem 2rem 2rem;
+  z-index: 3;
+  transition: all 0.24s ease-out;
+  ${ProjectCard}:hover & {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 0;
+  }
+`
+
+export const Title = styled.h2`
+  background-color: #252e3299;
+  backdrop-filter: blur(5px) saturate(3);
+  border-radius: 25px;
+  white-space: nowrap;
+  line-height: 2.2rem;
+  padding: 1rem 2rem;
   font-family: var(--font-poppins);
 	font-weight: bold;
 	text-align: center;
   text-transform: uppercase;
   color: var(--text-color-light);
-	font-size: var(--text-xxxl);
-  transform: translateY(0);
+	font-size: var(--text-xl);
   z-index: 3;
   transition: all 0.24s ease-out;
   ${ProjectCard}:hover & {
-    transform: translateY(-200%);
+    top: 3rem;
     backdrop-filter: blur(0);
+    background-color: transparent;
   }
 `
 
 export const Description = styled.p`
-  position: absolute;
-  font-size: var(--text-l);
+  font-size: var(--text-r);
+  line-height: 2rem;
 	color: var(--text-color-light);
   text-align: center;
   padding: 0 3rem;
   opacity: 0;
-  transform: translateY(200px);
-  transition: all .27s ease-in;
-  z-index: 4;
-  // Pseudo-elements for top and bottom borders
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 10rem;
-    right: 10rem;
-    height: 1px; // Adjust border thickness as needed
-    background-color: var(--orange); // Use the same color as the text or change as desired
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
-    transform-origin: left;
+  margin-top: 15rem;
+  transition: all 0.24s ease-out;
+  ${ProjectCard}:hover & {
+    opacity: 1;
+    margin-top: 0;
   }
-  &::before {
-    top: -1rem;
+`
+
+export const Stack = styled.div`
+  display: flex;
+  gap: .8rem;
+  margin: 0 auto;
+  opacity: 0;
+  margin-top: 15rem;
+  transition: all 0.24s ease-out;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .2rem;
+    width: 7rem;
+    height: 7rem;
+    padding: 1rem;
+    background-color: #090a0b80;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
   }
-  &::after {
-    bottom: -1rem;
+
+  span {
+    width: 100%;
+    font-size: var(--text-xs);
+    white-space: nowrap;
+    text-align: center;
+    margin-bottom: .2rem;
+  }
+
+  img {
+    max-width: 100%;
+    width: 3.2rem;
   }
   ${ProjectCard}:hover & {
     opacity: 1;
-    transform: translateY(0);
-    &::before,
-    &::after {
-      transform: scaleX(1);
-    }
+    margin-top: 0;
   }
 `
 
 export const Icons = styled.div`
-  position: absolute;
   display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	overflow: hidden;
 	border-radius: 0.8rem;
 	gap: 4rem;
-  z-index: 5;
+  opacity: 0;
+  margin-top: 15rem;
+  transition: all 0.24s ease-out;
   a {
     display: flex;
     align-items: center;
@@ -166,12 +205,8 @@ export const Icons = styled.div`
 	    color: var(--button-hover);
     }
   }
-  opacity: 0;
-  transform: translateY(300px);
-  transition: all .3s ease-in;
-
   ${ProjectCard}:hover & {
     opacity: 1;
-    transform: translateY(90px);
+    margin-top: 0;
   }
 `

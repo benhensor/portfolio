@@ -19,8 +19,10 @@ import jest from './assets/icons/tech/testing/jest.svg'
 import javascript from './assets/icons/tech/languages/js.svg'
 import jQuery from './assets/icons/tech/frontend/jquery.svg'
 import json from './assets/icons/tech/tools/json.svg'
+import leafletjs from './assets/icons/tech/frontend/leafletjs.svg'
 import mocha from './assets/icons/tech/testing/mochajs.svg'
 import mongodb from './assets/icons/tech/backend/mongodb.svg'
+import mysql from './assets/icons/tech/backend/mysql.svg'
 import netlify from './assets/icons/tech/devops/netlify.svg'
 import node from './assets/icons/tech/backend/nodejs.svg'
 import npm from './assets/icons/tech/tools/npm.svg'
@@ -45,24 +47,27 @@ import viteJs from './assets/icons/tech/frontend/vitejs.svg'
 import vsCode from './assets/icons/tech/tools/vscode.svg'
 
 // Project Images
-import paprback1 from './assets/projects/paprback/paprback2.webp'
+import audiophile1 from './assets/projects/audiophile/audiophile2.webp'
 import benhensorsound1 from './assets/projects/benhensorsound/benhensorsound.webp'
+import companydirectory from './assets/projects/companydirectory/companydirectory.webp'
+// import countries1 from './assets/projects/countries/countries.webp'
+import designo1 from './assets/projects/designo/designo.webp'
+import flashcards1 from './assets/projects/flashcards/flashcards.webp'
+import gazetteer from './assets/projects/gazetteer/gazetteer.webp'
+import jam1 from './assets/projects/jam/jam1.webp'
+// import kanban1 from './assets/projects/kanbantaskapp/kanban.webp'
+import paprback1 from './assets/projects/paprback/paprback2.webp'
+// import reddit1 from './assets/projects/reddit/reddit.webp'
 import seasonit1 from './assets/projects/seasonit/seasonit.webp'
 import sneakers1 from './assets/projects/sneakers/sneakers.webp'
-import countries1 from './assets/projects/countries/countries.webp'
-import audiophile1 from './assets/projects/audiophile/audiophile2.webp'
-import designo1 from './assets/projects/designo/designo.webp'
 import weather1 from './assets/projects/weatherapp/weather.webp'
-import kanban1 from './assets/projects/kanbantaskapp/kanban.webp'
-import jam1 from './assets/projects/jam/jam1.webp'
-import flashcards1 from './assets/projects/flashcards/flashcards.webp'
-import reddit1 from './assets/projects/reddit/reddit.webp'
 
 // Tech Icon Data
 const backend = [
 	{ name: 'Firebase', icon: firebase },
 	{ name: 'Flask', icon: flask },
 	{ name: 'MongoDB', icon: mongodb },
+	{ name: 'MySQL', icon: mysql },
 	{ name: 'Node.js', icon: node },
 	{ name: 'PostgreSQL', icon: postgresql },
 ]
@@ -88,6 +93,7 @@ const frontend = [
 	{ name: 'Framer-Motion', icon: framermotion },
 	{ name: 'HTML 5', icon: html },
 	{ name: 'jQuery', icon: jQuery },
+	{ name: 'Leaflet JS', icon: leafletjs },
 	{ name: 'React', icon: react },
 	{ name: 'Redux', icon: redux },
 	{ name: 'Sass', icon: sass },
@@ -273,6 +279,41 @@ const contactStatement = [
 const projects = [
 	{
 		key: 0,
+		title: 'The Gazetteer',
+		logo: null,
+		image: gazetteer,
+		description:
+			'A mapping app providing data on countries around the world.',
+		techStack: [
+			{ name: 'JavaScript', icon: javascript },
+			{ name: 'Leaflet JS', icon: leafletjs },
+			{ name: 'Bootstrap', icon: bootstrap },
+			{ name: 'jQuery', icon: jQuery },
+			{ name: 'PHP', icon: php },
+
+		],
+		live: 'https://benhensor.co.uk/project1/',
+		code: 'https://github.com/benhensor/benHensorITCS/tree/main/project1',
+	},
+	{
+		key: 0,
+		title: 'Company Directory',
+		logo: null,
+		image: companydirectory,
+		description:
+			'Mobile-first database interface providing CRUD actions for a business personnel management system.',
+		techStack: [
+			{ name: 'JavaScript', icon: javascript },
+			{ name: 'HTML', icon: html },
+			{ name: 'Bootstrap', icon: bootstrap },
+			{ name: 'jQuery', icon: jQuery },
+			{ name: 'PHP', icon: php },
+		],
+		live: 'https://benhensor.co.uk/project2/',
+		code: 'https://github.com/benhensor/benHensorITCS/tree/main/project2',
+	},
+	{
+		key: 0,
 		title: 'Bookaroo',
 		logo: null,
 		image: paprback1,
@@ -281,10 +322,8 @@ const projects = [
 		techStack: [
 			{ name: 'React', icon: react },
 			{ name: 'Node', icon: node },
-			{ name: 'PostgreSQL', icon: postgresql },
+			{ name: 'MySql', icon: mysql },
 			{ name: 'Vercel', icon: vercel },
-			{ name: 'Supabase', icon: supabase },
-			{ name: 'Render', icon: render },
 		],
 		live: 'https://bookaroo-frontend.vercel.app/',
 		code: 'https://github.com/benhensor/bookaroo_frontend',
@@ -295,7 +334,7 @@ const projects = [
 		logo: null,
 		image: benhensorsound1,
 		description:
-			'A recreation of my Sound Design website built in React with an Express mail server.',
+			'A recreation of my Sound Design website.',
 		techStack: [
 			{ name: 'React', icon: react },
 			{ name: 'Node', icon: node },
@@ -325,7 +364,7 @@ const projects = [
 		title: 'Sneakers',
 		logo: null,
 		image: sneakers1,
-		description: 'A Frontend Mentor e-commerce page built with React.',
+		description: 'A Frontend Mentor e-commerce site design challenge.',
 		techStack: [
 			{ name: 'React', icon: react },
 			{ name: 'Netlify', icon: netlify },
@@ -334,24 +373,11 @@ const projects = [
 		code: 'https://github.com/benhensor/e-commerce_page',
 	},
 	{
-		key: 4,
-		title: 'Countries',
-		logo: null,
-		image: countries1,
-		description: 'A Frontend Mentor country finder page built with React.',
-		techStack: [
-			{ name: 'React', icon: react },
-			{ name: 'Netlify', icon: netlify },
-		],
-		live: 'https://fe-country-finder.netlify.app/',
-		code: 'https://github.com/benhensor/countries_api.git',
-	},
-	{
 		key: 5,
 		title: 'Audiophile',
 		logo: null,
 		image: audiophile1,
-		description: 'A Frontend Mentor e-commerce site built with React.',
+		description: 'A Frontend Mentor e-commerce site design challenge.',
 		techStack: [
 			{ name: 'React', icon: react },
 			{ name: 'Netlify', icon: netlify },
@@ -365,7 +391,7 @@ const projects = [
 		logo: null,
 		image: designo1,
 		description:
-			'A Frontend Mentor multi-page site built with React and Styled Components.',
+			'A Frontend Mentor SPA design challenge.',
 		techStack: [
 			{ name: 'React', icon: react },
 			{ name: 'Netlify', icon: netlify },
@@ -385,22 +411,6 @@ const projects = [
 		],
 		live: 'https://weather-app-bh.vercel.app/',
 		code: 'https://github.com/benhensor/weather-app.git',
-	},
-	{
-		key: 8,
-		title: 'Kanban App',
-		logo: null,
-		image: kanban1,
-		description:
-			'A Frontend Mentor PWA challenge built with React and Styled Components.',
-		techStack: [
-			{ name: 'React', icon: react },
-			{ name: 'TypeScript', icon: typescript },
-			{ name: 'Taliwind CSS', icon: tailwind },
-			{ name: 'Vercel', icon: vercel },
-		],
-		live: 'https://kanban-pwa-indol.vercel.app/',
-		code: 'https://github.com/benhensor/kanban-pwa',
 	},
 	{
 		key: 9,
@@ -429,22 +439,55 @@ const projects = [
 		live: 'https://bh-flashcards-app.vercel.app/',
 		code: 'https://github.com/benhensor/codecademy-react/tree/main/flashcards',
 	},
-	{
-		key: 11,
-		title: 'Reddit Clone',
-		logo: null,
-		image: reddit1,
-		description:
-			'A Reddit clone built in React with Redux using the Reddit API.',
-		techStack: [
-			{ name: 'React', icon: react },
-			{ name: 'Redux', icon: redux },
-			{ name: 'Vercel', icon: vercel },
-		],
-		live: 'https://reddit-api-bh.vercel.app/',
-		code: 'https://github.com/benhensor/reddit-api',
-	},
 ]
+
+// Old Projects Data
+// const oldProjectData = [
+// {
+// 	key: 4,
+// 	title: 'Countries',
+// 	logo: null,
+// 	image: countries1,
+// 	description: 'A Frontend Mentor country finder page built with React.',
+// 	techStack: [
+// 		{ name: 'React', icon: react },
+// 		{ name: 'Netlify', icon: netlify },
+// 	],
+// 	live: 'https://fe-country-finder.netlify.app/',
+// 	code: 'https://github.com/benhensor/countries_api.git',
+// },
+// {
+// 	key: 8,
+// 	title: 'Kanban App',
+// 	logo: null,
+// 	image: kanban1,
+// 	description:
+// 		'A Frontend Mentor PWA challenge built with React and Styled Components.',
+// 	techStack: [
+// 		{ name: 'React', icon: react },
+// 		{ name: 'TypeScript', icon: typescript },
+// 		{ name: 'Taliwind CSS', icon: tailwind },
+// 		{ name: 'Vercel', icon: vercel },
+// 	],
+// 	live: 'https://kanban-pwa-indol.vercel.app/',
+// 	code: 'https://github.com/benhensor/kanban-pwa',
+// },
+// {
+// 	key: 11,
+// 	title: 'Reddit Clone',
+// 	logo: null,
+// 	image: reddit1,
+// 	description:
+// 		'A Reddit clone built in React with Redux using the Reddit API.',
+// 	techStack: [
+// 		{ name: 'React', icon: react },
+// 		{ name: 'Redux', icon: redux },
+// 		{ name: 'Vercel', icon: vercel },
+// 	],
+// 	live: 'https://reddit-api-bh.vercel.app/',
+// 	code: 'https://github.com/benhensor/reddit-api',
+// },
+// ]
 
 // exports
 export {
