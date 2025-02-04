@@ -47,6 +47,7 @@ import viteJs from './assets/icons/tech/frontend/vitejs.svg'
 import vsCode from './assets/icons/tech/tools/vscode.svg'
 
 // Project Images
+import scamazon from './assets/projects/scamazon/scamazon.webp'
 import audiophile1 from './assets/projects/audiophile/audiophile2.webp'
 import benhensorsound1 from './assets/projects/benhensorsound/benhensorsound.webp'
 import companydirectory from './assets/projects/companydirectory/companydirectory.webp'
@@ -296,7 +297,7 @@ const projects = [
 		code: 'https://github.com/benhensor/benHensorITCS/tree/main/project1',
 	},
 	{
-		key: 0,
+		key: 1,
 		title: 'Company Directory',
 		logo: null,
 		image: companydirectory,
@@ -313,7 +314,22 @@ const projects = [
 		code: 'https://github.com/benhensor/benHensorITCS/tree/main/project2',
 	},
 	{
-		key: 0,
+		key: 2,
+		title: 'Scamazon',
+		logo: null,
+		image: scamazon,
+		description:
+			'Full stack e-commerce site built with React, PHP and MySQL.',
+		techStack: [
+			{ name: 'React', icon: react },
+			{ name: 'PHP', icon: php },
+			{ name: 'MySql', icon: mysql },
+		],
+		live: 'https://benhensor.co.uk/scamazon/',
+		code: 'https://github.com/benhensor/scamazon-frontend',
+	},
+	{
+		key: 3,
 		title: 'Bookaroo',
 		logo: null,
 		image: paprback1,
@@ -329,7 +345,7 @@ const projects = [
 		code: 'https://github.com/benhensor/bookaroo_frontend',
 	},
 	{
-		key: 1,
+		key: 4,
 		title: 'Sound',
 		logo: null,
 		image: benhensorsound1,
@@ -345,7 +361,7 @@ const projects = [
 		code: 'https://github.com/benhensor/benhensorsound',
 	},
 	{
-		key: 2,
+		key: 5,
 		title: 'SeasonIt',
 		logo: null,
 		image: seasonit1,
@@ -360,7 +376,7 @@ const projects = [
 		code: 'https://github.com/benhensor/season-it',
 	},
 	{
-		key: 3,
+		key: 6,
 		title: 'Sneakers',
 		logo: null,
 		image: sneakers1,
@@ -373,7 +389,7 @@ const projects = [
 		code: 'https://github.com/benhensor/e-commerce_page',
 	},
 	{
-		key: 5,
+		key: 7,
 		title: 'Audiophile',
 		logo: null,
 		image: audiophile1,
@@ -386,7 +402,7 @@ const projects = [
 		code: 'https://github.com/benhensor/audiophile.git',
 	},
 	{
-		key: 6,
+		key: 8,
 		title: 'Designo',
 		logo: null,
 		image: designo1,
@@ -400,7 +416,7 @@ const projects = [
 		code: 'https://github.com/benhensor/designo.git',
 	},
 	{
-		key: 7,
+		key: 9,
 		title: 'Weather App',
 		logo: null,
 		image: weather1,
@@ -413,7 +429,7 @@ const projects = [
 		code: 'https://github.com/benhensor/weather-app.git',
 	},
 	{
-		key: 9,
+		key: 10,
 		title: 'Jam',
 		logo: null,
 		image: jam1,
@@ -425,24 +441,24 @@ const projects = [
 		live: 'https://jam-client.vercel.app/',
 		code: 'https://github.com/benhensor/jam',
 	},
-	{
-		key: 10,
-		title: 'Flashcard App',
-		logo: null,
-		image: flashcards1,
-		description: 'A quiz app making use of the Redux Toolkit in React.',
-		techStack: [
-			{ name: 'React', icon: react },
-			{ name: 'Redux', icon: redux },
-			{ name: 'Vercel', icon: vercel },
-		],
-		live: 'https://bh-flashcards-app.vercel.app/',
-		code: 'https://github.com/benhensor/codecademy-react/tree/main/flashcards',
-	},
 ]
 
 // Old Projects Data
 // const oldProjectData = [
+	// {
+	// 	key: 11,
+	// 	title: 'Flashcard App',
+	// 	logo: null,
+	// 	image: flashcards1,
+	// 	description: 'A quiz app making use of the Redux Toolkit in React.',
+	// 	techStack: [
+	// 		{ name: 'React', icon: react },
+	// 		{ name: 'Redux', icon: redux },
+	// 		{ name: 'Vercel', icon: vercel },
+	// 	],
+	// 	live: 'https://bh-flashcards-app.vercel.app/',
+	// 	code: 'https://github.com/benhensor/codecademy-react/tree/main/flashcards',
+	// },
 // {
 // 	key: 4,
 // 	title: 'Countries',
