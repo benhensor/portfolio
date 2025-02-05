@@ -53,7 +53,7 @@ import benhensorsound1 from './assets/projects/benhensorsound/benhensorsound.web
 import companydirectory from './assets/projects/companydirectory/companydirectory.webp'
 // import countries1 from './assets/projects/countries/countries.webp'
 import designo1 from './assets/projects/designo/designo.webp'
-import flashcards1 from './assets/projects/flashcards/flashcards.webp'
+// import flashcards1 from './assets/projects/flashcards/flashcards.webp'
 import gazetteer from './assets/projects/gazetteer/gazetteer.webp'
 import jam1 from './assets/projects/jam/jam1.webp'
 // import kanban1 from './assets/projects/kanbantaskapp/kanban.webp'
@@ -341,7 +341,7 @@ const projects = [
 			{ name: 'MySql', icon: mysql },
 			{ name: 'Vercel', icon: vercel },
 		],
-		live: 'https://bookaroo-frontend.vercel.app/',
+		live: 'https://benhensor.co.uk/bookaroo/',
 		code: 'https://github.com/benhensor/bookaroo_frontend',
 	},
 	{
