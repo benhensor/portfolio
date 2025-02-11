@@ -47,7 +47,7 @@ import viteJs from './assets/icons/tech/frontend/vitejs.svg'
 import vsCode from './assets/icons/tech/tools/vscode.svg'
 
 // Project Images
-import scamazon from './assets/projects/scamazon/scamazon.webp'
+import amazon from './assets/projects/amazon/amazon.webp'
 import audiophile1 from './assets/projects/audiophile/audiophile2.webp'
 import benhensorsound1 from './assets/projects/benhensorsound/benhensorsound.webp'
 import companydirectory from './assets/projects/companydirectory/companydirectory.webp'
@@ -315,9 +315,9 @@ const projects = [
 	},
 	{
 		key: 2,
-		title: 'Scamazon',
+		title: 'Amazon',
 		logo: null,
-		image: scamazon,
+		image: amazon,
 		description:
 			'Full stack e-commerce site built with React, PHP and MySQL.',
 		techStack: [
@@ -325,8 +325,8 @@ const projects = [
 			{ name: 'PHP', icon: php },
 			{ name: 'MySql', icon: mysql },
 		],
-		live: 'https://benhensor.co.uk/scamazon/',
-		code: 'https://github.com/benhensor/scamazon-frontend',
+		live: 'https://benhensor.co.uk/amazon/',
+		code: 'https://github.com/benhensor/amazon-client',
 	},
 	{
 		key: 3,
