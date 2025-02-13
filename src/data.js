@@ -315,11 +315,11 @@ const projects = [
 	},
 	{
 		key: 2,
-		title: 'Amazon',
+		title: 'Amazon Clone',
 		logo: null,
 		image: amazon,
 		description:
-			'Full stack e-commerce site built with React, PHP and MySQL.',
+			'A full stack emulation of the Amazon e-commerce site built with React, PHP and MySQL.',
 		techStack: [
 			{ name: 'React', icon: react },
 			{ name: 'PHP', icon: php },
