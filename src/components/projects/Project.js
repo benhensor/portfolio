@@ -26,13 +26,21 @@ export default function Project({ project }) {
 						))}
 					</Stack>
 					<Icons>
-						<a href={project.code} target="_blank" rel="noreferrer">
+						<a 
+							href={project.code} 
+							target="_blank" rel="noreferrer"
+							aria-label={`View ${project.title} source code on GitHub`}
+						>
 							<FaGithub
 								className="project-icon-github"
 								style={{ fontSize: '2.6rem' }}
 							/>
 						</a>
-						<a href={project.live} target="_blank" rel="noreferrer">
+						<a 
+							href={project.live} 
+							target="_blank" rel="noreferrer"
+							aria-label={`View ${project.title} live site`}
+						>
 							Live site
 						</a>
 					</Icons>
