@@ -229,7 +229,7 @@ const journey = {
 			key: 4,
 			type: 'work',
 			date: '2015-2022',
-			title: 'Sound Designer - Film, TV & Commercials',
+			title: 'Sound Designer - Film & Television',
 			provider: 'Self Employed',
 			description: 'Award winning Sound Designer working across film, television and commercials.',
 		},
