@@ -54,23 +54,6 @@ export default function Journey() {
 		)
 	}
 
-	const VerticalLineAnimation = ({ scrollDirection }) => (
-		<motion.div
-			$scrollDirection={scrollDirection}
-			initial={{ 
-				scaleY: 0
-			}}
-			whileInView={{ 
-				scaleY: 1
-			}}
-			viewport={{ once: false }} // Allow re-animation
-			transition={{ 
-				duration: 0.5, 
-				ease: 'easeInOut'
-			}}
-		/>
-	);
-
 	return (
 		<Section id="journey">
 			<BGWord>JOURNEY</BGWord>
