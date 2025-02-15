@@ -54,6 +54,49 @@ export default function Journey() {
 		)
 	}
 
+	const timings = {
+		verticalLine: [
+			{ scaleY: 0 },
+			{ scaleY: 1 },
+			{ duration: 0.5, ease: 'easeInOut' },
+		],
+		event: [
+			{ opacity: 0 },
+			{ opacity: 1 },
+			{ duration: 0.5 },
+		],
+		eventPoint: [
+        { scale: 0 },
+        { scale: 1 },
+        { duration: 0.1, ease: 'easeOut' }  // Starts at 0s
+    ],
+    eventArrow: [
+        { scale: 0 },
+        { scale: 1 },
+        { delay: 0.1, duration: 0.1, ease: 'easeOut' }  // Starts at 0.1s
+    ],
+    eventDottedLine: [
+        { scaleX: 0 },
+        { scaleX: 1 },
+        { delay: 0.2, duration: 0.5, ease: 'easeOut' }  // Starts at 0.2s
+    ],
+    eventIconContainer: [
+        { opacity: 0, scale: 0 },
+        { opacity: 1, scale: 1 },
+        { delay: 0.3, duration: 0.3, ease: 'easeOut' }  // Starts at 0.7s (after dotted line)
+    ],
+    eventDate: [
+        { opacity: 0 },
+        { opacity: 1 },
+        { delay: 0.4, duration: 0.3 }  // Starts at 1.0s
+    ],
+    eventContent: [
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0 },
+        { delay: 0.5, duration: 0.24, ease: 'easeInOut' }  // Starts at 1.3s
+    ]
+	}
+
 	return (
 		<Section id="journey">
 			<BGWord>JOURNEY</BGWord>
@@ -62,36 +105,32 @@ export default function Journey() {
 					<VerticalLine
 						as={motion.div}
 						$scrollDirection={scrollDirection}
-						initial={{ 
-				scaleY: 0
-			}}
-			whileInView={{ 
-				scaleY: 1
-			}}
-						transition={{ duration: 0.5, ease: 'easeInOut' }}
+						initial={{ scaleY: timings.verticalLine[0].scaleY }}
+						whileInView={{ scaleY: timings.verticalLine[1].scaleY }}
+						transition={timings.verticalLine[2]}
 					/>
 					<div className="events">
 						{journey.events.map((event) => (
 							<Event
 								key={event.key}
-								$side={`${event.key % 2 === 0 ? 'left' : 'right'}`}
+								className={`${event.key % 2 === 0 ? 'left' : 'right'}`}
 								$eventKey={event.key}
 								as={motion.div}
 								initial={{
-									opacity: 0,
+									opacity: timings.event[0].opacity,
 								}}
 								whileInView={{
-									opacity: 1,
+									opacity: timings.event[1].opacity,
 								}}
 								viewport={{ once: true }}
-								transition={{ duration: 0.5 }}
+								transition={timings.event[2]}
 							>
 								<div className="row">
 									<motion.div
 										className="event-date"
-										initial={{ opacity: 0 }}
-										whileInView={{ opacity: 1 }}
-										transition={{ duration: 0.3, delay: 0.5 }}
+										initial={{ opacity: timings.eventDate[0].opacity }}
+										whileInView={{ opacity: timings.eventDate[1].opacity }}
+										transition={timings.eventDate[2]}
 									>
 										<span>{event.date}</span>
 									</motion.div>
@@ -102,12 +141,9 @@ export default function Journey() {
 										<div className="spacer-event-line"></div>
 										<motion.div
 											className="event-arrow"
-											initial={{ scale: 0 }}
-											whileInView={{ scale: 1 }}
-											transition={{
-												delay: 0.4,
-												ease: 'easeOut',
-											}}
+											initial={{ scale: timings.eventArrow[0].scale }}
+											whileInView={{ scale: timings.eventArrow[1].scale }}
+											transition={timings.eventArrow[2]}
 										>
 											<Arrow
 												direction={
@@ -120,25 +156,19 @@ export default function Journey() {
 										<motion.div
 											className="event-dotted-line"
 											initial={{ 
-												scaleX: 0,
+												scaleX: timings.eventDottedLine[0].scaleX,
 												transformOrigin: event.key % 2 === 0 ? 'left center' : 'right center' 
 											}}
 											whileInView={{ 
-												scaleX: 1
+												scaleX: timings.eventDottedLine[1].scaleX,
 											}}
-											transition={{
-												duration: 0.5,
-												ease: 'easeOut'
-											}}
+											transition={timings.eventDottedLine[2]}
 										>
 											<motion.div
 												className="event-icon-container"
-												initial={{ opacity: 0, scale: 0 }}
-												whileInView={{ opacity: 1, scale: 1 }} 
-												transition={{
-													duration: 0.3,
-													ease: 'easeOut',
-												}}
+												initial={ timings.eventIconContainer[0] }
+												whileInView={ timings.eventIconContainer[1] }
+												transition={ timings.eventIconContainer[2] } 
 											>
 												<div className="event-icon">
 													{event.type === 'education' ? (
@@ -148,8 +178,7 @@ export default function Journey() {
 													)}
 												</div>
 												<motion.div
-													className="event-icon-arrow"
-													$side={`${event.key % 2 === 0 ? 'left' : 'right'}`}
+													className={`event-icon-arrow ${event.key % 2 === 0 ? 'left' : 'right'}`}
 												>
 												<Arrow
 													direction={
@@ -164,25 +193,21 @@ export default function Journey() {
 									</div>
 									<motion.div
 										className="event-point"
-										initial={{ scale: 0 }}
-										whileInView={{ scale: 1 }}
-										transition={{ delay: 0.2, ease: 'easeOut' }}
+										initial={{ scale: timings.eventPoint[0].scale }}
+										whileInView={{ scale: timings.eventPoint[1].scale }}
+										transition={timings.eventPoint[2]}
 									/>
 									<div className="spacer-opposite"></div>
 								</div>
 								<div className="row">
 									<EventContent
-										$side={`${
+										className={`${
 											event.key % 2 === 0 ? 'left' : 'right'
 										}`}
 										as={motion.div}
-										initial={{ opacity: 0, y: 30 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										transition={{
-											delay: 0.3,
-											duration: 0.24,
-											ease: 'easeInOut',
-										}}
+										initial={ timings.eventContent[0] }
+										whileInView={ timings.eventContent[1] }
+										transition={ timings.eventContent[2] }
 									>
 										<div className="event-content">
 											<p className="event-title">

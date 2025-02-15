@@ -49,6 +49,15 @@ export const Timeline = styled.div`
 			justify-content: flex-end;
 		}
 	}
+
+	@media only screen and (max-width: 450px) {
+		.events {
+			margin: 4rem 0 6rem 0;
+		}
+		.row-cv-btn {
+			margin-top: 4rem;
+		}
+	}
 `
 
 export const VerticalLine = styled.div`
@@ -74,7 +83,7 @@ export const Event = styled.div`
 	.row {
 		display: flex;
 		flex-direction: ${(props) =>
-			props.$side === 'right' ? 'row' : 'row-reverse'};
+			props.className === 'right' ? 'row' : 'row-reverse'};
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -85,9 +94,9 @@ export const Event = styled.div`
 
 	.event-date {
 		flex: 1;
-		margin-left: ${(props) => (props.$side === 'left' ? '6rem' : '0')};
-		margin-right: ${(props) => (props.$side === 'right' ? '6rem' : '0')};
-		text-align: ${(props) => (props.$side === 'left' ? 'left' : 'right')};
+		margin-left: ${(props) => (props.className === 'left' ? '6rem' : '0')};
+		margin-right: ${(props) => (props.className === 'right' ? '6rem' : '0')};
+		text-align: ${(props) => (props.className === 'left' ? 'left' : 'right')};
 		font-size: var(--text-s);
 		color: var(--orange);
 		z-index: 3;
@@ -98,9 +107,9 @@ export const Event = styled.div`
 		display: flex;
 		align-items: center;
 		flex-direction: ${(props) =>
-			props.$side === 'left' ? 'row' : 'row-reverse'};
+			props.className === 'left' ? 'row' : 'row-reverse'};
 		justify-content: ${(props) =>
-			props.$side === 'left' ? 'flex-start' : 'flex-start'};
+			props.className === 'left' ? 'flex-start' : 'flex-start'};
 		gap: 0.5rem;
 	}
 
@@ -125,7 +134,7 @@ export const Event = styled.div`
 	.event-dotted-line {
 		flex: 1;
 		display: flex;
-		flex-direction: ${props => props.$side === 'right' ? 'row' : 'row-reverse'};
+		flex-direction: ${props => props.className === 'right' ? 'row' : 'row-reverse'};
 		align-items: center;
 		max-width: 50rem;
 		height: 0;
@@ -167,14 +176,14 @@ export const Event = styled.div`
 		}
 		.event-icon-arrow {
 			position: absolute;
-			left: ${(props) => (props.$side === 'left' ? '-.7rem' : 'auto')};
-			right: ${(props) => (props.$side === 'right' ? '-.7rem' : 'auto')};
+			left: ${(props) => (props.className === 'left' ? '-.7rem' : 'auto')};
+			right: ${(props) => (props.className === 'right' ? '-.7rem' : 'auto')};
 
 			margin-bottom: 0.2rem;
 			margin-left: ${(props) =>
-				props.$side === 'left' ? '0' : '-.3rem'};
+				props.className === 'left' ? '0' : '-.3rem'};
 			margin-right: ${(props) =>
-				props.$side === 'right' ? '0' : '-.3rem'};
+				props.className === 'right' ? '0' : '-.3rem'};
 			display: flex;
 			align-items: center;
 			width: 1rem;
@@ -220,16 +229,16 @@ export const Event = styled.div`
 
 export const EventContent = styled.div`
 	flex: 1;
-	margin-left: ${(props) => (props.$side === 'left' ? '6rem' : '0')};
-	margin-right: ${(props) => (props.$side === 'right' ? '6rem' : '0')};
-	text-align: ${(props) => (props.$side === 'left' ? 'left' : 'right')};
+	margin-left: ${(props) => (props.className === 'left' ? '6rem' : '0')};
+	margin-right: ${(props) => (props.className === 'right' ? '6rem' : '0')};
+	text-align: ${(props) => (props.className === 'left' ? 'left' : 'right')};
 	display: flex;
 	flex-direction: column;
 	z-index: 3;
 
 	.event-content {
 		align-self: ${(props) =>
-			props.$side === 'left' ? 'flex-start' : 'flex-end'};
+			props.className === 'left' ? 'flex-start' : 'flex-end'};
 		width: fit-content;
 		display: flex;
 		flex-direction: column;
@@ -250,17 +259,30 @@ export const EventContent = styled.div`
 
 	.event-description {
 		align-self: ${(props) =>
-			props.$side === 'left' ? 'flex-start' : 'flex-end'};
+			props.className === 'left' ? 'flex-start' : 'flex-end'};
 		font-size: var(--text-s);
 		color: var(--text-color-md);
 		line-height: 1.5;
 		max-width: 30rem;
 	}
+
+	@media only screen and (max-width: 450px) {
+		margin-top: 2rem;
+		.event-title {
+			font-size: var(--text-s);
+		}
+		.event-provider {
+			font-size: var(--text-s);
+		}
+		.event-description {
+			font-size: var(--text-xs);
+		}
+	}
 `
 
 export const Button = styled.button`
 	padding: 1rem 2rem;
-	font-size: 1.6rem;
+	font-size: var(--text-r);
 	font-weight: 700;
 	background: var(--orange);
 	color: var(--black);
@@ -271,5 +293,9 @@ export const Button = styled.button`
 	transition: all 0.12s ease;
 	&:hover {
 		background: var(--ltOrange);
+	}
+
+	@media only screen and (max-width: 450px) {
+		font-size: var(--text-s);
 	}
 `
