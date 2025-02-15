@@ -152,6 +152,8 @@ export const Event = styled.div`
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			transform-origin: ${(props) =>
+				props.className === 'left' ? 'right center' : 'left center'};
 			transition: transform 0.3s ease;
 			position: relative;
 			svg {

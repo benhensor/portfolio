@@ -83,7 +83,7 @@ export default function Journey() {
     eventIconContainer: [
         { opacity: 0, scale: 0 },
         { opacity: 1, scale: 1 },
-        { delay: 0.3, duration: 0.3, ease: 'easeOut' }  // Starts at 0.7s (after dotted line)
+        { delay: 0.1, duration: 0.3, ease: 'easeOut' }  // Starts at 0.7s (after dotted line)
     ],
     eventDate: [
         { opacity: 0 },
