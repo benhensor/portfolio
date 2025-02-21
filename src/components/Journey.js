@@ -4,7 +4,7 @@ import Wave from './Wave'
 import { useWindowSize } from '../hooks/useWindowSize'
 import { useScrollDirection } from '../hooks/useScrollDirection'
 import { Section, Container, BGWord } from '../styles/GlobalStyles'
-import { journey } from '../data'
+import { usePortfolioContext } from '../context/portfolioDataContext'
 import Arrow from './icons/Arrow'
 import Education from './icons/Education'
 import Work from './icons/Work'
@@ -17,6 +17,7 @@ import {
 } from '../styles/JourneyStyles'
 
 export default function Journey() {
+	const { journeyInfo } = usePortfolioContext()
 	const scrollDirection = useScrollDirection()
 	const windowWidth = useWindowSize()[0]
 	const mobileView = windowWidth < 450
@@ -110,7 +111,7 @@ export default function Journey() {
 						transition={timings.verticalLine[2]}
 					/>
 					<div className="events">
-						{journey.events.map((event) => (
+						{journeyInfo?.events.map((event) => (
 							<Event
 								key={event.key}
 								className={`${event.key % 2 === 0 ? 'left' : 'right'}`}

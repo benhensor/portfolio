@@ -1,11 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useCallback } from 'react'
 import { useInView, useAnimation } from 'framer-motion'
+import { useScrollDirection } from '../../hooks/useScrollDirection'
 import TechCategory from './TechCategory'
-import {
-	Section,
-	Container,
-	BGWord,
-} from '../../styles/GlobalStyles'
+import { Section, Container, BGWord } from '../../styles/GlobalStyles'
 import { TechContainer, TechCategoriesContainer } from '../../styles/TechStyles'
 import {
 	backend,
@@ -19,42 +16,54 @@ import {
 import Wave from '../Wave'
 
 export default function Tech() {
-
+	const scrollDirection = useScrollDirection()
 	const contentRef = useRef(null)
 	const techRef = useRef(null)
 	const isInView = useInView(techRef, { amount: 0.5 })
 	const controls = useAnimation()
+
+	const getBaseOffset = () => {
+		const isSmallScreen = window.innerWidth <= 768
+		return isSmallScreen ? 100 : 50
+	}
+
+	const getYOffset = useCallback(() => {
+		const baseOffset = getBaseOffset()
+		return scrollDirection === 'down' ? baseOffset : -baseOffset
+	}, [scrollDirection])
+
 	const [variants, setVariants] = useState({
 		page: {
 			hidden: { opacity: 0 },
 			visible: {
 				opacity: 1,
-				transition: {
-					duration: 0.75,
-				},
+				transition: { duration: 0.75 },
 			},
 		},
 		container: {
-			hidden: { opacity: 0, y: 50 },
+			hidden: { opacity: 0 },
 			visible: {
 				opacity: 1,
-				y: 0,
 				transition: {
 					when: 'beforeChildren',
 					staggerChildren: 0.1,
+					staggerDirection: scrollDirection === 'down' ? 1 : -1,
 					ease: 'easeOut',
 					duration: 0.5,
 				},
 			},
 		},
 		item: {
-			hidden: { opacity: 0, y: 50 },
+			hidden: {
+				opacity: 0,
+				y: getYOffset(),
+			},
 			visible: {
 				opacity: 1,
 				y: 0,
 				transition: {
 					ease: 'easeOut',
-					duration: 0.5,
+					duration: 0.3,
 				},
 			},
 		},
@@ -62,48 +71,42 @@ export default function Tech() {
 
 	useEffect(() => {
 		const updateVariants = () => {
-			const isSmallScreen = window.innerWidth <= 768
-			setVariants({
-				page: {
-					hidden: { opacity: 0 },
-					visible: {
-						opacity: 1,
-						transition: {
-							duration: 0.75,
-						},
-					},
-				},
+			const yOffset = getYOffset()
+
+			setVariants((prev) => ({
+				...prev,
 				container: {
-					hidden: { opacity: 0, y: 50 },
+					...prev.container,
 					visible: {
-						opacity: 1,
-						y: isSmallScreen ? -50 : 0,
+						...prev.container.visible,
 						transition: {
-							when: 'beforeChildren',
-							staggerChildren: 0.1,
-							ease: 'easeOut',
-							duration: 0.5,
+							...prev.container.visible.transition,
+							staggerDirection:
+								scrollDirection === 'down' ? 1 : -1,
 						},
 					},
 				},
 				item: {
-					hidden: { opacity: 0, y: isSmallScreen ? 100 : 50 },
+					hidden: {
+						opacity: 0,
+						y: yOffset,
+					},
 					visible: {
 						opacity: 1,
 						y: 0,
 						transition: {
 							ease: 'easeOut',
-							duration: 0.5,
+							duration: 0.3,
 						},
 					},
 				},
-			})
+			}))
 		}
 
 		updateVariants()
 		window.addEventListener('resize', updateVariants)
 		return () => window.removeEventListener('resize', updateVariants)
-	}, [])
+	}, [scrollDirection, getYOffset])
 
 	useEffect(() => {
 		if (isInView) {
@@ -150,7 +153,7 @@ export default function Tech() {
 					</TechCategoriesContainer>
 				</TechContainer>
 			</Container>
-			<Wave 
+			<Wave
 				section="tech"
 				transform="rotateY(180deg)"
 				width="calc(205% + 3px)"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
-import { heroPhrases } from '../../data'
+import { usePortfolioContext } from '../../context/portfolioDataContext'
 
 const phraseVariants = {
   hidden: { opacity: 0 },
@@ -10,22 +10,23 @@ const phraseVariants = {
 };
 
 export default function HeroPhrases() {
+	const { heroPhrases } = usePortfolioContext()
   const [currentPhrase, setCurrentPhrase] = useState(0)
 
-	const textRotate = heroPhrases.map((phrase) => phrase.phrase)
-
 	useEffect(() => {
+		if (!heroPhrases) return
 		const interval = setInterval(() => {
 			setCurrentPhrase(
-				(prevPhrase) => (prevPhrase + 1) % textRotate.length
+				(prevPhrase) => (prevPhrase + 1) % heroPhrases.length
 			)
 		}, 3500)
 
 		return () => clearInterval(interval)
-	}, [textRotate.length])
+	}, [heroPhrases])
 
 	const renderPhrases = () => {
-		return textRotate.map((phrase, index) => (
+		if (!heroPhrases) return null
+		return heroPhrases.map((phrase, index) => (
 			<Phrase
 				key={index}
 				variants={phraseVariants}

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { useInView, useAnimation } from 'framer-motion'
-import Project from './Project'
+import { usePortfolioContext } from '../../context/portfolioDataContext'
 import { Section, Container, BGWord } from '../../styles/GlobalStyles'
 import {
 	Heading,
@@ -8,10 +8,11 @@ import {
 	ProjectGrid,
 	Wrapper,
 } from '../../styles/ProjectsStyles'
-import { projects } from '../../data'
+import Project from './Project'
 import Wave from '../Wave'
 
 export default function Projects() {
+	const { projects } = usePortfolioContext()
 	const projectsRef = useRef(null)
 	const isInView = useInView(projectsRef, { amount: 0.1 })
 	const controls = useAnimation()
@@ -42,7 +43,7 @@ export default function Projects() {
 				</SubHeading>
 
 				<ProjectGrid>
-					{projects.map((project, i) => (
+					{projects?.map((project, i) => (
 						<Wrapper
 							key={project.key}
 							initial="hidden"

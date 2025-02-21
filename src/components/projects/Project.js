@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
+import { techIcons, projectImages } from '../../data'
 import {
 	ProjectCard,
 	ProjectContent,
@@ -11,17 +12,28 @@ import {
 } from '../../styles/ProjectsStyles'
 
 export default function Project({ project }) {
+
+	const getProjectImage = (key) => {
+		const image = projectImages.find((img) => img.key === key)
+		return image;
+	}
+
+	const getTechStack = (name) => {
+		const tech = techIcons.find((t) => t.name === name)
+		return tech.icon;
+	}
+
 	return (
-		<ProjectCard key={project.key} $image={project.image}>
+		<ProjectCard key={project.key} $image={getProjectImage(project.key).image}>
 			<ProjectContent>
 				<ProjectDetails>
 					<Title>{project.title}</Title>
 					<Description>{project.description}</Description>
 					<Stack>
-						{project.techStack.map((tech, index) => (
+						{project?.techStack?.map((tech, index) => (
 							<div key={index}>
-								<img src={tech.icon} alt={tech.name} />
-								<span>{tech.name}</span>
+								<img src={getTechStack(tech)} alt={tech} />
+								<span>{tech}</span>
 							</div>
 						))}
 					</Stack>

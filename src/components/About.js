@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
-import { aboutInfo } from '../data'
+import { usePortfolioContext } from '../context/portfolioDataContext'
 import profile from '../assets/img/profile.webp'
 import { Section, Container, BGWord } from '../styles/GlobalStyles'
 import {
@@ -12,6 +12,7 @@ import {
 import Wave from './Wave'
 
 export default function About() {
+	const { aboutInfo, isLoading } = usePortfolioContext()
 	const contentRef = useRef(null)
 	const isInView = useInView(contentRef, { amount: 0.5 })
 	const controls = useAnimation()
@@ -155,12 +156,12 @@ export default function About() {
 	}, [])
 
 	useEffect(() => {
-		if (isInView) {
-			controls.start('visible')
-		} else {
-			controls.start('hidden')
-		}
-	}, [isInView, controls])
+    if (isInView && !isLoading && aboutInfo) {
+      controls.start('visible')
+    } else {
+      controls.start('hidden')
+    }
+  }, [isInView, controls, isLoading, aboutInfo])
 
 	const scrollToContact = () => {
 		document
@@ -173,8 +174,6 @@ export default function About() {
 		link.href = '/api/serve-cv.php'
 		link.click()
 	}
-
-	const { heading, subHeading, sentences } = aboutInfo
 
 	return (
 		<Section id="about">
@@ -192,13 +191,13 @@ export default function About() {
 						variants={variants.content}
 					>
 						<motion.h1 variants={variants.item}>
-							{heading}
+							{aboutInfo?.heading}
 						</motion.h1>
 						<motion.h2 variants={variants.item}>
-							{subHeading}
+							{aboutInfo?.subHeading}
 						</motion.h2>
 						<motion.div>
-							{sentences.map((sentence) => (
+							{aboutInfo?.sentences?.map((sentence) => (
 								<motion.p
 									key={sentence.key}
 									variants={variants.sentence}

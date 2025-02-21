@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { useInView, motion, useAnimation } from 'framer-motion'
-import { contactStatement } from '../data'
+import { usePortfolioContext } from '../context/portfolioDataContext'
 import Cat from './cat/Cat'
 import Wave from './Wave'
 import AnimatedText from './AnimatedText'
@@ -13,6 +13,7 @@ export default function CatSection() {
 	const catSectionRef = useRef(null)
 	const isInView = useInView(catSectionRef, { amount: 0.2 })
 	const controls = useAnimation()
+	const { contactStatement } = usePortfolioContext()
 
 	useEffect(() => {
 		if (isInView) {
@@ -39,7 +40,7 @@ export default function CatSection() {
 		<Section id="cat">
 			<Container ref={catSectionRef}>
 				<ContactStatement>
-					{contactStatement.map((sentence, i) => (
+					{contactStatement?.map((sentence, i) => (
 						<motion.p
 							key={i}
 							initial="hidden"
