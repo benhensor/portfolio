@@ -26,6 +26,7 @@ import mysql from './assets/icons/tech/backend/mysql.svg'
 import netlify from './assets/icons/tech/devops/netlify.svg'
 import node from './assets/icons/tech/backend/nodejs.svg'
 import npm from './assets/icons/tech/tools/npm.svg'
+import owm from './assets/icons/tech/backend/openweathermap.svg'
 import php from './assets/icons/tech/languages/php.svg'
 import playwright from './assets/icons/tech/testing/playwright.svg'
 import postgresql from './assets/icons/tech/backend/postgresql.svg'
@@ -66,6 +67,7 @@ const backend = [
 	{ name: 'MongoDB', icon: mongodb },
 	{ name: 'MySQL', icon: mysql },
 	{ name: 'Node JS', icon: node },
+	{ name: 'OWM', icon: owm },
 	{ name: 'PostgreSQL', icon: postgresql },
 ]
 
@@ -151,6 +153,7 @@ const techIcons = [
 	{ name: 'Netlify', icon: netlify },
 	{ name: 'Node JS', icon: node },
 	{ name: 'NPM', icon: npm },
+	{ name: 'OWM', icon: owm },
 	{ name: 'PHP', icon: php },
 	{ name: 'Photoshop', icon: ps },
 	{ name: 'Playwright', icon: playwright },
