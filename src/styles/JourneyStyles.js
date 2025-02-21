@@ -223,9 +223,6 @@ export const Event = styled.div`
 			font-size: var(--text-s);
 			line-height: 1.4;
 		}
-		.event-provider {
-			font-size: var(--text-xs);
-		}
 	}
 `
 
@@ -275,9 +272,6 @@ export const EventContent = styled.div`
 		}
 		.event-provider {
 			font-size: var(--text-s);
-		}
-		.event-description {
-			font-size: var(--text-xs);
 		}
 	}
 `

@@ -83,7 +83,7 @@ export const InvalidIcon = styled.div`
 `
 
 export const ContactLabel = styled.label`
-  font-size: 1.2rem;
+  font-size: var(--text-s);
   color: var(--text-color-soft);
   margin-left: 1rem;
   margin-bottom: 0.2em;
@@ -94,7 +94,7 @@ export const ContactInput = styled.input`
   width: 100%;
   background: var(--contact-input-bg);
   padding: 0.5em;
-  font-size: 1em;
+  font-size: var(--text-r);
   color: var(--text-color-lt);
   border-bottom: ${({ $borderBottom }) => $borderBottom};
   border-radius: .7rem;
@@ -117,7 +117,7 @@ export const ContactTextarea = styled.textarea`
   border-bottom: ${({ $borderBottom }) => $borderBottom};
   border-radius: .7rem;
   padding: 0.5em;
-  font-size: 1em;
+  font-size: var(--text-r);
   color: var(--text-color-lt);
   resize: vertical;
   min-height: 10em;
@@ -136,7 +136,7 @@ export const ContactTextarea = styled.textarea`
 
 export const ContactButton = styled.button`
   padding: 0.5em;
-  font-size: 1em;
+  font-size: var(--text-r);
   border-radius: 25px;
   background: var(--button-contact);
   color: var(--text-color-dk);
@@ -153,7 +153,7 @@ export const ContactButton = styled.button`
 export const ContactStatus = styled.p`
   margin-top: 1em;
   min-height: 2.7em;
-  font-size: 1.6rem;
+  font-size: var(--text-r);
   color: ${({ $success }) => ($success ? '#76f4aa' : '#b60000')}; 
   padding: 0.5em;
   text-align: center;

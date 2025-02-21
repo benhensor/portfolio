@@ -160,7 +160,7 @@ export const Stack = styled.div`
 
   span {
     width: 100%;
-    font-size: var(--text-xs);
+    font-size: var(--text-s);
     white-space: nowrap;
     text-align: center;
     margin-top: .2rem;

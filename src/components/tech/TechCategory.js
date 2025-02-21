@@ -96,7 +96,7 @@ const TechCard = styled(motion.div)`
 	height: 10rem;
 	padding: 1rem;
 	border-radius: 5px;
-	background-color: #232a2f99;
+	background-color: #232a2f50;
 	backdrop-filter: blur(5px);
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	img {

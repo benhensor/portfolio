@@ -27,12 +27,12 @@ export const TextContainer = styled(motion.div)`
 		color: var(--orange);
 	}
 	h2 {
-		font-size: clamp(1.5rem, 3vw, 2.5rem);
+		font-size: clamp(1.6rem, 3vw, 2.5rem);
 		margin-bottom: 1rem;
 		color: var(--ltOrange);
 	}
 	p {
-		font-size: clamp(0.8rem, 3vw, 1.6rem);
+		font-size: var(--text-r);
 		margin-bottom: 1.6rem;
 		color: var(--text-color-md);
 		line-height: 1.6;
@@ -42,7 +42,7 @@ export const TextContainer = styled(motion.div)`
 	button {
 		margin: 2rem 2rem 0 0;
 		padding: 1rem 2rem;
-		font-size: 1.6rem;
+		font-size: var(--text-r);
 		font-weight: 700;
 		background: var(--orange);
 		color: var(--black);
@@ -105,22 +105,26 @@ export const ImageContainer = styled(motion.div)`
 `
 
 export const Image = styled.img`
-	width: 25rem;
-	height: 37rem;
-	object-position: center;
-	position: relative;
-	top: -2.7em;
-	left: 2.5em;
-	@media screen and (max-width: 768px) {
-		top: -2.5em;
-		left: 2.5em;
-		width: 15rem;
-		height: 23rem;
-	}
-	@media screen and (max-width: 546px) {
-		top: -2rem;
-		left: 2rem;
-		width: 10rem;
-		height: 15rem;
-	}
+  width: 25rem;
+  height: 37rem;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  top: -2.7em;
+  left: 2.5em;
+  aspect-ratio: 250/370;
+
+  @media screen and (max-width: 768px) {
+    width: 15rem;
+    height: 22.2rem;
+    top: -2.5em;
+    left: 2.5em;
+  }
+
+  @media screen and (max-width: 546px) {
+    width: 10rem;
+    height: 14.8rem;
+    top: -2rem;
+    left: 2rem;
+  }
 `
