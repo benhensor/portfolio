@@ -71,7 +71,7 @@ const backend = [
 	{ name: 'Node JS', icon: node },
 	{ name: 'OWM', icon: owm },
 	{ name: 'PostgreSQL', icon: postgresql },
-	{ name: 'Spotify', icon: spotify },
+	{ name: 'Spotify API', icon: spotify },
 ]
 
 const design = [
@@ -99,7 +99,7 @@ const frontend = [
 	{ name: 'React JS', icon: react },
 	{ name: 'Redux', icon: redux },
 	{ name: 'Sass', icon: sass },
-	{ name: 'Tailwind', icon: tailwind },
+	{ name: 'Tailwind CSS', icon: tailwind },
 	{ name: 'Vite JS', icon: viteJs },
 ]
 
@@ -170,9 +170,9 @@ const techIcons = [
 	{ name: 'Render', icon: render },
 	{ name: 'Sass', icon: sass },
 	{ name: 'Semantic UI', icon: semanticUi },
-	{ name: 'Spotify', icon: spotify },
+	{ name: 'Spotify API', icon: spotify },
 	{ name: 'Supabase', icon: supabase },
-	{ name: 'Tailwind', icon: tailwind },
+	{ name: 'Tailwind CSS', icon: tailwind },
 	{ name: 'TypeScript', icon: typescript },
 	{ name: 'Vercel', icon: vercel },
 	{ name: 'Vite JS', icon: viteJs },
