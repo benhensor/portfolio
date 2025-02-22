@@ -40,6 +40,7 @@ import redux from './assets/icons/tech/frontend/redux.svg'
 import render from './assets/icons/tech/devops/render.svg'
 import sass from './assets/icons/tech/frontend/sass.svg'
 import semanticUi from './assets/icons/tech/frontend/semanticui.svg'
+import spotify from './assets/icons/tech/backend/spotify.svg'
 import supabase from './assets/icons/tech/devops/supabase.svg'
 import tailwind from './assets/icons/tech/frontend/tailwindcss.svg'
 import typescript from './assets/icons/tech/languages/typescript.svg'
@@ -59,6 +60,7 @@ import paprback from './assets/projects/paprback/paprback2.webp'
 import seasonit from './assets/projects/seasonit/seasonit.webp'
 import sneakers from './assets/projects/sneakers/sneakers.webp'
 import weather from './assets/projects/weatherapp/weather.webp'
+import kanban from './assets/projects/kanbantaskapp/kanban.webp'
 
 // Tech Icon Data
 const backend = [
@@ -69,6 +71,7 @@ const backend = [
 	{ name: 'Node JS', icon: node },
 	{ name: 'OWM', icon: owm },
 	{ name: 'PostgreSQL', icon: postgresql },
+	{ name: 'Spotify', icon: spotify },
 ]
 
 const design = [
@@ -167,6 +170,7 @@ const techIcons = [
 	{ name: 'Render', icon: render },
 	{ name: 'Sass', icon: sass },
 	{ name: 'Semantic UI', icon: semanticUi },
+	{ name: 'Spotify', icon: spotify },
 	{ name: 'Supabase', icon: supabase },
 	{ name: 'Tailwind', icon: tailwind },
 	{ name: 'TypeScript', icon: typescript },
@@ -187,6 +191,7 @@ const projectImages = [
 	{ key: 8, image: designo },
 	{ key: 9, image: weather },
 	{ key: 10, image: jam },
+	{ key: 11, image: kanban },
 ]
 
 // exports
