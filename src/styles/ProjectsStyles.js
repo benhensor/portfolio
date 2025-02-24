@@ -94,7 +94,7 @@ export const ProjectDetails = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 0 2rem 0;
   z-index: 3;
   transition: all 0.24s ease-out;
   ${ProjectCard}:hover & {
@@ -143,6 +143,8 @@ export const Description = styled.p`
 
 export const Stack = styled.div`
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 0 auto;
   opacity: 0;
   margin-top: 15rem;
@@ -160,7 +162,7 @@ export const Stack = styled.div`
 
   span {
     width: 100%;
-    font-size: var(--text-s);
+    font-size: var(--text-xs);
     white-space: nowrap;
     text-align: center;
     margin-top: .2rem;
