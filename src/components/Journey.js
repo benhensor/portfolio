@@ -67,35 +67,35 @@ export default function Journey() {
 			{ duration: 0.5 },
 		],
 		eventPoint: [
-        { scale: 0 },
-        { scale: 1 },
-        { duration: 0.1, ease: 'easeOut' }  // Starts at 0s
-    ],
-    eventArrow: [
-        { scale: 0 },
-        { scale: 1 },
-        { delay: 0.1, duration: 0.1, ease: 'easeOut' }  // Starts at 0.1s
-    ],
-    eventDottedLine: [
-        { scaleX: 0 },
-        { scaleX: 1 },
-        { delay: 0.2, duration: 0.5, ease: 'easeOut' }  // Starts at 0.2s
-    ],
-    eventIconContainer: [
-        { opacity: 0, scale: 0 },
-        { opacity: 1, scale: 1 },
-        { delay: 0.1, duration: 0.3, ease: 'easeOut' }  // Starts at 0.7s (after dotted line)
-    ],
-    eventDate: [
-        { opacity: 0 },
-        { opacity: 1 },
-        { delay: 0.4, duration: 0.3 }  // Starts at 1.0s
-    ],
-    eventContent: [
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0 },
-        { delay: 0.5, duration: 0.24, ease: 'easeInOut' }  // Starts at 1.3s
-    ]
+			{ scale: 0 },
+			{ scale: 1 },
+			{ duration: 0.1, ease: 'easeOut' }  // Starts at 0s
+		],
+		eventArrow: [
+			{ scale: 0 },
+			{ scale: 1 },
+			{ delay: 0.1, duration: 0.1, ease: 'easeOut' }  // Starts at 0.1s
+		],
+		eventDottedLine: [
+			{ scaleX: 0 },
+			{ scaleX: 1 },
+			{ delay: 0.2, duration: 0.5, ease: 'easeOut' }  // Starts at 0.2s
+		],
+		eventIconContainer: [
+			{ opacity: 0, scale: 0 },
+			{ opacity: 1, scale: 1 },
+			{ delay: 0.1, duration: 0.3, ease: 'easeOut' }  // Starts at 0.7s (after dotted line)
+		],
+		eventDate: [
+			{ opacity: 0 },
+			{ opacity: 1 },
+			{ delay: 0.4, duration: 0.3 }  // Starts at 1.0s
+		],
+		eventContent: [
+			{ opacity: 0, y: 30 },
+			{ opacity: 1, y: 0 },
+			{ delay: 0.5, duration: 0.24, ease: 'easeInOut' }  // Starts at 1.3s
+		]
 	}
 
 	return (
@@ -156,20 +156,20 @@ export default function Journey() {
 										</motion.div>
 										<motion.div
 											className="event-dotted-line"
-											initial={{ 
+											initial={{
 												scaleX: timings.eventDottedLine[0].scaleX,
-												transformOrigin: event.key % 2 === 0 ? 'left center' : 'right center' 
+												transformOrigin: event.key % 2 === 0 ? 'left center' : 'right center'
 											}}
-											whileInView={{ 
+											whileInView={{
 												scaleX: timings.eventDottedLine[1].scaleX,
 											}}
 											transition={timings.eventDottedLine[2]}
 										>
 											<motion.div
 												className="event-icon-container"
-												initial={ timings.eventIconContainer[0] }
-												whileInView={ timings.eventIconContainer[1] }
-												transition={ timings.eventIconContainer[2] } 
+												initial={timings.eventIconContainer[0]}
+												whileInView={timings.eventIconContainer[1]}
+												transition={timings.eventIconContainer[2]}
 											>
 												<div className="event-icon">
 													{event.type === 'education' ? (
@@ -181,14 +181,14 @@ export default function Journey() {
 												<motion.div
 													className={`event-icon-arrow ${event.key % 2 === 0 ? 'left' : 'right'}`}
 												>
-												<Arrow
-													direction={
-														event.key % 2 === 0
-															? 'left'
-															: 'right'
-													}
-												/>
-											</motion.div>
+													<Arrow
+														direction={
+															event.key % 2 === 0
+																? 'left'
+																: 'right'
+														}
+													/>
+												</motion.div>
 											</motion.div>
 										</motion.div>
 									</div>
@@ -202,13 +202,12 @@ export default function Journey() {
 								</div>
 								<div className="row">
 									<EventContent
-										className={`${
-											event.key % 2 === 0 ? 'left' : 'right'
-										}`}
+										className={`${event.key % 2 === 0 ? 'left' : 'right'
+											}`}
 										as={motion.div}
-										initial={ timings.eventContent[0] }
-										whileInView={ timings.eventContent[1] }
-										transition={ timings.eventContent[2] }
+										initial={timings.eventContent[0]}
+										whileInView={timings.eventContent[1]}
+										transition={timings.eventContent[2]}
 									>
 										<div className="event-content">
 											<p className="event-title">
@@ -226,6 +225,7 @@ export default function Journey() {
 								</div>
 							</Event>
 						))}
+					</div>
 						<div className="row-cv-btn">
 							<div className="col-left">
 								<Button
@@ -239,7 +239,6 @@ export default function Journey() {
 							<div className="col-center"></div>
 							<div className="col-right"></div>
 						</div>
-					</div>
 				</Timeline>
 			</Container>
 			<Wave
