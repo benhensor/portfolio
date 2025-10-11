@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaLock } from 'react-icons/fa'
 import { techIcons, projectImages } from '../../data'
 import {
 	ProjectCard,
@@ -23,6 +23,8 @@ export default function Project({ project }) {
 		return tech.icon;
 	}
 
+	const isPrivateRepo = project.isPrivate;
+
 	return (
 		<ProjectCard key={project.key} $image={getProjectImage(project.key).image}>
 			<ProjectContent>
@@ -37,17 +39,27 @@ export default function Project({ project }) {
 							</div>
 						))}
 					</Stack>
+					{isPrivateRepo ? <span>Private repository. Contact me for code access.</span> : ''}
 					<Icons>
-						<a 
-							href={project.code} 
-							target="_blank" rel="noreferrer"
-							aria-label={`View ${project.title} source code on GitHub`}
-						>
-							<FaGithub
-								className="project-icon-github"
-								style={{ fontSize: '2.6rem' }}
-							/>
-						</a>
+						{isPrivateRepo ? (
+							<div className="private-repo-message">
+								<FaLock
+									className="project-icon-lock"
+									style={{ fontSize: '2.2rem', marginRight: '0.5rem' }}
+								/>
+							</div>
+						) : (
+							<a 
+								href={project.code} 
+								target="_blank" rel="noreferrer"
+								aria-label={`View ${project.title} source code on GitHub`}
+							>
+								<FaGithub
+									className="project-icon-github"
+									style={{ fontSize: '2.6rem' }}
+								/>
+							</a>
+						)}
 						<a 
 							href={project.live} 
 							target="_blank" rel="noreferrer"

@@ -94,13 +94,17 @@ export const ProjectDetails = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 2rem 0;
+  padding: 0 1rem 2rem 1rem;
   z-index: 3;
   transition: all 0.24s ease-out;
   ${ProjectCard}:hover & {
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 2rem 0;
+  }
+  span {
+    font-size: var(--text-s);
+    text-align: center;
   }
 `
 
@@ -188,6 +192,14 @@ export const Icons = styled.div`
   opacity: 0;
   margin-top: 15rem;
   transition: all 0.24s ease-out;
+  .private-repo-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+	    color: var(--error);
+    }
+  }
   a {
     display: flex;
     align-items: center;
